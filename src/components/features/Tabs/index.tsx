@@ -23,7 +23,7 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 import { DataGrid } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import elementos from './../../../utils/elementos.json';
+import elementos from '../../../utils/elementos.json';
 
 const columns = [
     {
@@ -134,7 +134,7 @@ const rows = () => {
     })
 };
 
-export const Registers = () => {
+export const Tabs = () => {
     const navigate = useNavigate();
     const [page, setPage] = useState(0);
     const [isLoading, setisLoading] = useState(false);
