@@ -1,0 +1,398 @@
+[
+    {
+        "idInscricao": 1,
+        "candidato": {
+            "nome": "Renan",
+            "email": "renan@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Frontend"
+                    }
+                ],
+                "turno": "tarde"
+            },
+            "telefone": "2121212121",
+            "estado": "RJ"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 2,
+        "candidato": {
+            "nome": "Ana",
+            "email": "ana@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Backend"
+                    }
+                ],
+                "turno": "manhã"
+            },
+            "telefone": "2020202020",
+            "estado": "SP"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 3,
+        "candidato": {
+            "nome": "Lucas",
+            "email": "lucas@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Fullstack"
+                    }
+                ],
+                "turno": "noite"
+            },
+            "telefone": "3030303030",
+            "estado": "MG"
+        },
+        "disponivel": "F"
+    },
+    {
+        "idInscricao": 4,
+        "candidato": {
+            "nome": "Mariana",
+            "email": "mariana@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Data Science"
+                    }
+                ],
+                "turno": "manhã"
+            },
+            "telefone": "4040404040",
+            "estado": "RS"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 5,
+        "candidato": {
+            "nome": "Rafael",
+            "email": "rafael@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "DevOps"
+                    }
+                ],
+                "turno": "tarde"
+            },
+            "telefone": "5050505050",
+            "estado": "SC"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 6,
+        "candidato": {
+            "nome": "Camila",
+            "email": "camila@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "UI/UX Design"
+                    }
+                ],
+                "turno": "noite"
+            },
+            "telefone": "6060606060",
+            "estado": "PR"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 7,
+        "candidato": {
+            "nome": "Thiago",
+            "email": "thiago@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Mobile Development"
+                    }
+                ],
+                "turno": "manhã"
+            },
+            "telefone": "7070707070",
+            "estado": "SP"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 8,
+        "candidato": {
+            "nome": "Juliana",
+            "email": "juliana@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Frontend"
+                    }
+                ],
+                "turno": "tarde"
+            },
+            "telefone": "8080808080",
+            "estado": "RJ"
+        },
+        "disponivel": "F"
+    },
+    {
+        "idInscricao": 9,
+        "candidato": {
+            "nome": "Felipe",
+            "email": "felipe@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Backend"
+                    }
+                ],
+                "turno": "noite"
+            },
+            "telefone": "9090909090",
+            "estado": "MG"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 10,
+        "candidato": {
+            "nome": "Aline",
+            "email": "aline@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Data Science"
+                    }
+                ],
+                "turno": "manhã"
+            },
+            "telefone": "1010101010",
+            "estado": "RS"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 11,
+        "candidato": {
+            "nome": "Gustavo",
+            "email": "gustavo@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "DevOps"
+                    }
+                ],
+                "turno": "tarde"
+            },
+            "telefone": "1111111111",
+            "estado": "SC"
+        },
+        "disponivel": "F"
+    },
+    {
+        "idInscricao": 12,
+        "candidato": {
+            "nome": "Isabela",
+            "email": "isabela@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "UI/UX Design"
+                    }
+                ],
+                "turno": "noite"
+            },
+            "telefone": "1212121212",
+            "estado": "PR"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 13,
+        "candidato": {
+            "nome": "Vinicius",
+            "email": "vinicius@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Mobile Development"
+                    }
+                ],
+                "turno": "manhã"
+            },
+            "telefone": "1313131313",
+            "estado": "SP"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 14,
+        "candidato": {
+            "nome": "Carolina",
+            "email": "carolina@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Frontend"
+                    }
+                ],
+                "turno": "tarde"
+            },
+            "telefone": "1414141414",
+            "estado": "RJ"
+        },
+        "disponivel": "F"
+    },
+    {
+        "idInscricao": 15,
+        "candidato": {
+            "nome": "Pedro",
+            "email": "pedro@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Backend"
+                    }
+                ],
+                "turno": "noite"
+            },
+            "telefone": "1515151515",
+            "estado": "MG"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 16,
+        "candidato": {
+            "nome": "Larissa",
+            "email": "larissa@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Data Science"
+                    }
+                ],
+                "turno": "manhã"
+            },
+            "telefone": "1616161616",
+            "estado": "RS"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 17,
+        "candidato": {
+            "nome": "Fernando",
+            "email": "fernando@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "DevOps"
+                    }
+                ],
+                "turno": "tarde"
+            },
+            "telefone": "1717171717",
+            "estado": "SC"
+        },
+        "disponivel": "F"
+    },
+    {
+        "idInscricao": 18,
+        "candidato": {
+            "nome": "Mariano",
+            "email": "mariano@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "UI/UX Design"
+                    }
+                ],
+                "turno": "noite"
+            },
+            "telefone": "1818181818",
+            "estado": "PR"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 19,
+        "candidato": {
+            "nome": "Tatiane",
+            "email": "tatiane@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Mobile Development"
+                    }
+                ],
+                "turno": "manhã"
+            },
+            "telefone": "1919191919",
+            "estado": "SP"
+        },
+        "disponivel": "T"
+    },
+    {
+        "idInscricao": 20,
+        "candidato": {
+            "nome": "Roberto",
+            "email": "roberto@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "Frontend"
+                    }
+                ],
+                "turno": "tarde"
+            },
+            "telefone": "2020202020",
+            "estado": "RJ"
+        },
+        "disponivel": "F"
+    },
+    {
+        "idInscricao": 21,
+        "candidato": {
+            "nome": "Rodolfo",
+            "email": "rodolfo@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "QA"
+                    }
+                ],
+                "turno": "tarde"
+            },
+            "telefone": "2020202020",
+            "estado": "RJ"
+        },
+        "disponivel": "F"
+    },
+    {
+        "idInscricao": 22,
+        "candidato": {
+            "nome": "Miguel",
+            "email": "miguel@email.com",
+            "formulario": {
+                "trilhas": [
+                    {
+                        "nome": "QA"
+                    }
+                ],
+                "turno": "manhã"
+            },
+            "telefone": "2020203030",
+            "estado": "SP"
+        },
+        "disponivel": "T"
+    }
+]
