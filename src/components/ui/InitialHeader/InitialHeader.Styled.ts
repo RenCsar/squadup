@@ -6,7 +6,7 @@ justify-content: center;
 align-items: center;
 `;
 
-export const HeaderStyled = styled.header`
+export const HeaderStyled = styled.div`
   ${flexCenter}
   justify-content: space-between;
   background-color: var(--bg-header);

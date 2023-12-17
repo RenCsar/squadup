@@ -44,10 +44,11 @@ ol li {
   --font-color-primary: var(--branco);
   --font-color-secondary: var(--preto);
 
-  --font-color-header: var( --font-color-primary);
-  --btn-font-color: var( --font-color-primary);
+  --font-color-header: var(--font-color-primary);
+  --btn-font-color: var(--font-color-primary);
 
   --padding-lateral: 40px;
+  --padding-top-header: 70px;
   --margin-sm: 20px;
   --margin-md: 50px;
 
