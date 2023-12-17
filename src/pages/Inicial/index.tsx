@@ -1,8 +1,11 @@
+import InitialHeader from "../../components/ui/InitialHeader";
+import { Container } from "./Inicial.Styled";
+
 const Initial = () => {
     return (
-        <div>
-            <h1>Página Inicial</h1>
-        </div>
+        <Container>
+            <InitialHeader />
+        </Container>
     )
 }
 

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
   padding: 0px;
@@ -17,16 +17,21 @@ ol li {
 }
 
 :root {
-  --branco: #fff;
-  --verde: rgba(92, 167, 32, 1);
+  --branco: #F5F5F5;
+  --azul-claro: #2266FF;
+  --azul-escuro: #121E36;
+  --verde: #79B473;
   --verde-hover: rgba(92, 167, 32, .6);
+  --vermelho: #F24236;
   --marrom: rgba(81, 34, 0, 0.74);
   --preto: rgba(22, 22, 22, 1);
   --cinza: rgba(165, 161, 161, 1);
   --cinza-claro: #f9f9f9;
+
+  --shadow-hover: rgba(0, 0, 0, .3);
   --border-light-gray: rgba(22, 22, 22, .08);
 
-  --bg-header: var(--branco);
+  --bg-header: var(--azul-claro);
   --bg-body: var(--branco);
   --bg-footer: var(--cinza-claro);
   --bg-btn: var(--verde);
@@ -35,13 +40,21 @@ ol li {
   --border-radius-sm: 5px;
   --border-radius-md: 15px;
 
-  --font-family-primary: 'Lato', sans-serif;
-  --font-color: var(--preto);
-  --btn-font-color: var(--branco);
+  --font-family-primary: 'Manrope', sans-serif;
+  --font-color-primary: var(--branco);
+  --font-color-secondary: var(--preto);
+
+  --font-color-header: var( --font-color-primary);
+  --btn-font-color: var( --font-color-primary);
 
   --padding-lateral: 40px;
   --margin-sm: 20px;
   --margin-md: 50px;
 
-  --transition: 1.3s;
+  --transition: .95s;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  background-color: var(--bg-body);
 }
