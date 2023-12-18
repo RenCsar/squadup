@@ -15,6 +15,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import { Link } from 'react-router-dom';
+import Logo from '../../../assets/logo-escuro.png';
 
 type Anchor = 'right';
 
@@ -61,7 +62,19 @@ export default function TemporaryDrawer() {
                     userSelect: 'none'
                 }}
             >
-                <h2>SquadUP</h2>
+                {/* Se não estiver logado aparece o logo, se estiver vai aparecer a imagem do usuário */}
+                <Box
+                    sx={{
+                        width: "100px",
+                        height: "25px",
+                        "& :first-child": {
+                            width: "100px",
+                            height: "25px",
+                        }
+                    }}
+                >
+                    <img src={Logo} alt="logo" />
+                </Box>
             </Box>
             <Divider />
             <List>

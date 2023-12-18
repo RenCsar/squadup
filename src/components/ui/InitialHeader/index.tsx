@@ -2,6 +2,8 @@ import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { HeaderStyled } from "./InitialHeader.Styled";
 import TemporaryDrawer from "../../features/Drawer";
 import { Link } from "react-router-dom";
+import Logo from '../../../assets/logo-escuro.png'
+import ButtonFindTalent from "../ButtonFindTalent";
 
 const InitialHeader = () => {
   const theme = useTheme();
@@ -10,7 +12,7 @@ const InitialHeader = () => {
   return (
     <HeaderStyled>
       <Box className="logo-container">
-        <h2>SquadUP</h2>
+        <img src={Logo} alt="logo" />
       </Box>
       <Box component="nav"
         sx={{
@@ -19,7 +21,7 @@ const InitialHeader = () => {
       >
         <ul>
           <li>
-            <a href="#">Sobre</a>
+            <a href="#sobre">Sobre</a>
           </li>
           <li>
             <a href="#">Serviços</a>
@@ -30,9 +32,10 @@ const InitialHeader = () => {
           <li>
             <a href="#">Contato</a>
           </li>
-          <li>
-            <Link to="/home">Encontre um Talento</Link>
-          </li>
+          <ButtonFindTalent
+            color={"var(--font-color-secondary)"}
+            backgroundColor={"var(--bg-btn)"}
+          />
         </ul>
       </Box>
       <Box

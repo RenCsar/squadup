@@ -1,20 +1,20 @@
 import { createTheme } from '@mui/material/styles';
 
-interface CustomTheme {
-    palette: {
-      primary: {
-        main: string;
-      };
-      secondary: {
-        main: string;
-      };
-    };
-  }
+// interface CustomTheme {
+//   palette: {
+//     primary: {
+//       main: string;
+//     };
+//     secondary: {
+//       main: string;
+//     };
+//   };
+// }
 
-const theme: CustomTheme = createTheme({
+const theme = createTheme({
   palette: {
     primary: {
-      main: 'var(--azul-claro)', // Azul
+      main: '#2266FF', // Azul
     },
     secondary: {
       main: '#FF4081', // Rosa
@@ -40,7 +40,7 @@ const theme: CustomTheme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: 'Manrope, sans-serif',
     fontSize: 16,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
@@ -48,7 +48,7 @@ const theme: CustomTheme = createTheme({
   },
   spacing: 8, // Espaçamento base entre componentes
   shape: {
-    borderRadius: 4, // Borda arredondada padrão
+    borderRadius: 4,
   },
   breakpoints: {
     values: {

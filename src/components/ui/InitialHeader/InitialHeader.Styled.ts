@@ -14,10 +14,16 @@ export const HeaderStyled = styled.div`
   height: 70px;
   padding-inline: var(--padding-lateral);
   color: var(--font-color-header);
+  user-select: none;
 
   & .logo-container {
     ${flexCenter}
     cursor: pointer;
+
+    & img {
+      width: 140px;
+      height: 37px;
+    }
   }
 
   & nav ul {
@@ -39,5 +45,9 @@ export const HeaderStyled = styled.div`
         background-color: var(--branco);
       }
     }
+  }
+
+  @media (max-width: 500px) {
+    padding-inline: var(--padding-lateral-mobile);
   }
 `;

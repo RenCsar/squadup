@@ -23,7 +23,6 @@ ol li {
   --verde: #79B473;
   --verde-hover: rgba(92, 167, 32, .6);
   --vermelho: #F24236;
-  --marrom: rgba(81, 34, 0, 0.74);
   --preto: rgba(22, 22, 22, 1);
   --cinza: rgba(165, 161, 161, 1);
   --cinza-claro: #f9f9f9;
@@ -34,20 +33,22 @@ ol li {
   --bg-header: var(--azul-claro);
   --bg-body: var(--branco);
   --bg-footer: var(--cinza-claro);
-  --bg-btn: var(--verde);
-  --bg-btn-hover: var(--marrom);
+  --bg-btn: var(--branco);
+  --bg-btn-hover: var(--azul-escuro);
 
   --border-radius-sm: 5px;
   --border-radius-md: 15px;
 
   --font-family-primary: 'Manrope', sans-serif;
   --font-color-primary: var(--branco);
-  --font-color-secondary: var(--preto);
+  --font-color-secondary: var(--azul-claro);
+  --font-color-text: var(var(--azul-escuro));
 
   --font-color-header: var(--font-color-primary);
   --btn-font-color: var(--font-color-primary);
 
   --padding-lateral: 40px;
+  --padding-lateral-mobile: 20px;
   --padding-top-header: 70px;
   --margin-sm: 20px;
   --margin-md: 50px;
@@ -58,4 +59,17 @@ ol li {
 body {
   font-family: var(--font-family-primary);
   background-color: var(--bg-body);
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--azul-escuro);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background: var(--branco);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--branco);
 }
