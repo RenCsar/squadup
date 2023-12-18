@@ -1,10 +1,9 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { Container } from "./Banner.Styled";
 import Logo from "../../../assets/logo-escuro.webp";
 import Homem from "../../../assets/person-ti1.webp";
-import { Link } from "react-router-dom";
-import ExecutiveBanner from "../ExecutiveBanner";
-import ButtonFindTalent from "../ButtonFindTalent";
+import ExecutiveBanner from "../../ui/ExecutiveBanner";
+import ButtonFindTalent from "../../ui/ButtonFindTalent";
 
 const Banner = () => {
   return (
