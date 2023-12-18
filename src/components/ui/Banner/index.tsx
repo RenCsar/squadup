@@ -1,7 +1,7 @@
 import { Box, Button } from "@mui/material";
 import { Container } from "./Banner.Styled";
-import Logo from "../../../assets/logo-escuro.png";
-import Homem from "../../../assets/person-ti1.png";
+import Logo from "../../../assets/logo-escuro.webp";
+import Homem from "../../../assets/person-ti1.webp";
 import { Link } from "react-router-dom";
 import ExecutiveBanner from "../ExecutiveBanner";
 import ButtonFindTalent from "../ButtonFindTalent";

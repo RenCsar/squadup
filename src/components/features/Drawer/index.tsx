@@ -15,7 +15,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import { Link } from 'react-router-dom';
-import Logo from '../../../assets/logo-escuro.png';
+import Logo from '../../../assets/logo-escuro.webp';
 
 type Anchor = 'right';
 

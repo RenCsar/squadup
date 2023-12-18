@@ -2,7 +2,7 @@ import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { HeaderStyled } from "./InitialHeader.Styled";
 import TemporaryDrawer from "../../features/Drawer";
 import { Link } from "react-router-dom";
-import Logo from '../../../assets/logo-escuro.png'
+import Logo from '../../../assets/logo-escuro.webp'
 import ButtonFindTalent from "../ButtonFindTalent";
 
 const InitialHeader = () => {
