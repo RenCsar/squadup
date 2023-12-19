@@ -7,7 +7,7 @@ import ButtonFindTalent from "../../ui/ButtonFindTalent";
 
 const Banner = () => {
   return (
-    <Container id="sobre">
+    <Container>
       <Box className="container-geral">
         <Box className="banner-header">
           <img src={Logo} alt="" />

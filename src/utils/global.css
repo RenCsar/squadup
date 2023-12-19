@@ -32,7 +32,7 @@ ol li {
 
   --bg-header: var(--azul-claro);
   --bg-body: var(--branco);
-  --bg-footer: var(--cinza-claro);
+  --bg-footer: var(--azul-claro);
   --bg-btn: var(--branco);
   --bg-btn-hover: var(--azul-escuro);
 

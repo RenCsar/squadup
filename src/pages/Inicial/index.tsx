@@ -3,6 +3,8 @@ import InitialHeader from "../../components/ui/InitialHeader";
 import { Container } from "./Inicial.Styled";
 import Banner from "../../components/sections/Banner";
 import SocialsFixed from "../../components/ui/SocialsFixed";
+import Footer from "../../components/sections/Footer";
+import Servicos from "../../components/sections/Servicos";
 
 const Initial = () => {
     return (
@@ -10,9 +12,17 @@ const Initial = () => {
             <Box component='header' className="header-container">
                 <InitialHeader />
             </Box>
-            <Banner />
             <Box className="socials-fixed">
                 <SocialsFixed />
+            </Box>
+            <Box className="banner" id="sobre">
+                <Banner />
+            </Box>
+            <Box className="serviços" id="servicos">
+                <Servicos />
+            </Box>
+            <Box className="footer">
+                <Footer />
             </Box>
         </Container>
     )
