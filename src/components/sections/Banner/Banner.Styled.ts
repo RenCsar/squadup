@@ -1,18 +1,12 @@
 import styled from "styled-components";
-
-const flexCenter = `
-display: flex;
-justify-content: center;
-align-items: center;
-`;
+import { flexCenter, sectionBase } from "../../../utils/globalStyledComponents";
 
 export const Container = styled.section`
-  background-color: var(--azul-claro);
+  ${sectionBase}
   min-height: 100vh;
-  padding-top: var(--padding-top-header);
-  padding-inline: var(--padding-lateral);
-  color: var(--font-color-primary);
   width: 100%;
+  background-color: var(--azul-claro);
+  color: var(--font-color-primary);
 
   & .container-geral {
     ${flexCenter}

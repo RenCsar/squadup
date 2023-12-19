@@ -1,14 +1,14 @@
 import { Box } from "@mui/material";
-import { Container } from "./Servicos.Styled";
+import { Container } from "./Clientes.Styled";
 
-const Servicos = () => {
+const Clientes = () => {
   return (
     <Container>
       <Box className="container-geral">
-        Serviços
+        Clientes
       </Box>
     </Container>
   )
 }
 
-export default Servicos;
+export default Clientes;

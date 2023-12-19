@@ -36,12 +36,12 @@ export default function TemporaryDrawer() {
                 setState({ ...state, [anchor]: open });
             };
 
-    const icons = [
-        <InfoIcon />,
-        <HandymanIcon />,
-        <ImportantDevicesIcon />,
-        <MailIcon />
-    ];
+    const linkItens = [
+        { title: 'Sobre', path: "sobre", icon: <InfoIcon /> },
+        { title: 'Serviços', path: "servicos", icon: <HandymanIcon /> },
+        { title: 'Tecnologias', path: "tecnologias", icon: <ImportantDevicesIcon /> },
+        { title: 'Contato', path: "contato", icon: <MailIcon /> },
+    ]
 
     const list = (anchor: Anchor) => (
         <Box
@@ -78,10 +78,10 @@ export default function TemporaryDrawer() {
             </Box>
             <Divider />
             <List>
-                {['Sobre', 'Serviços', 'Tecnologias', 'Contato'].map((text, index) => (
-                    <a href={`#${text}`}>
+                {linkItens.map((i, index) => (
+                    <a href={`#${i.path}`}>
                         <ListItem
-                            key={text}
+                            key={i.title}
                             disablePadding
                             onClick={toggleDrawer(anchor, false)}
                             onKeyDown={toggleDrawer(anchor, false)}
@@ -99,9 +99,9 @@ export default function TemporaryDrawer() {
                                         color: "var(--font-color-primary)"
                                     }}
                                 >
-                                    {icons[index] || 'icon'}
+                                    {i.icon || 'icon'}
                                 </ListItemIcon>
-                                <ListItemText primary={text} />
+                                <ListItemText primary={i.title} />
                             </ListItemButton>
                         </ListItem>
                     </a>

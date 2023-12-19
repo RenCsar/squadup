@@ -5,6 +5,9 @@ import Banner from "../../components/sections/Banner";
 import SocialsFixed from "../../components/ui/SocialsFixed";
 import Footer from "../../components/sections/Footer";
 import Servicos from "../../components/sections/Servicos";
+import Clientes from "../../components/sections/Clientes";
+import Tecnologias from "../../components/sections/Tecnologias";
+import Contato from "../../components/sections/Contato";
 
 const Initial = () => {
     return (
@@ -18,8 +21,17 @@ const Initial = () => {
             <Box className="banner" id="sobre">
                 <Banner />
             </Box>
-            <Box className="serviços" id="servicos">
+            <Box className="clientes" id="clientes">
+                <Clientes />
+            </Box>
+            <Box className="servicos" id="servicos">
                 <Servicos />
+            </Box>
+            <Box className="tecnologias" id="tecnologias">
+                <Tecnologias />
+            </Box>
+            <Box className="contato" id="contato">
+                <Contato />
             </Box>
             <Box className="footer">
                 <Footer />
