@@ -33,7 +33,7 @@ const InitialHeader = () => {
           </li>
           <ButtonFindTalent
             color={"var(--font-color-secondary)"}
-            backgroundColor={"var(--bg-btn)"}
+            backgroundColor={"var(--bg-btn-primary)"}
           />
         </ul>
       </Box>

@@ -3,7 +3,7 @@ import { flexCenter, sectionBase } from "../../../utils/globalStyledComponents";
 
 export const Container = styled.section`
   ${sectionBase}
-  background-color: var(--bg-body);
+  background-color: var(--bg-section-escuro);
   min-height: 100vh;
   width: 100%;
 

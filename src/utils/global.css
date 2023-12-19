@@ -32,9 +32,12 @@ ol li {
 
   --bg-header: var(--azul-claro);
   --bg-body: var(--branco);
+  --bg-section-escuro: var(--azul-escuro);
+  --bg-section-claro: var(--azul-claro);
   --bg-footer: var(--azul-claro);
-  --bg-btn: var(--branco);
-  --bg-btn-hover: var(--azul-escuro);
+
+  --bg-btn-primary: var(--branco);
+  --bg-btn-primary-hover: var(--azul-escuro);
 
   --border-radius-sm: 5px;
   --border-radius-md: 15px;
