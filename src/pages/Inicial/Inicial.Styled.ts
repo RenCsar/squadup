@@ -25,4 +25,10 @@ export const Container = styled.div`
     transform: translateY(-50%);
     z-index: 1;
   }
+
+  @media (max-width: 650px) {
+    .socials-fixed {
+      display: none;
+    }
+  }
 `;
