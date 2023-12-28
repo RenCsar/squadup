@@ -34,6 +34,7 @@ ol li {
   --bg-body: var(--branco);
   --bg-section-escuro: var(--azul-escuro);
   --bg-section-claro: var(--azul-claro);
+  --bg-section-branco: var(--branco);
   --bg-footer: var(--azul-claro);
 
   --bg-btn-primary: var(--branco);

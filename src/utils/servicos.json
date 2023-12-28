@@ -1,0 +1,33 @@
+[
+    {
+        "title": "Projetos e Negócios",
+        "img": "projeto",
+        "classStyle": "projetos",
+        "items": [
+            "Alocação de Gerente de projetos para controle de escopo e prazo de projeto;",
+            "Alocação de Analista de requisitos para análise e elaboração de documentações funcionais e técnicas;",
+            "Tenha em mãos a documentação do seu projeto com qualidade e competência."
+        ]
+    },
+    {
+        "title": "Sistemas Web",
+        "img": "web",
+        "classStyle": "web",
+        "items": [
+            "Alocação de Desenvolvedor Front-End, Back-end e Mobile;",
+            "Profissionais de alta performance e com competências variadas;",
+            "Especialistas em diferentes linguagens e níveis de especialização."
+        ]
+    },
+    {
+        "title": "UI/UX Design",
+        "img": "design",
+        "classStyle": "design",
+        "items": [
+            "Alocação de profissional de UX/UI design;",
+            "Otimização do tempo na validação das regras do negócio e novas ideias;",
+            "Redução dos custos de desenvolvimento em até 30%;",
+            "Foco no usuário e nas necessidades do negócio."
+        ]
+    }
+]

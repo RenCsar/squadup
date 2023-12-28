@@ -24,7 +24,7 @@ const Initial = () => {
             <Box className="clientes" id="clientes">
                 <Clientes />
             </Box>
-            <Box className="servicos" id="servicos">
+            <Box className="servicos">
                 <Servicos />
             </Box>
             <Box className="tecnologias" id="tecnologias">
