@@ -1,10 +1,14 @@
 import styled from "styled-components";
-import { flexCenter, sectionBase } from "../../../utils/globalStyledComponents";
+import {
+  flexCenter,
+  interactionOff,
+  sectionBase,
+} from "../../../utils/globalStyledComponents";
 
 export const Container = styled.section`
   ${sectionBase}
   background-color: var(--bg-section-escuro);
-  min-height: calc(100vh + 150px);
+  min-height: calc(100vh + 70px + 80px);
   width: 100%;
 
   & .container-geral {
@@ -13,12 +17,13 @@ export const Container = styled.section`
     width: 100%;
     ${flexCenter}
     flex-direction: column;
-    margin-top: 80px;
+    margin-top: 70px;
 
     & h2 {
-      margin-top: 70px;
+      margin-top: 80px;
       color: var(--font-color-primary);
       font-size: 35px;
+      text-align: center;
     }
 
     & .card-container {
@@ -27,6 +32,52 @@ export const Container = styled.section`
       gap: 20px;
       justify-content: center;
       width: 100%;
+
+      .swiper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+        .swiper-slide {
+          ${interactionOff}
+          ${flexCenter}
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    min-height: calc(100vh + 90px + 80px);
+    .container-geral {
+      margin-top: 90px;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    padding-inline: var(--padding-lateral-mobile);
+    .container-geral {
+      padding-inline: 0;
+    }
+  }
+  
+  @media (max-width: 350px) {
+    min-height: calc(100vh + 110px + 80px);
+    .container-geral {
+      margin-top: 110px;
+      & h2 {
+        font-size: 30px;
+      }
+    }
+  }
+
+  @media (max-width: 330px) {
+    min-height: calc(100vh + 110px + 130px);
+    .container-geral {
+      & h2 {
+        font-size: 28px;
+      }
     }
   }
 `;

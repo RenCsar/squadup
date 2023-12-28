@@ -34,8 +34,8 @@ export default function Carousel() {
                 navigation={false}
                 draggable={false}
             >
-                {marcas.map((i) => (
-                    <SwiperSlide>
+                {marcas.map((i, index) => (
+                    <SwiperSlide key={index}>
                         <img src={i.url} alt="" />
                     </SwiperSlide>
                 ))}

@@ -11,8 +11,8 @@ const ServicesClients = ({ title, img, classStyle, items }: TServicesClientsProp
             </Box>
             <Box className="list-container">
                 <StyledListItem type={classStyle}>
-                    {items.map((i) =>
-                        <li>
+                    {items.map((i, index) =>
+                        <li key={index}>
                             <span>{i}</span>
                         </li>
                     )}

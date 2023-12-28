@@ -9,6 +9,7 @@ export const Container = styled.div`
   display: flex;
   background-color: var(--bg-section-branco);
   width: 320px;
+  min-height: 375px;
   border-radius: var(--border-radius-sm);
   padding: 30px 20px;
   flex-direction: column;
@@ -48,6 +49,10 @@ export const Container = styled.div`
   & .list-container {
     display: flex;
     height: 100%;
+  }
+
+  @media (max-width: 330px) {
+    padding: 20px 10px;
   }
 `;
 

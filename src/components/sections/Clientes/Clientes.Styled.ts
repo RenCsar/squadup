@@ -149,8 +149,6 @@ export const Container = styled.section`
       }
 
       & .depoimento {
-        width: 100%;
-        height: auto;
         padding: 20px 20px;
       }
     }

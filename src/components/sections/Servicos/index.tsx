@@ -5,8 +5,21 @@ import Web from './../../../assets/web.svg';
 import Design from './../../../assets/design.svg';
 import ServicesClients from "../../ui/ServicesClients";
 import Services from "./../../../utils/servicos.json";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay } from 'swiper/modules';
+import { useMediaQuery } from 'react-responsive';
+
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 const Servicos = () => {
+  const mdDown = useMediaQuery({
+    query: '(max-width: 1140px)'
+  });
+  const smDown = useMediaQuery({
+    query: '(max-width: 815px)'
+  });
 
   const imagens: Record<string, string> = {
     projeto: Projeto,
@@ -19,16 +32,32 @@ const Servicos = () => {
       <Box className="container-geral" id="servicos">
         <h2>Modelos de Outsourcing de TI</h2>
         <Box className="card-container">
-          {
-            Services.map((i) =>
-              <ServicesClients
-                title={i.title}
-                img={imagens[i.img]}
-                classStyle={i.classStyle}
-                items={i.items}
-              />
-            )
-          }
+          <Swiper
+            className="mySwiper"
+            modules={[Autoplay]}
+            spaceBetween={0}
+            slidesPerView={smDown ? 1 : mdDown ? 2 : 3}
+            loop={true}
+            autoplay={!mdDown ? false : {
+              delay: 2000,
+            }}
+            pagination={{
+              clickable: mdDown ? true : false,
+            }}
+            navigation={false}
+            draggable={mdDown ? true : false}
+          >
+            {Services.map((i) => (
+              <SwiperSlide key={i.title}>
+                <ServicesClients
+                  title={i.title}
+                  img={imagens[i.img]}
+                  classStyle={i.classStyle}
+                  items={i.items}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </Box>
       </Box>
     </Container>
