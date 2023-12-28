@@ -30,7 +30,13 @@ const Servicos = () => {
   return (
     <Container>
       <Box className="container-geral" id="servicos">
-        <h2>Modelos de Outsourcing de TI</h2>
+        <Box className="text-container">
+          <h2>Nossos Serviços</h2>
+          <p>
+            Trabalhamos com um time de profissionais especializados em cada fase do seu projeto, bem como melhores práticas para condução e desenvolvimento de um software ou aplicativo mobile. Conheça nossos profissionais, temos a equipe perfeita para seu negócio.
+          </p>
+        </Box>
+        <h3>Modelos de Outsourcing de TI</h3>
         <Box className="card-container">
           <Swiper
             className="mySwiper"
