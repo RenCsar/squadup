@@ -28,9 +28,6 @@ const InitialHeader = () => {
           <li>
             <a href="#tecnologias">Tecnologias</a>
           </li>
-          <li>
-            <a href="#contato">Contato</a>
-          </li>
           <ButtonFindTalent
             color={"var(--font-color-secondary)"}
             backgroundColor={"var(--bg-btn-primary)"}

@@ -40,7 +40,6 @@ export default function TemporaryDrawer() {
         { title: 'Sobre', path: "sobre", icon: <InfoIcon /> },
         { title: 'Serviços', path: "servicos", icon: <HandymanIcon /> },
         { title: 'Tecnologias', path: "tecnologias", icon: <ImportantDevicesIcon /> },
-        { title: 'Contato', path: "contato", icon: <MailIcon /> },
     ]
 
     const list = (anchor: Anchor) => (
