@@ -7,6 +7,7 @@ import Footer from "../../components/sections/Footer";
 import Servicos from "../../components/sections/Servicos";
 import Clientes from "../../components/sections/Clientes";
 import Tecnologias from "../../components/sections/Tecnologias";
+import Empresa from "../../components/sections/Empresa";
 
 const Initial = () => {
     return (
@@ -19,6 +20,9 @@ const Initial = () => {
             </Box>
             <Box className="banner" id="sobre">
                 <Banner />
+            </Box>
+            <Box className="empresa" id="empresa">
+                <Empresa />
             </Box>
             <Box className="clientes" id="clientes">
                 <Clientes />
