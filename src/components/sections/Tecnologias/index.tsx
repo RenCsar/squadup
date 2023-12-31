@@ -5,7 +5,10 @@ const Tecnologias = () => {
   return (
     <Container>
       <Box className="container-geral">
-        Tecnologias
+        <h2>Tecnologias</h2>
+        <Box className="tec-container">
+
+        </Box>
       </Box>
     </Container>
   )

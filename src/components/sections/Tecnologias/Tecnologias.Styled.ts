@@ -11,7 +11,21 @@ export const Container = styled.section`
     padding-inline: var(--padding-lateral);
     height: 100%;
     width: 100%;
-    /* ${flexCenter}
-    justify-content: space-between; */
+    margin-top: 20px;
+    ${flexCenter};
+    flex-direction: column;
+
+    & h2 {
+      color: var(--font-color-text);
+      font-size: 35px;
+      text-align: center;
+      font-weight: 500;
+    }
+
+    & .tec-container {
+      height: 100%;
+      width: 100%;
+      display: flex;
+    }
   }
 `;
