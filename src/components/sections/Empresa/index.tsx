@@ -2,11 +2,13 @@ import { Parallax, Background } from 'react-parallax';
 import EmpresaImg from "./../../../assets/empresa.webp";
 import { Container } from './Empresa.Styled';
 import { Box } from '@mui/material';
+import { useMediaQuery } from 'react-responsive';
 
 const Empresa = () => {
+    const lgDown = useMediaQuery({ query: "(max-width: 1100px)" });
     return (
         <Container>
-            <Parallax strength={-350}>
+            <Parallax strength={lgDown ? 0 : -320}>
                 <Background>
                     <img
                         src={EmpresaImg}
