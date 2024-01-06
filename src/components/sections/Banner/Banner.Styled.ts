@@ -29,7 +29,7 @@ export const Container = styled.section`
 
       & img {
         width: 400px;
-        height: 100px;
+        height: auto;
       }
 
       & .text-container {
@@ -57,7 +57,6 @@ export const Container = styled.section`
       & .banner-header {
         & img {
           width: 300px;
-          height: 75px;
         }
 
         & .text-container {
@@ -73,7 +72,6 @@ export const Container = styled.section`
       & .banner-header {
         & img {
           width: 250px;
-          height: 63px;
         }
 
         & .text-container {

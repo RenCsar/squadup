@@ -28,7 +28,7 @@ ol li {
   --cinza-claro: #f9f9f9;
 
   --shadow-hover: rgba(0, 0, 0, .3);
-  --border-light-gray: rgba(22, 22, 22, .08);
+  --border-light-gray: var(--cinza-claro);
 
   --bg-header: var(--azul-claro);
   --bg-body: var(--branco);
@@ -36,6 +36,7 @@ ol li {
   --bg-section-claro: var(--azul-claro);
   --bg-section-branco: var(--branco);
   --bg-footer: var(--azul-claro);
+  --bg-border-color: rgba(256, 256, 256, .2);
 
   --bg-btn-primary: var(--branco);
   --bg-btn-primary-hover: var(--azul-escuro);
@@ -46,7 +47,7 @@ ol li {
   --font-family-primary: 'Manrope', sans-serif;
   --font-color-primary: var(--branco);
   --font-color-secondary: var(--azul-claro);
-  --font-color-text: var(var(--azul-escuro));
+  --font-color-text: var(--azul-escuro);
 
   --font-color-header: var(--font-color-primary);
   --btn-font-color: var(--font-color-primary);
