@@ -9,7 +9,7 @@ const Clientes = () => {
     <Container>
       <Box className="container-geral">
         <Box className="text-container">
-          <h2>Conheça alguns dos nossos parceiros que apoiam nossos serviços</h2>
+          <h2>Conheça alguns dos nossos <span>parceiros</span> que apoiam nossos <span>serviços</span></h2>
         </Box>
         <Box className="carousel-container-geral">
           <Carousel content={marcas} />

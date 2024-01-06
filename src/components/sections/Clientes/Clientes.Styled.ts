@@ -25,6 +25,15 @@ export const Container = styled.section`
       h2 {
         font-size: 35px;
         font-weight: 500;
+        & span {
+          background: linear-gradient(
+            135deg,
+            var(--azul-escuro) -30%,
+            var(--azul-claro) 100%
+          );
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
     }
 
