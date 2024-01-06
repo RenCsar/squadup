@@ -5,6 +5,8 @@ import LogoClaro from '../../../assets/logo-claro.webp';
 import LogoEscuro from '../../../assets/logo-escuro.webp';
 import ButtonFindTalent from "../ButtonFindTalent";
 import useBackground from "../../../hooks/useBackground";
+import { Link } from "react-scroll";
+import * as Scroll from 'react-scroll';
 
 const InitialHeader = () => {
   const theme = useTheme();
@@ -12,6 +14,12 @@ const InitialHeader = () => {
   const backgroundColor = useBackground(true);
 
   let Logo = backgroundColor === "var(--bg-section-escuro)" ? LogoClaro : LogoEscuro;
+
+  const section = [
+    { title: "Sobre", link: 'sobre' },
+    { title: "Serviços", link: 'servicos' },
+    { title: "Tecnologias", link: 'tecnologias' }
+  ];
 
   return (
     <HeaderStyled backgroundcolor={backgroundColor}>
@@ -24,15 +32,16 @@ const InitialHeader = () => {
         }}
       >
         <ul>
-          <li>
-            <a href="#sobre">Sobre</a>
-          </li>
-          <li>
-            <a href="#servicos">Serviços</a>
-          </li>
-          <li>
-            <a href="#tecnologias">Tecnologias</a>
-          </li>
+          {section.map((i) =>
+            <li key={i.link}>
+              <Link
+                to={i.link}
+                spy={true}
+                smooth={true}
+                duration={800}
+              >{i.title}</Link>
+            </li>
+          )}
           <ButtonFindTalent
             color={"var(--font-color-secondary)"}
             backgroundColor={"var(--bg-btn-primary)"}

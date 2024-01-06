@@ -16,6 +16,8 @@ import HandymanIcon from '@mui/icons-material/Handyman';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import { Link } from 'react-router-dom';
 import Logo from '../../../assets/logo-escuro.webp';
+import { Link as LinkSmooth } from "react-scroll";
+import * as Scroll from 'react-scroll';
 
 type Anchor = 'right';
 
@@ -78,7 +80,12 @@ export default function TemporaryDrawer() {
             <Divider />
             <List>
                 {linkItens.map((i, index) => (
-                    <a href={`#${i.path}`}>
+                    <LinkSmooth
+                        to={i.path}
+                        spy={true}
+                        smooth={true}
+                        duration={800}
+                    >
                         <ListItem
                             key={i.title}
                             disablePadding
@@ -103,7 +110,7 @@ export default function TemporaryDrawer() {
                                 <ListItemText primary={i.title} />
                             </ListItemButton>
                         </ListItem>
-                    </a>
+                    </LinkSmooth>
                 ))}
             </List>
             <Divider />
