@@ -30,7 +30,7 @@ export const Container = styled.footer`
 
       & .content {
         display: flex;
-        justify-content: space-between;        
+        justify-content: space-between;
 
         & .text-container {
           width: 400px;
@@ -42,7 +42,8 @@ export const Container = styled.footer`
           }
         }
 
-        & .outsourcing, & .squadup {
+        & .outsourcing,
+        & .squadup {
           display: flex;
           flex-direction: column;
           gap: 5px;
@@ -59,7 +60,7 @@ export const Container = styled.footer`
             }
           }
         }
-        
+
         & .gptw {
           & img {
             width: 80px;
@@ -84,6 +85,52 @@ export const Container = styled.footer`
       & img {
         width: 80px;
         height: 40.88px;
+      }
+    }
+  }
+
+  @media (max-width: 1120px) {
+    & .container-geral {
+      & .first-section {
+        & .content {
+          gap: 20px;
+          flex-wrap: wrap;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 830px) {
+    & .container-geral {
+      padding-block: 10px;
+      & .first-section {
+        & .last-line {
+          flex-wrap: wrap;
+          gap: 20px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 550px) {
+    padding-inline: var(--padding-lateral-mobile);
+    & .container-geral {
+      padding-inline: 0px;
+    }
+  }
+
+  @media (max-width: 430px) {
+    & .container-geral {
+      & .first-section {
+        & .last-line {
+          flex-direction: column;
+        }
+      }
+
+      & .second-section {
+        flex-direction: column;
+        gap: 20px;
       }
     }
   }
