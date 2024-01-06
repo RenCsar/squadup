@@ -25,3 +25,7 @@ type TCarouselItemProps = {
 export type TCarouselProps = {
     content: TCarouselItemProps[];
 };
+
+export type TSocialProps = {
+    isFooter: boolean;
+}

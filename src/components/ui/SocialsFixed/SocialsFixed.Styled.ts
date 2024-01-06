@@ -1,13 +1,16 @@
 import styled from "styled-components";
+import { TSocialProps } from "../../../utils/types";
 
-export const Container = styled.div`
+export const Container = styled.div<TSocialProps>`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${(props) => (props.isFooter ? "row" : "column")};
   padding-inline: 20px;
 
   & svg {
-    width: 30px;
-    height: 30px;
+    width: ${(props) => (props.isFooter ? "40px" : "30px")};
+    height: ${(props) => (props.isFooter ? "40px" : "30px")};
+    fill: ${(props) =>
+      props.isFooter ? "var(--branco)" : "var(--azul-claro)"};
 
     &:hover {
       fill: var(--azul-escuro);
