@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { TBackgroundProps } from "../../../utils/types";
 
 const flexCenter = `
 display: flex;
@@ -6,10 +7,11 @@ justify-content: center;
 align-items: center;
 `;
 
-export const HeaderStyled = styled.div`
+export const HeaderStyled = styled.div<TBackgroundProps>`
   ${flexCenter}
   justify-content: space-between;
-  background-color: var(--bg-header);
+  background-color: ${(props) =>
+    props.backgroundcolor ? props.backgroundcolor : "var(--bg-header)"};
   width: 100%;
   height: 70px;
   padding-inline: var(--padding-lateral);

@@ -1,9 +1,12 @@
+import useBackground from "../../../hooks/useBackground";
 import { TSocialProps } from "../../../utils/types";
 import { Container } from "./SocialsFixed.Styled";
 
-const SocialsFixed = ({isFooter}: TSocialProps) => {
+const SocialsFixed = ({ isFooter }: TSocialProps) => {
+  const backgroundColor = useBackground();
+
   return (
-    <Container isFooter={isFooter}>
+    <Container isFooter={isFooter} backgroundcolor={backgroundColor}>
       <a href="https://www.linkedin.com/in/renan-cesar/" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 50 50"
           fill={"#2266ff"}>

@@ -1,15 +1,20 @@
 import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { HeaderStyled } from "./InitialHeader.Styled";
 import TemporaryDrawer from "../../features/Drawer";
-import Logo from '../../../assets/logo-escuro.webp'
+import LogoClaro from '../../../assets/logo-claro.webp';
+import LogoEscuro from '../../../assets/logo-escuro.webp';
 import ButtonFindTalent from "../ButtonFindTalent";
+import useBackground from "../../../hooks/useBackground";
 
 const InitialHeader = () => {
   const theme = useTheme();
   const mdDown = useMediaQuery(theme.breakpoints.down('md'));
+  const backgroundColor = useBackground(true);
+
+  let Logo = backgroundColor === "var(--bg-section-escuro)" ? LogoClaro : LogoEscuro;
 
   return (
-    <HeaderStyled>
+    <HeaderStyled backgroundcolor={backgroundColor}>
       <Box className="logo-container">
         <img src={Logo} alt="logo" />
       </Box>
@@ -31,6 +36,7 @@ const InitialHeader = () => {
           <ButtonFindTalent
             color={"var(--font-color-secondary)"}
             backgroundColor={"var(--bg-btn-primary)"}
+            backgoundColorHover={backgroundColor === "var(--bg-section-escuro)" ? "var(--bg-section-claro)" : "var(--bg-section-escuro)"}
           />
         </ul>
       </Box>

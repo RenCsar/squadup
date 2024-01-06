@@ -26,6 +26,10 @@ export type TCarouselProps = {
     content: TCarouselItemProps[];
 };
 
-export type TSocialProps = {
+export type TBackgroundProps = {
+    backgroundcolor?: string;
+}
+
+export type TSocialProps = TBackgroundProps & {
     isFooter: boolean;
 }

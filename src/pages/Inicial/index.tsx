@@ -16,7 +16,7 @@ const Initial = () => {
                 <InitialHeader />
             </Box>
             <Box className="socials-fixed">
-                <SocialsFixed isFooter={false}/>
+                <SocialsFixed isFooter={false} />
             </Box>
             <Box className="banner" id="sobre">
                 <Banner />
@@ -33,7 +33,7 @@ const Initial = () => {
             <Box className="tecnologias">
                 <Tecnologias />
             </Box>
-            <Box className="footer">
+            <Box className="footer" id="footer">
                 <Footer />
             </Box>
         </Container>

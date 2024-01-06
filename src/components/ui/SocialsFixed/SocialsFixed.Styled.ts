@@ -13,7 +13,12 @@ export const Container = styled.div<TSocialProps>`
       props.isFooter ? "var(--branco)" : "var(--azul-claro)"};
 
     &:hover {
-      fill: var(--azul-escuro);
+      fill: ${(props) =>
+        props.isFooter
+          ? "var(--azul-escuro)"
+          : props.backgroundcolor == "var(--bg-section-claro)"
+          ? "var(--azul-escuro)"
+          : "var(--branco)"};
     }
   }
 `;
