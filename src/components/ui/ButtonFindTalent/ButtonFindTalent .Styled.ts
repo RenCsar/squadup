@@ -4,7 +4,7 @@ import { TButtonProps } from "../../../utils/types";
 export const Container = styled.div<TButtonProps>`
   & a {
     background-color: ${(props) =>
-      props.backgroundColor ? props.backgroundColor : "var(--azul-claro)"};
+      props.backgroundcolor ? props.backgroundcolor : "var(--azul-claro)"};
     color: ${(props) =>
       props.color ? props.color : "var(--font-color-primary)"};
     border-radius: ${(props) =>
@@ -18,8 +18,8 @@ export const Container = styled.div<TButtonProps>`
       transition: var(--transition);
       transform: scale(1.009);
       background-color: ${(props) =>
-        props.backgoundColorHover
-          ? props.backgoundColorHover
+        props.backgoundcolorhover
+          ? props.backgoundcolorhover
           : "var(--azul-escuro)"};
       color: ${(props) =>
         props.colorHover ? props.colorHover : "var(--font-color-primary)"};

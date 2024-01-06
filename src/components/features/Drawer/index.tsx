@@ -81,13 +81,13 @@ export default function TemporaryDrawer() {
             <List>
                 {linkItens.map((i, index) => (
                     <LinkSmooth
+                        key={`${i.title}-${index}`}
                         to={i.path}
                         spy={true}
                         smooth={true}
                         duration={800}
                     >
                         <ListItem
-                            key={i.title}
                             disablePadding
                             onClick={toggleDrawer(anchor, false)}
                             onKeyDown={toggleDrawer(anchor, false)}
@@ -116,9 +116,8 @@ export default function TemporaryDrawer() {
             <Divider />
             <List>
                 {['Encontre um Talento'].map((text, index) => (
-                    <Link to={"/home"}>
+                    <Link to={"/home"} key={`${text}-${index}`}>
                         <ListItem
-                            key={text}
                             disablePadding
                             onClick={toggleDrawer(anchor, false)}
                             onKeyDown={toggleDrawer(anchor, false)}

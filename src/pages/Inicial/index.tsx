@@ -16,7 +16,7 @@ const Initial = () => {
                 <InitialHeader />
             </Box>
             <Box className="socials-fixed">
-                <SocialsFixed isFooter={false} />
+                <SocialsFixed isfooter={false} />
             </Box>
             <Box className="banner" id="sobre">
                 <Banner />

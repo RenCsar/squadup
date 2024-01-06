@@ -44,8 +44,8 @@ const InitialHeader = () => {
           )}
           <ButtonFindTalent
             color={"var(--font-color-secondary)"}
-            backgroundColor={"var(--bg-btn-primary)"}
-            backgoundColorHover={backgroundColor === "var(--bg-section-escuro)" ? "var(--bg-section-claro)" : "var(--bg-section-escuro)"}
+            backgroundcolor={"var(--bg-btn-primary)"}
+            backgoundcolorhover={backgroundColor === "var(--bg-section-escuro)" ? "var(--bg-section-claro)" : "var(--bg-section-escuro)"}
           />
         </ul>
       </Box>

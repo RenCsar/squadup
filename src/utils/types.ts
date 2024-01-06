@@ -1,10 +1,10 @@
 export type TButtonProps = {
     color?: string;
-    backgroundColor?: string;
+    backgroundcolor?: string;
     fontSize?: string;
     borderRadius?: string;
     colorHover?: string;
-    backgoundColorHover?: string;
+    backgoundcolorhover?: string;
 };
 
 export type TServiceListProps = {
@@ -31,5 +31,5 @@ export type TBackgroundProps = {
 }
 
 export type TSocialProps = TBackgroundProps & {
-    isFooter: boolean;
+    isfooter: boolean;
 }

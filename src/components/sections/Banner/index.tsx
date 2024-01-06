@@ -19,7 +19,7 @@ const Banner = () => {
             <div className="link-container">
               <ButtonFindTalent
                 color={"var(--font-color-secondary)"}
-                backgroundColor={"var(--bg-btn-primary)"}
+                backgroundcolor={"var(--bg-btn-primary)"}
               />
             </div>
           </Box>

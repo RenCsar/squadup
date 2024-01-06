@@ -68,9 +68,9 @@ const Footer = () => {
               <p>SquadUp Soluções em Tecnologia</p>
             </Box>
             <Box className="social-media">
-              <SocialsFixed isFooter={true} />
+              <SocialsFixed isfooter={true} />
             </Box>
-            <ButtonFindTalent backgroundColor="var(--bg-btn-primary)" color="var(--font-color-secondary)" />
+            <ButtonFindTalent backgroundcolor="var(--bg-btn-primary)" color="var(--font-color-secondary)" />
           </Box>
         </Box>
         <Box className="second-section">

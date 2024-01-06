@@ -3,13 +3,13 @@ import { Container } from "./ButtonFindTalent .Styled";
 import { Link } from "react-router-dom";
 import { TButtonProps } from "../../../utils/types";
 
-const ButtonFindTalent = ({ backgroundColor, color, borderRadius, backgoundColorHover, colorHover }: TButtonProps) => {
+const ButtonFindTalent = ({ backgroundcolor, color, borderRadius, backgoundcolorhover, colorHover }: TButtonProps) => {
     return (
         <Container
-            backgroundColor={backgroundColor}
+            backgroundcolor={backgroundcolor}
             color={color}
             borderRadius={borderRadius}
-            backgoundColorHover={backgoundColorHover}
+            backgoundcolorhover={backgoundcolorhover}
             colorHover={colorHover}
         >
             <Button sx={{

@@ -3,18 +3,18 @@ import { TSocialProps } from "../../../utils/types";
 
 export const Container = styled.div<TSocialProps>`
   display: flex;
-  flex-direction: ${(props) => (props.isFooter ? "row" : "column")};
+  flex-direction: ${(props) => (props.isfooter ? "row" : "column")};
   padding-inline: 20px;
 
   & svg {
-    width: ${(props) => (props.isFooter ? "40px" : "30px")};
-    height: ${(props) => (props.isFooter ? "40px" : "30px")};
+    width: ${(props) => (props.isfooter ? "40px" : "30px")};
+    height: ${(props) => (props.isfooter ? "40px" : "30px")};
     fill: ${(props) =>
-      props.isFooter ? "var(--branco)" : "var(--azul-claro)"};
+      props.isfooter ? "var(--branco)" : "var(--azul-claro)"};
 
     &:hover {
       fill: ${(props) =>
-        props.isFooter
+        props.isfooter
           ? "var(--azul-escuro)"
           : props.backgroundcolor == "var(--bg-section-claro)"
           ? "var(--azul-escuro)"
