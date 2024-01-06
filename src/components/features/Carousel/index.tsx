@@ -1,16 +1,14 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import marcas from '../../../utils/marcas.json';
-
-// Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { Container } from './Carousel.Styled';
 import { useTheme, useMediaQuery } from '@mui/material';
+import { TCarouselProps } from '../../../utils/types';
 
-export default function Carousel() {
+export default function Carousel({ content }: TCarouselProps) {
     const theme = useTheme()
     const mdDown = useMediaQuery(theme.breakpoints.down("md"));
     const smDown = useMediaQuery(theme.breakpoints.down("sm"));
@@ -34,7 +32,7 @@ export default function Carousel() {
                 navigation={false}
                 draggable={false}
             >
-                {marcas.map((i, index) => (
+                {content.map((i: { url: string }, index: number) => (
                     <SwiperSlide key={index}>
                         <img src={i.url} alt="" />
                     </SwiperSlide>

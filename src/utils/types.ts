@@ -17,3 +17,11 @@ export type TServicesClientsProps = {
     classStyle: string;
     items: string[];
 }
+
+type TCarouselItemProps = {
+    url: string;
+};
+
+export type TCarouselProps = {
+    content: TCarouselItemProps[];
+};

@@ -2,13 +2,12 @@ import styled from "styled-components";
 import {
   flexCenter,
   interactionOff,
-  sectionBase,
 } from "../../../utils/globalStyledComponents";
 
 export const Container = styled.section`
-  ${sectionBase}
+  padding-inline: var(--padding-lateral);
   background-color: var(--bg-section-escuro);
-  min-height: calc(100vh + 70px + 80px + 129px);
+  min-height: calc(100vh + 70px);
   width: 100%;
 
   & .container-geral {
@@ -17,7 +16,6 @@ export const Container = styled.section`
     width: 100%;
     ${flexCenter}
     flex-direction: column;
-    margin-top: 70px; 
 
     & .text-container {
       width: 90%;
@@ -28,10 +26,10 @@ export const Container = styled.section`
       text-align: center;
 
       & h2 {
-      margin-top: 80px;
-      color: var(--font-color-primary);
-      font-size: 35px;
-      text-align: center;
+        margin-top: 80px;
+        color: var(--font-color-primary);
+        font-size: 35px;
+        text-align: center;
       }
     }
 
@@ -65,14 +63,11 @@ export const Container = styled.section`
   }
 
   @media (max-width: 500px) {
-    min-height: calc(100vh + 90px + 80px + 200px);
-    .container-geral {
-      margin-top: 90px;
-    }
-  }
-  
-  @media (max-width: 450px) {
+    min-height: calc(100vh + 130px);
     padding-inline: var(--padding-lateral-mobile);
+  }
+
+  @media (max-width: 450px) {
     .container-geral {
       padding-inline: 0;
       & .text-container {
@@ -80,11 +75,10 @@ export const Container = styled.section`
       }
     }
   }
-  
+
   @media (max-width: 350px) {
-    min-height: calc(100vh + 110px + 80px + 200px);
+    min-height: calc(100vh + 200px);
     .container-geral {
-      margin-top: 110px;
       & h2 {
         font-size: 30px;
       }
@@ -92,7 +86,7 @@ export const Container = styled.section`
   }
 
   @media (max-width: 330px) {
-    min-height: calc(100vh + 110px + 130px + 300px);
+    min-height: calc(100vh + 250px);
     .container-geral {
       & h2 {
         font-size: 28px;

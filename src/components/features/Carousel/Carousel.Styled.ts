@@ -14,7 +14,7 @@ export const Container = styled.section`
       ${flexCenter}
       text-align: center;
       font-size: 18px;
-      background: var(--bg-body);
+      background: transparent;
 
       img {
         width: 150px;

@@ -2,6 +2,7 @@ import { Box } from "@mui/material";
 import { Container } from "./Clientes.Styled";
 import Carousel from "../../features/Carousel";
 import Quote from '../../../assets/quote.webp';
+import marcas from '../../../utils/marcas.json';
 
 const Clientes = () => {
   return (
@@ -11,7 +12,7 @@ const Clientes = () => {
           <h2>Conheça alguns dos nossos parceiros que apoiam nossos serviços</h2>
         </Box>
         <Box className="carousel-container-geral">
-          <Carousel />
+          <Carousel content={marcas} />
         </Box>
         <Box className="depoimento">
           <img src={Quote} alt="Aspas duplas" />

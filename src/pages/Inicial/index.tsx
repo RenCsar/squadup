@@ -24,13 +24,13 @@ const Initial = () => {
             <Box className="empresa" id="empresa">
                 <Empresa />
             </Box>
-            <Box className="clientes" id="clientes">
-                <Clientes />
-            </Box>
             <Box className="servicos">
                 <Servicos />
             </Box>
-            <Box className="tecnologias" id="tecnologias">
+            <Box className="clientes" id="clientes">
+                <Clientes />
+            </Box>
+            <Box className="tecnologias">
                 <Tecnologias />
             </Box>
             <Box className="footer">
