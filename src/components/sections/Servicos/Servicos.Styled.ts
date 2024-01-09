@@ -62,6 +62,10 @@ export const Container = styled.section`
     }
   }
 
+  @media (max-width: 630px) {
+    padding-bottom: 20px;
+  }
+
   @media (max-width: 500px) {
     min-height: calc(100vh + 130px);
     padding-inline: var(--padding-lateral-mobile);
