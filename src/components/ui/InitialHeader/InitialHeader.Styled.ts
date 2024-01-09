@@ -40,6 +40,7 @@ export const HeaderStyled = styled.div<TBackgroundProps>`
       transition: var(--transition);
       height: 100%;
       border-radius: var(--border-radius-sm);
+      cursor: pointer;
 
       &:hover {
         transition: var(--transition);
