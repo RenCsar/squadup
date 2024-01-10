@@ -16,6 +16,7 @@ import {
     Tooltip,
     useMediaQuery,
     useTheme,
+    Avatar,
 } from '@mui/material';
 import { Search } from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -26,6 +27,37 @@ import { useState } from 'react';
 import elementos from '../../../utils/elementos.json';
 
 const columns = [
+    {
+        field: 'img',
+        headerName: '',
+        width: 60,
+        sortable: false,
+        filterable: false,
+        hideable: false,
+        renderCell: (params: any) => {
+            return (
+                <Box
+                    sx={{
+                        display: "flex",
+                        gap: "10px",
+
+                        "& img": {
+                            width: 40,
+                            height: 40,
+                            borderRadius: 50
+                        }
+                    }}
+                >
+                    {
+                        params.row.img ?
+                            <img src={params.row.img} alt="foto-perfil" />
+                            :
+                            <Avatar />
+                    }
+                </Box>
+            )
+        }
+    },
     {
         field: 'id',
         headerName: 'ID',
@@ -72,7 +104,7 @@ const columns = [
         sortable: false,
         filterable: false,
         hideable: false,
-        renderCell: () => {
+        renderCell: (params: any) => {
             return (
                 <Box
                     sx={{
@@ -81,19 +113,18 @@ const columns = [
                     }}
                 >
                     <Tooltip title="Editar">
-                        <Button variant="contained" id="" sx={{ width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1 } }} onClick={() => alert("Editar")}>
+                        <Button variant="contained" id="edit" sx={{ width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1 } }} onClick={() => console.log(params.row)}>
                             <EditNoteIcon />
                         </Button>
                     </Tooltip>
                     <Tooltip title="Deletar">
-                        <Button variant="contained" id="" sx={{ background: "red", width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1, background: "red" } }}>
+                        <Button variant="contained" id="delete" sx={{ background: "red", width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1, background: "red" } }} onClick={() => console.log(params.row.id)}>
                             <DeleteIcon />
                         </Button>
                     </Tooltip>
                 </Box>
             )
         },
-
     }
 ];
 
@@ -119,6 +150,7 @@ const rows = () => {
     return elementos.map(dados => {
         return {
             id: dados.idInscricao,
+            img: dados.candidato.img,
             nome: dados.candidato.nome,
             email: dados.candidato.email,
             trilha: dados.candidato.formulario?.trilhas
@@ -129,7 +161,7 @@ const rows = () => {
             status: dados.disponivel,
             telefone: dados.candidato.telefone,
             turno: dados.candidato.formulario?.turno,
-            estado: dados.candidato.estado
+            estado: dados.candidato.estado,
         }
     })
 };
@@ -164,7 +196,7 @@ export const Tabs = () => {
                     }}
                     spacing={2}
                 >
-                    <FormControl fullWidth variant="outlined">
+                    <FormControl fullWidth variant="outlined" size="small">
                         <InputLabel>Pesquisar por Email</InputLabel>
                         <OutlinedInput
                             endAdornment={
@@ -182,8 +214,8 @@ export const Tabs = () => {
                             }}
                         />
                     </FormControl>
-                    <FormControl fullWidth>
-                        <InputLabel>Filtrar por trilha</InputLabel>
+                    <FormControl fullWidth size="small">
+                        <InputLabel>Filtrar por Stack</InputLabel>
                         <Select
                             label="Filtrar por trilha"
                             id="candidatos-filter-by-trilha"
@@ -208,7 +240,7 @@ export const Tabs = () => {
                             ;
                         </Select>
                     </FormControl>
-                    <FormControl fullWidth>
+                    <FormControl fullWidth size="small">
                         <InputLabel>Filtrar por edição</InputLabel>
                         <Select
                             label="Filtrar por edição"
@@ -237,7 +269,7 @@ export const Tabs = () => {
                         <Button
                             fullWidth
                             sx={{
-                                height: '3rem'
+                                height: 'auto'
                             }}
                             variant="contained"
                             onClick={resetFiltro}
@@ -286,7 +318,7 @@ export const Tabs = () => {
                         )}
                     </Grid>
                     :
-                    <Grid item xs={12} sx={{ height: 'calc(100vh - 211px)', width: '100%' }}>
+                    <Grid item xs={12} sx={{ height: 'calc(100vh - 220px)', width: '100%' }}>
                         {isLoading ? (
                             <LinearProgress />
                         ) : (
@@ -296,9 +328,9 @@ export const Tabs = () => {
                                 initialState={{
                                     pagination: { paginationModel: { pageSize: 22 } },
                                 }}
-                                onRowClick={({ row }) => {
-                                    navigate('/candidatos/curriculo', { state: row })
-                                }}
+                                // onRowClick={({ row }) => {
+                                //     navigate('/candidatos/curriculo', { state: row })
+                                // }}
                                 sx={{
                                     boxShadow: 2
                                 }}

@@ -16,7 +16,7 @@ const ButtonFindTalent = ({ backgroundcolor, color, borderRadius, backgoundcolor
                 textTransform: 'inherit',
                 p: 0
             }}>
-                <Link to="/home">Encontre um Talento</Link>
+                <Link to="/">Encontre um Talento</Link>
             </Button>
         </Container>
     )

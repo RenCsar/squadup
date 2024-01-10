@@ -1,8 +1,11 @@
+import { Tabs } from "../../components/features/Tabs";
+import { Container } from "./Home.Styled";
+
 const Home = () => {
     return (
-        <div>
-            <h1>Home</h1>     
-        </div>
+        <Container>
+            <Tabs />
+        </Container>
     )
 }
 
