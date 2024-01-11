@@ -25,6 +25,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import elementos from '../../../utils/elementos.json';
+import CustomButton from '../../ui/Button';
 
 const columns = [
     {
@@ -266,16 +267,14 @@ export const Tabs = () => {
                         </Select>
                     </FormControl>
                     <Box display="flex" alignItems="center" justifyContent="center">
-                        <Button
-                            fullWidth
-                            sx={{
-                                height: 'auto'
-                            }}
-                            variant="contained"
-                            onClick={resetFiltro}
+                        <CustomButton
+                            color={"var(--font-color-primary)"}
+                            backgroundcolor={"var(--bg-section-claro)"}
+                            backgroundcolorhover={"var(--bg-section-escuro)"}
+                            onClickButton={resetFiltro}
                         >
                             Limpar
-                        </Button>
+                        </CustomButton>
                     </Box>
                 </Stack>
             </Grid>
@@ -318,7 +317,7 @@ export const Tabs = () => {
                         )}
                     </Grid>
                     :
-                    <Grid item xs={12} sx={{ height: 'calc(100vh - 220px)', width: '100%' }}>
+                    <Grid item xs={12} sx={{ height: 'calc(100vh - 223px)', width: '100%' }}>
                         {isLoading ? (
                             <LinearProgress />
                         ) : (

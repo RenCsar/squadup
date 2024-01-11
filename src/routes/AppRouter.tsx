@@ -16,9 +16,9 @@ function AppRouter() {
       <ThemeProvider theme={theme}>
         <Routes>
           <Route path="*" element={<Error />} />
-          <Route path="/inicio" element={<Initial />} />
+          <Route index element={<Initial />} />
           <Route path="/" element={<DefaultPage />}>
-            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
             <Route path="/talentos" element={<Talentos />} />
             <Route path="/adicionar" element={<AddTalentos />} />
             <Route path="/profile" element={<Profile />} />

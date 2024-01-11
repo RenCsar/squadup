@@ -1,7 +1,6 @@
 const Talentos = () => {
   return (
     <div>
-      
     </div>
   )
 }

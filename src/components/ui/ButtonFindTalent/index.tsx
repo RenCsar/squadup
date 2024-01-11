@@ -3,20 +3,20 @@ import { Container } from "./ButtonFindTalent .Styled";
 import { Link } from "react-router-dom";
 import { TButtonProps } from "../../../utils/types";
 
-const ButtonFindTalent = ({ backgroundcolor, color, borderRadius, backgoundcolorhover, colorHover }: TButtonProps) => {
+const ButtonFindTalent = ({ backgroundcolor, color, borderRadius, backgroundcolorhover, colorHover }: TButtonProps) => {
     return (
         <Container
             backgroundcolor={backgroundcolor}
             color={color}
             borderRadius={borderRadius}
-            backgoundcolorhover={backgoundcolorhover}
+            backgroundcolorhover={backgroundcolorhover}
             colorHover={colorHover}
         >
             <Button sx={{
                 textTransform: 'inherit',
                 p: 0
             }}>
-                <Link to="/">Encontre um Talento</Link>
+                <Link to="/home">Encontre um Talento</Link>
             </Button>
         </Container>
     )

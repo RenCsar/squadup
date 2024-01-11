@@ -1,28 +1,12 @@
 import styled from "styled-components";
 import { TButtonProps } from "../../../utils/types";
+import { Container as sharedButtonStyles } from "../Button/Button.Styled";
 
-export const Container = styled.div<TButtonProps>`
-  & a {
-    background-color: ${(props) =>
-      props.backgroundcolor ? props.backgroundcolor : "var(--azul-claro)"};
-    color: ${(props) =>
-      props.color ? props.color : "var(--font-color-primary)"};
-    border-radius: ${(props) =>
-      props.borderRadius ? props.borderRadius : "var(--border-radius-sm)"};
-    border-radius: var(--border-radius-sm);
+export const Container = styled(sharedButtonStyles)<TButtonProps>`
+  & button {
     padding: 10px 15px;
-    font-weight: bold;
-    transition: var(--transition);
-
     &:hover {
-      transition: var(--transition);
       transform: scale(1.009);
-      background-color: ${(props) =>
-        props.backgoundcolorhover
-          ? props.backgoundcolorhover
-          : "var(--azul-escuro)"};
-      color: ${(props) =>
-        props.colorHover ? props.colorHover : "var(--font-color-primary)"};
     }
   }
 `;

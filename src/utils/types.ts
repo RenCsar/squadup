@@ -4,7 +4,9 @@ export type TButtonProps = {
     fontSize?: string;
     borderRadius?: string;
     colorHover?: string;
-    backgoundcolorhover?: string;
+    backgroundcolorhover?: string;
+    children?: React.ReactNode;
+    onClickButton?: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 export type TServiceListProps = {

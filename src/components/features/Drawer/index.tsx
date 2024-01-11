@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as Scroll from 'react-scroll';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -10,8 +11,8 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import LogoutIcon from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
@@ -19,10 +20,9 @@ import InfoIcon from '@mui/icons-material/Info';
 import HandymanIcon from '@mui/icons-material/Handyman';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import { Link, useLocation } from 'react-router-dom';
-import Logo from '../../../assets/logo-escuro.webp';
 import { Link as LinkSmooth } from "react-scroll";
-import * as Scroll from 'react-scroll';
 import { Avatar, IconButton, Tooltip, Typography } from '@mui/material';
+import Logo from '../../../assets/logo-escuro.webp';
 import elementos from '../../../utils/elementos.json';
 
 const userLogaded = {
@@ -36,7 +36,7 @@ export default function TemporaryDrawer() {
     const [state, setState] = React.useState({ right: false });
 
     const location = useLocation();
-    let isInitialPage = location.pathname === "/inicio" || false;
+    let isInitialPage = location.pathname === "/" || false;
 
     const toggleDrawer =
         (anchor: Anchor, open: boolean) =>
@@ -59,13 +59,13 @@ export default function TemporaryDrawer() {
             { title: 'Tecnologias', path: 'tecnologias', icon: <ImportantDevicesIcon /> },
         ]
         : [
-            { title: 'Home', path: '/', icon: <HomeIcon /> },
+            { title: 'Home', path: '/home', icon: <HomeIcon /> },
             { title: 'Talentos', path: '/talentos', icon: <PersonSearchIcon /> },
             { title: 'Adicionar Talento', path: '/adicionar', icon: <PersonAddIcon /> },
         ];
 
     const linkServices = [
-        { title: "Profile", path: '/profile', icon: <PersonIcon /> },
+        { title: "Profile", path: '/profile', icon: <ManageAccountsIcon /> },
         { title: "Settings", path: '/settings', icon: <SettingsIcon /> },
         { title: "Sair", path: '/logout', icon: <LogoutIcon /> }
     ]

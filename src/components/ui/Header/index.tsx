@@ -14,7 +14,7 @@ const Header = () => {
   let Logo = backgroundColor === "var(--bg-section-escuro)" ? LogoClaro : LogoEscuro;
 
   const section = [
-    { title: "Home", link: '/' },
+    { title: "Home", link: '/home' },
     { title: "Talentos", link: '/talentos' },
     { title: "Adicionar Talento", link: '/adicionar' }
   ];
@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <HeaderStyled backgroundcolor={backgroundColor}>
       <Box className="logo-container">
-        <Link to="/inicio">
+        <Link to="/">
           <img src={Logo} alt="logo" />
         </Link>
       </Box>
