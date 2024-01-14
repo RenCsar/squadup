@@ -1,7 +1,11 @@
+import { Container } from "./Talentos.Styled";
+import { Tabs } from "../../components/features/Tabs";
+
 const Talentos = () => {
   return (
-    <div>
-    </div>
+    <Container>
+      <Tabs />
+    </Container>
   )
 }
 
