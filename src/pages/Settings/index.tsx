@@ -1,8 +1,10 @@
+import { Container } from "./Settings.Styled";
+
 const Settings = () => {
   return (
-    <div>
+    <Container>
       
-    </div>
+    </Container>
   )
 }
 

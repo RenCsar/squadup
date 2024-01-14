@@ -1,8 +1,10 @@
+import { Container } from "./Profile.Styled";
+
 const Profile = () => {
   return (
-    <div>
+    <Container>
       
-    </div>
+    </Container>
   )
 }
 

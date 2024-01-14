@@ -1,8 +1,10 @@
+import { Container } from "./AddTalentos.Styled";
+
 const AddTalentos = () => {
   return (
-    <div>
+    <Container>
       
-    </div>
+    </Container>
   )
 }
 
