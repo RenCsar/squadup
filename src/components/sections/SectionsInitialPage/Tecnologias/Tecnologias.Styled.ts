@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter, sectionBase } from "../../../utils/globalStyledComponents";
+import { flexCenter, sectionBase } from "../../../../utils/globalStyledComponents";
 
 export const Container = styled.section`
   ${sectionBase}

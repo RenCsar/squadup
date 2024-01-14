@@ -1,13 +1,13 @@
 import { Box } from "@mui/material";
 import InitialHeader from "../../components/ui/InitialHeader";
 import { Container } from "./Inicial.Styled";
-import Banner from "../../components/sections/Banner";
+import Banner from "../../components/sections/SectionsInitialPage/Banner";
 import SocialsFixed from "../../components/ui/SocialsFixed";
-import Footer from "../../components/sections/Footer";
-import Servicos from "../../components/sections/Servicos";
-import Clientes from "../../components/sections/Clientes";
-import Tecnologias from "../../components/sections/Tecnologias";
-import Empresa from "../../components/sections/Empresa";
+import Footer from "../../components/sections/SectionsInitialPage/Footer";
+import Servicos from "../../components/sections/SectionsInitialPage/Servicos";
+import Clientes from "../../components/sections/SectionsInitialPage/Clientes";
+import Tecnologias from "../../components/sections/SectionsInitialPage/Tecnologias";
+import Empresa from "../../components/sections/SectionsInitialPage/Empresa";
 
 const Initial = () => {
     return (

@@ -13,7 +13,7 @@ export const HeaderStyled = styled.div<TBackgroundProps>`
   background-color: ${(props) =>
     props.backgroundcolor ? props.backgroundcolor : "var(--bg-header)"};
   width: 100%;
-  height: 70px;
+  height: var(--header-height);
   padding-inline: var(--padding-lateral);
   color: var(--font-color-header);
   user-select: none;

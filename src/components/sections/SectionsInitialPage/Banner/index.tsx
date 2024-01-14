@@ -1,9 +1,9 @@
 import { Box } from "@mui/material";
 import { Container } from "./Banner.Styled";
-import Logo from "../../../assets/logo-escuro.webp";
-import Homem from "../../../assets/person-ti1.webp";
-import ExecutiveBanner from "../../ui/ExecutiveBanner";
-import ButtonFindTalent from "../../ui/ButtonFindTalent";
+import Logo from "../../../../assets/logo-escuro.webp";
+import Homem from "../../../../assets/person-ti1.webp";
+import ExecutiveBanner from "../../../ui/ExecutiveBanner";
+import ButtonFindTalent from "../../../ui/ButtonFindTalent";
 
 const Banner = () => {
   return (

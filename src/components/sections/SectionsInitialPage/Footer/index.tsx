@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import { Container } from "./Footer.Styled";
-import RCLogo from "../../../assets/rc-logo.webp";
-import Logo from "../../../assets/logo-escuro.webp";
-import Gptw from "../../../assets/gptw.webp";
-import ButtonFindTalent from "../../ui/ButtonFindTalent";
-import SocialsFixed from "../../ui/SocialsFixed";
+import RCLogo from "../../../../assets/rc-logo.webp";
+import Logo from "../../../../assets/logo-escuro.webp";
+import Gptw from "../../../../assets/gptw.webp";
+import ButtonFindTalent from "../../../ui/ButtonFindTalent";
+import SocialsFixed from "../../../ui/SocialsFixed";
 
 const Footer = () => {
   return (

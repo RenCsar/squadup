@@ -1,4 +1,4 @@
-import Parallax from "../../features/Parallax";
+import Parallax from "../../../features/Parallax";
 import { Container } from './Empresa.Styled';
 
 const Empresa = () => {

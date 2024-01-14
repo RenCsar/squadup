@@ -59,6 +59,8 @@ ol li {
   --margin-sm: 20px;
   --margin-md: 50px;
 
+  --header-height: 70px;
+
   --transition: .95s;
 }
 

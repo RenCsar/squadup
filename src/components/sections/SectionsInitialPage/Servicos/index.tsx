@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import { Container } from "./Servicos.Styled";
-import Projeto from './../../../assets/projetos.svg';
-import Web from './../../../assets/web.svg';
-import Design from './../../../assets/design.svg';
-import ServicesClients from "../../ui/ServicesClients";
-import Services from "./../../../utils/servicos.json";
+import Projeto from './../../../../assets/projetos.svg';
+import Web from './../../../../assets/web.svg';
+import Design from './../../../../assets/design.svg';
+import ServicesClients from "../../../ui/ServicesClients";
+import Services from "../../../../utils/servicos.json";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { useMediaQuery } from 'react-responsive';
