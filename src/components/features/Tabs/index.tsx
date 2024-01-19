@@ -27,6 +27,7 @@ import { useState } from 'react';
 import elementos from '../../../utils/elementos.json';
 import CustomButton from '../../ui/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import TalentCard from '../../ui/TalentCard';
 
 const trilhaArr = [
     { nome: "Frontend" },
@@ -281,7 +282,6 @@ export const Tabs = () => {
                             <Box
                                 component="div"
                                 sx={{
-                                    boxShadow: 2,
                                     borderRadius: "5px",
                                     height: "100%",
                                     width: "100%",
@@ -291,20 +291,13 @@ export const Tabs = () => {
                                     gap: "5px",
                                     scrollBehavior: "smooth",
                                     overflow: 'auto',
-                                    background: "rgba(0, 0, 0, .1)"
                                 }}
 
                             >
-                                {[...Array(6)].map((_, index) => (
-                                    <Box
+                                {elementos.map((talent, index) => (
+                                    <TalentCard
                                         key={index}
-                                        sx={{
-                                            width: "100%",
-                                            height: "200px",
-                                            background: "white",
-                                            borderRadius: "5px",
-                                            display: "flex",
-                                        }}
+                                        talent={talent}
                                     />
                                 ))}
                             </Box>

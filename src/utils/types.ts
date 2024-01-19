@@ -35,3 +35,24 @@ export type TBackgroundProps = {
 export type TSocialProps = TBackgroundProps & {
     isfooter: boolean;
 }
+
+export type TTalent = {
+    idInscricao: number;
+    candidato:{
+        nome: string;
+        img?: string;
+        email: string;
+        formulario:{
+            trilhas: { nome: string; }[];
+            turno: string;
+        };
+        telefone: string;
+        estado: string;
+    };
+    disponivel: string;
+}
+
+export type TTalentProps = {
+    key: number,
+    talent: TTalent
+}
