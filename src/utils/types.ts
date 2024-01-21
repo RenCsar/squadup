@@ -7,6 +7,7 @@ export type TButtonProps = {
     backgroundcolorhover?: string;
     children?: React.ReactNode;
     onClickButton?: React.MouseEventHandler<HTMLButtonElement>;
+    type?: "submit" | "button" | "reset" | undefined;
 };
 
 export type TServiceListProps = {
@@ -38,11 +39,11 @@ export type TSocialProps = TBackgroundProps & {
 
 export type TTalent = {
     idInscricao: number;
-    candidato:{
+    candidato: {
         nome: string;
         img?: string;
         email: string;
-        formulario:{
+        formulario: {
             trilhas: { nome: string; }[];
             turno: string;
         };

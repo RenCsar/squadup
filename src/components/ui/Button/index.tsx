@@ -2,7 +2,7 @@ import { Button } from "@mui/material";
 import { Container } from "./Button.Styled";
 import { TButtonProps } from "../../../utils/types";
 
-const CustomButton = ({ backgroundcolor, color, borderRadius, backgroundcolorhover, colorHover, children, onClickButton }: TButtonProps) => {
+const CustomButton = ({ type, backgroundcolor, color, borderRadius, backgroundcolorhover, colorHover, children, onClickButton }: TButtonProps) => {
     return (
         <Container
             backgroundcolor={backgroundcolor}
@@ -12,6 +12,7 @@ const CustomButton = ({ backgroundcolor, color, borderRadius, backgroundcolorhov
             colorHover={colorHover}
         >
             <Button
+                type={type ? type : "button"}
                 sx={{
                     textTransform: 'inherit',
                     height: "auto",
@@ -22,6 +23,7 @@ const CustomButton = ({ backgroundcolor, color, borderRadius, backgroundcolorhov
             >
                 {children}
             </Button>
+
         </Container>
     )
 }
