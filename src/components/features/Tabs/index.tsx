@@ -28,6 +28,7 @@ import elementos from '../../../utils/elementos.json';
 import CustomButton from '../../ui/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import TalentCard from '../../ui/TalentCard';
+import { stacks } from '../../../utils/elementos';
 
 const trilhaArr = [
     { nome: "Frontend" },
@@ -220,14 +221,14 @@ export const Tabs = () => {
                             }}
                             sx={{ color: 'black' }}
                         >
-                            {trilhaArr?.map((trilha: any) => {
+                            {stacks?.map((stack) => {
                                 return (
                                     <MenuItem
-                                        key={trilha.nome}
-                                        value={trilha.nome}
-                                        id={`filtro-trilha-${trilha.nome}`}
+                                        key={stack.id}
+                                        value={stack.nome}
+                                        id={`filtro-trilha-${stack.nome}`}
                                     >
-                                        {trilha.nome}
+                                        {stack.nome}
                                     </MenuItem>
                                 )
                             })}

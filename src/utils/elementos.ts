@@ -27,3 +27,14 @@ export const estadosBrasileiros = [
     { id: 26, nome: "Sergipe", sigla: "SE" },
     { id: 27, nome: "Tocantins", sigla: "TO" },
 ];
+
+export const stacks = [
+    { id: 1, nome: "Frontend" },
+    { id: 2, nome: "Backend" },
+    { id: 3, nome: "Fullstack" },
+    { id: 4, nome: "Data Science" },
+    { id: 5, nome: "DevOps" },
+    { id: 6, nome: "UI/UX Design" },
+    { id: 7, nome: "Mobile Development" },
+    { id: 8, nome: "QA" },
+];

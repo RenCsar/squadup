@@ -10,7 +10,7 @@ export const Container = styled.div`
   & .container-geral {
     background-color: var(--bg-section-branco);
     border-radius: var(--border-radius-md);
-    width: 100%;
+    width: 600px;
     height: 100%;
     padding: 30px;
     display: flex;
@@ -26,7 +26,12 @@ export const Container = styled.div`
     }
 
     & .btn-container {
-      width: 120px;
+      display: flex;
+      justify-content: flex-end;
+
+      & button {
+        width: 120px;
+      }
     }
   }
 

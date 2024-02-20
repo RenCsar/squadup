@@ -14,9 +14,10 @@ import {
 } from "@mui/material";
 import InputMask from "react-input-mask";
 import { addTalentSchema } from "../../../schemas/addTalentSchema";
-import { estadosBrasileiros } from "../../../utils/estados";
+import { estadosBrasileiros, stacks } from "../../../utils/elementos";
 import { formatDate } from "../../../utils/functions/dateUtils";
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CustomButton from "../../ui/Button";
 
 type TAddTalent = {
@@ -29,10 +30,13 @@ type TAddTalent = {
     cidade: string;
     dataNascimento: Date;
     img: string;
+    status?: string;
+    stack?: string;
 }
 
 const AddForm = () => {
     const [value, resetValue] = useState(0);
+    const [imgTalent, setImgTalent] = useState('');
 
     const {
         register,
@@ -49,6 +53,7 @@ const AddForm = () => {
         console.log(data)
         reset();
         resetValue(value + 1);
+        setImgTalent('');
     };
 
     return (
@@ -60,7 +65,62 @@ const AddForm = () => {
                 </Box>
                 <Box component="form" onSubmit={handleSubmit(onSubmit)}>
                     <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                        <Grid item xs={12} md={6} lg={6} xl={6}>
+                        <Grid item xs={12} md={12} lg={12} xl={12}
+                            sx={{
+                                display: "flex",
+                                flexDirection: "column",
+                                alignItems: "center",
+                                gap: "10px",
+                                width: '100%',
+                                height: 290,
+                                mb: errors.img?.message ? "20px" : 0,
+                            }}
+                        >
+                            <Box
+                                sx={{
+                                    display: "flex",
+                                    width: 200,
+                                    height: 200,
+
+                                    "& img": {
+                                        width: 200,
+                                        height: 200,
+                                        borderRadius: 50,
+                                    }
+                                }}
+                            >
+                                {
+                                    imgTalent == '' ?
+                                        <AccountCircleIcon sx={{ fontSize: 200, color: 'var(--azul-claro)' }} />
+                                        :
+                                        <img src={imgTalent} alt="imagem do talento" onError={() => setImgTalent('')} />
+                                }
+                            </Box>
+                            <Grid item xs={12} md={12} lg={12} xl={12}
+                                sx={{
+                                    width: '100%',
+                                }}
+                            >
+                                <Tooltip
+                                    title={`Insira a URL de uma imagem para ser utilizada como foto do perfil. O link deve começar com "https://" ou "data:image".`}
+                                    placement="top"
+                                    arrow
+                                >
+                                    <TextField
+                                        fullWidth
+                                        label="URL da Imagem"
+                                        error={!!errors.img}
+                                        helperText={`${errors.img?.message ? errors.img?.message : ''}`}
+                                        id="url-img"
+                                        {...register("img")}
+                                        key={value}
+                                        onChange={(e) => setImgTalent(e.target.value)}
+                                    />
+                                </Tooltip>
+                            </Grid>
+                        </Grid>
+
+                        <Grid item xs={12} md={12} lg={12} xl={12}>
                             <TextField
                                 fullWidth
                                 label="Nome"
@@ -70,7 +130,7 @@ const AddForm = () => {
                                 {...register("nome")}
                             />
                         </Grid>
-                        <Grid item xs={12} md={6} lg={6} xl={6}>
+                        <Grid item xs={12} md={12} lg={12} xl={12}>
                             <TextField
                                 fullWidth
                                 label="E-mail"
@@ -82,7 +142,7 @@ const AddForm = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} md={3} lg={3} xl={3}>
+                        <Grid item xs={12} md={6} lg={6} xl={6}>
                             <InputMask
                                 mask="************"
                                 maskChar=" "
@@ -107,7 +167,7 @@ const AddForm = () => {
                                 }
                             </InputMask>
                         </Grid>
-                        <Grid item xs={12} md={3} lg={3} xl={3}>
+                        <Grid item xs={12} md={6} lg={6} xl={6}>
                             <InputMask
                                 mask="999.999.999-99"
                                 maskChar=" "
@@ -133,7 +193,7 @@ const AddForm = () => {
                             </InputMask>
                         </Grid>
 
-                        <Grid item xs={12} md={3} lg={3} xl={3} display="flex" flexDirection="column">
+                        <Grid item xs={12} md={6} lg={6} xl={6} display="flex" flexDirection="column">
                             <InputMask
                                 mask="(99)99999-9999"
                                 maskChar=" "
@@ -155,7 +215,7 @@ const AddForm = () => {
                                 }
                             </InputMask>
                         </Grid>
-                        <Grid item xs={12} md={3} lg={3} xl={3}>
+                        <Grid item xs={12} md={6} lg={6} xl={6}>
                             <TextField
                                 fullWidth
                                 label="Data de Nascimento"
@@ -168,7 +228,7 @@ const AddForm = () => {
                             />
                         </Grid>
 
-                        <Grid item xs={12} md={3} lg={3} xl={3}>
+                        <Grid item xs={12} md={6} lg={6} xl={6}>
                             <TextField
                                 fullWidth
                                 label="Cidade"
@@ -179,7 +239,7 @@ const AddForm = () => {
                                 key={value}
                             />
                         </Grid>
-                        <Grid item xs={12} md={3} lg={3} xl={3}>
+                        <Grid item xs={12} md={6} lg={6} xl={6}>
                             <FormControl fullWidth>
                                 <InputLabel>Estado</InputLabel>
                                 <Select
@@ -200,21 +260,43 @@ const AddForm = () => {
                         </Grid>
 
                         <Grid item xs={12} md={6} lg={6} xl={6}>
-                            <Tooltip
-                                title={`Insira a URL de uma imagem para ser utilizada como foto do perfil. O link deve começar com "https://" ou "data:image".`}
-                                placement="top"
-                                arrow
-                            >
-                                <TextField
-                                    fullWidth
-                                    label="URL da Imagem"
-                                    error={!!errors.img}
-                                    helperText={`${errors.img?.message ? errors.img?.message : ''}`}
-                                    id="url-img"
-                                    {...register("img")}
+                            <FormControl fullWidth>
+                                <InputLabel>Status</InputLabel>
+                                <Select
+                                    label="Status"
+                                    error={!!errors.status}
+                                    defaultValue="T"
+                                    id="step-1-status"
+                                    {...register("status")}
                                     key={value}
-                                />
-                            </Tooltip>
+                                >
+                                    <MenuItem value="T">
+                                        Disponível
+                                    </MenuItem>
+                                    <MenuItem value="F">
+                                        Indisponível
+                                    </MenuItem>
+                                </Select>
+                            </FormControl>
+                        </Grid>
+                        <Grid item xs={12} md={6} lg={6} xl={6}>
+                            <FormControl fullWidth>
+                                <InputLabel>Stack</InputLabel>
+                                <Select
+                                    label="Stack"
+                                    error={!!errors.stack}
+                                    defaultValue="Frontend"
+                                    id="step-1-stack"
+                                    {...register("stack")}
+                                    key={value}
+                                >
+                                    {stacks.map((stack) => (
+                                        <MenuItem key={stack.id} value={stack.nome}>
+                                            {stack.nome}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
                         </Grid>
 
                         <Grid item xs={12} md={12} lg={12} xl={12}>
