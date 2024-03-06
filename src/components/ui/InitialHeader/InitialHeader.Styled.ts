@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import { TBackgroundProps } from "../../../utils/types";
-
-const flexCenter = `
-display: flex;
-justify-content: center;
-align-items: center;
-`;
+import { flexCenter } from "../../../utils/globalStyles";
 
 export const HeaderStyled = styled.div<TBackgroundProps>`
   ${flexCenter}

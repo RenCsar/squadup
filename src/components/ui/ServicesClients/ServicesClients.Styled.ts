@@ -2,7 +2,7 @@ import styled from "styled-components";
 import IndicadorProjetos from "./../../../assets/indicador-projetos.svg";
 import IndicadorWeb from "./../../../assets/indicador-web.svg";
 import IndicadorDesign from "./../../../assets/indicador-design.svg";
-import { interactionOff } from "../../../utils/globalStyledComponents";
+import { interactionOff } from "../../../utils/globalStyles";
 import { TServiceListProps } from "../../../utils/types";
 
 export const Container = styled.div`

@@ -9,11 +9,13 @@ import Talentos from "../pages/Talentos";
 import AddTalentos from "../pages/AddTalentos";
 import Profile from "../pages/Profile";
 import Settings from "../pages/Settings";
+import GlobalStyle from "../utils/globalStyles";
 
 function AppRouter() {
   return (
     <BrowserRouter>
       <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Routes>
           <Route path="*" element={<Error />} />
           <Route index element={<Initial />} />

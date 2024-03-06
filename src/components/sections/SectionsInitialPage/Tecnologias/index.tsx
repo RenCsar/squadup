@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { Container } from "./Tecnologias.Styled";
 import Carousel from "../../../features/Carousel";
-import tech from '../../../../utils/tech.json';
+import tech from '../../../../utils/json/tech.json';
 
 const Tecnologias = () => {
   return (

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { sectionBase } from "../../../../utils/globalStyledComponents";
+import { sectionBase } from "../../../../utils/globalStyles";
 
 export const Container = styled.footer`
   ${sectionBase}

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {
   flexCenter,
   interactionOff,
-} from "../../../../utils/globalStyledComponents";
+} from "../../../../utils/globalStyles";
 
 export const Container = styled.section`
   padding-inline: var(--padding-lateral);

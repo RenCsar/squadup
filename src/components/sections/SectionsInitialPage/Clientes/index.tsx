@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { Container } from "./Clientes.Styled";
 import Carousel from "../../../features/Carousel";
 import Quote from '../../../../assets/quote.webp';
-import marcas from '../../../../utils/marcas.json';
+import marcas from '../../../../utils/json/marcas.json';
 
 const Clientes = () => {
   return (

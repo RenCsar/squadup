@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { flexCenter } from "../../../utils/globalStyledComponents";
+import { flexCenter } from "../../../utils/globalStyles";
 
 export const Container = styled.div`
   background-color: var(--bg-section-claro);

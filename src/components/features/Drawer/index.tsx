@@ -23,7 +23,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Link as LinkSmooth } from "react-scroll";
 import { Avatar, IconButton, Tooltip, Typography } from '@mui/material';
 import Logo from '../../../assets/logo-escuro.webp';
-import elementos from '../../../utils/elementos.json';
+import elementos from '../../../utils/json/talentos.json';
 
 const userLogaded = {
     nome: elementos[0].candidato.nome,

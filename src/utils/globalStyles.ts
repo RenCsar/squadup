@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+import { createGlobalStyle } from "styled-components";
+
+export const sectionBase = `
+padding-top: var(--padding-top-header);
+padding-inline: var(--padding-lateral);
+`;
+
+export const flexCenter = `
+display: flex;
+justify-content: center;
+align-items: center;
+`;
+
+export const interactionOff = `
+user-select: none;
+pointer-events: none;
+`;
+
+const GlobalStyle = createGlobalStyle`
+ @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
   padding: 0px;
@@ -81,4 +100,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--branco);
-}
+} 
+`;
+
+export default GlobalStyle;

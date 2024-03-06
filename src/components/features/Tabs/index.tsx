@@ -24,22 +24,11 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 import { DataGrid } from '@mui/x-data-grid';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import elementos from '../../../utils/elementos.json';
+import elementos from '../../../utils/json/talentos.json';
 import CustomButton from '../../ui/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import TalentCard from '../../ui/TalentCard';
 import { stacks } from '../../../utils/elementos';
-
-const trilhaArr = [
-    { nome: "Frontend" },
-    { nome: "Backend" },
-    { nome: "Fullstack" },
-    { nome: "Data Science" },
-    { nome: "DevOps" },
-    { nome: "UI/UX Design" },
-    { nome: "Mobile Development" },
-    { nome: "QA" }
-];
 
 const rows = () => {
     return elementos.map(dados => {
