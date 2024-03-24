@@ -10,7 +10,7 @@ const TalentCard = ({ talent }: TTalentProps) => {
     return (
         <Container>
             <Box className="card-header">
-                <p>{`ID: ${talent.idInscricao}`}</p>
+                <p>{`ID: ${talent.id}`}</p>
                 <Box className="button-container">
                     <Tooltip title="Editar">
                         <Button variant="contained" id="edit" sx={{ background: "var(--bg-btn-primary-hover)", width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1 } }} onClick={() => { console.log(talent) }}>
@@ -27,8 +27,8 @@ const TalentCard = ({ talent }: TTalentProps) => {
             <Box className="content">
                 <Box className="img-container">
                     {
-                        talent.candidato.img ?
-                            <img src={talent.candidato.img} alt="imagem do talento" />
+                        talent.img ?
+                            <img src={talent.img} alt="imagem do talento" />
                             :
                             <AccountCircleIcon sx={{ fontSize: 100 }} />
                     }
@@ -40,9 +40,9 @@ const TalentCard = ({ talent }: TTalentProps) => {
                         }
                     }}
                 >
-                    <p>{`Nome: ${talent.candidato.nome}`}</p>
-                    <p>{`E-mail: ${talent.candidato.email}`}</p>
-                    <p>{`Stack: ${talent.candidato.formulario.trilhas[0].nome}`}</p>
+                    <p>{`Nome: ${talent.nome}`}</p>
+                    <p>{`E-mail: ${talent.email}`}</p>
+                    <p>{`Stack: ${talent.stack[0].nome}`}</p>
                     <p>Situação:<span>{` ${talent.disponivel === "T" ? "Disponível" : "Indisponível"}`}</span></p>
                 </Box>
             </Box>

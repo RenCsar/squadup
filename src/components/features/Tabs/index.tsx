@@ -33,19 +33,18 @@ import { stacks } from '../../../utils/elementos';
 const rows = () => {
     return elementos.map(dados => {
         return {
-            id: dados.idInscricao,
-            img: dados.candidato.img,
-            nome: dados.candidato.nome,
-            email: dados.candidato.email,
-            trilha: dados.candidato.formulario?.trilhas
+            id: dados.id,
+            img: dados.img,
+            nome: dados.nome,
+            email: dados.email,
+            trilha: dados.stack
                 .map((trilha: any) => {
                     return trilha.nome
                 })
                 .join(', '),
             status: dados.disponivel,
-            telefone: dados.candidato.telefone,
-            turno: dados.candidato.formulario?.turno,
-            estado: dados.candidato.estado,
+            telefone: dados.telefone,
+            estado: dados.estado,
         }
     })
 };
@@ -317,7 +316,7 @@ export const Tabs = () => {
             }
             <Grid item xs={12} display="flex" justifyContent="center">
                 <Pagination
-                    count={2}
+                    count={1}
                     color="primary"
                     size="small"
                     onChange={(_, page) => {

@@ -38,18 +38,14 @@ export type TSocialProps = TBackgroundProps & {
 }
 
 export type TTalent = {
-    idInscricao: number;
-    candidato: {
-        nome: string;
-        img?: string;
-        email: string;
-        formulario: {
-            trilhas: { nome: string; }[];
-            turno: string;
-        };
-        telefone: string;
-        estado: string;
-    };
+    id: number;
+    nome: string;
+    img?: string;
+    email: string;
+    stack: { nome: string; }[];
+    telefone: string;
+    estado: string;
+
     disponivel: string;
 }
 

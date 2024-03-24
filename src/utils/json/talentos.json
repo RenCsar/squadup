@@ -1,420 +1,310 @@
 [
     {
-        "idInscricao": 1,
-        "candidato": {
-            "nome": "Renan",
-            "img": "https://avatars.githubusercontent.com/u/59808695?v=4",
-            "email": "renan@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Frontend"
-                    }
-                ],
-                "turno": "tarde"
-            },
-            "telefone": "2121212121",
-            "estado": "RJ"
-        },
+        "id": 1,
+        "nome": "Renan",
+        "img": "https://avatars.githubusercontent.com/u/59808695?v=4",
+        "email": "renan@email.com",
+        "stack": [
+            {
+                "nome": "Frontend"
+            }
+        ],
+        "telefone": "2121212121",
+        "estado": "RJ",
         "disponivel": "T"
     },
     {
-        "idInscricao": 2,
-        "candidato": {
-            "nome": "Ana",
-            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMmRs9RUG3DizDB6HHJrHjqLicgSTOPVlQI6pv0Axrb4mKKZnwwsfff4hTaUwmX76DajE&usqp=CAU",
-            "email": "ana@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Backend"
-                    }
-                ],
-                "turno": "manhã"
-            },
-            "telefone": "2020202020",
-            "estado": "SP"
-        },
+        "id": 2,
+        "nome": "Ana",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMmRs9RUG3DizDB6HHJrHjqLicgSTOPVlQI6pv0Axrb4mKKZnwwsfff4hTaUwmX76DajE&usqp=CAU",
+        "email": "ana@email.com",
+        "stack": [
+            {
+                "nome": "Backend"
+            }
+        ],
+        "telefone": "2020202020",
+        "estado": "SP",
         "disponivel": "T"
     },
     {
-        "idInscricao": 3,
-        "candidato": {
-            "nome": "Lucas",
-            "img": "https://avatars.githubusercontent.com/u/7830161?v=4",
-            "email": "lucas@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Fullstack"
-                    }
-                ],
-                "turno": "noite"
-            },
-            "telefone": "3030303030",
-            "estado": "MG"
-        },
+        "id": 3,
+        "nome": "Lucas",
+        "img": "https://avatars.githubusercontent.com/u/7830161?v=4",
+        "email": "lucas@email.com",
+        "stack": [
+            {
+                "nome": "Fullstack"
+            }
+        ],
+        "telefone": "3030303030",
+        "estado": "MG",
         "disponivel": "F"
     },
     {
-        "idInscricao": 4,
-        "candidato": {
-            "nome": "Mariana",
-            "img": "https://e1.pngegg.com/pngimages/987/198/png-clipart-circle-shaped-s-woman-s-face-thumbnail.png",
-            "email": "mariana@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Data Science"
-                    }
-                ],
-                "turno": "manhã"
-            },
-            "telefone": "4040404040",
-            "estado": "RS"
-        },
+        "id": 4,
+        "nome": "Mariana",
+        "img": "https://e1.pngegg.com/pngimages/987/198/png-clipart-circle-shaped-s-woman-s-face-thumbnail.png",
+        "email": "mariana@email.com",
+        "stack": [
+            {
+                "nome": "Data Science"
+            }
+        ],
+        "telefone": "4040404040",
+        "estado": "RS",
         "disponivel": "T"
     },
     {
-        "idInscricao": 5,
-        "candidato": {
-            "nome": "Rafael",
-            "img": "https://i.pinimg.com/736x/fd/fc/ef/fdfcefc24e58a4e3ed4dd6099d530353.jpg",
-            "email": "rafael@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "DevOps"
-                    }
-                ],
-                "turno": "tarde"
-            },
-            "telefone": "5050505050",
-            "estado": "SC"
-        },
+        "id": 5,
+        "nome": "Rafael",
+        "img": "https://i.pinimg.com/736x/fd/fc/ef/fdfcefc24e58a4e3ed4dd6099d530353.jpg",
+        "email": "rafael@email.com",
+        "stack": [
+            {
+                "nome": "DevOps"
+            }
+        ],
+        "telefone": "5050505050",
+        "estado": "SC",
         "disponivel": "T"
     },
     {
-        "idInscricao": 6,
-        "candidato": {
-            "nome": "Camila",
-            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcZTrmolqTHfFMiJo0YORNDfNgtrqtPCUh7cUzceerlEcbD7T_EPhzjx20aJHsvehID2U&usqp=CAU",
-            "email": "camila@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "UI/UX Design"
-                    }
-                ],
-                "turno": "noite"
-            },
-            "telefone": "6060606060",
-            "estado": "PR"
-        },
+        "id": 6,
+        "nome": "Camila",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcZTrmolqTHfFMiJo0YORNDfNgtrqtPCUh7cUzceerlEcbD7T_EPhzjx20aJHsvehID2U&usqp=CAU",
+        "email": "camila@email.com",
+        "stack": [
+            {
+                "nome": "UI/UX Design"
+            }
+        ],
+        "telefone": "6060606060",
+        "estado": "PR",
         "disponivel": "T"
     },
     {
-        "idInscricao": 7,
-        "candidato": {
-            "nome": "Thiago",
-            "img": "https://homensquesecuidam.com/wp-content/uploads/2020/07/pele-masculina-negra-precisa-de-cuidado-especial-1-por-juan-alves-homens-que-se-cuidam.jpg",
-            "email": "thiago@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Mobile Development"
-                    }
-                ],
-                "turno": "manhã"
-            },
-            "telefone": "7070707070",
-            "estado": "SP"
-        },
+        "id": 7,
+        "nome": "Thiago",
+        "img": "https://homensquesecuidam.com/wp-content/uploads/2020/07/pele-masculina-negra-precisa-de-cuidado-especial-1-por-juan-alves-homens-que-se-cuidam.jpg",
+        "email": "thiago@email.com",
+        "stack": [
+            {
+                "nome": "Mobile Development"
+            }
+        ],
+        "telefone": "7070707070",
+        "estado": "SP",
         "disponivel": "T"
     },
     {
-        "idInscricao": 8,
-        "candidato": {
-            "nome": "Juliana",
-            "img": "https://conteudo.imguol.com.br/c/entretenimento/12/2020/08/07/rosto-de-mulher-negra-1596814017850_v2_1x1.jpg",
-            "email": "juliana@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Frontend"
-                    }
-                ],
-                "turno": "tarde"
-            },
-            "telefone": "8080808080",
-            "estado": "RJ"
-        },
+        "id": 8,
+        "nome": "Juliana",
+        "img": "https://conteudo.imguol.com.br/c/entretenimento/12/2020/08/07/rosto-de-mulher-negra-1596814017850_v2_1x1.jpg",
+        "email": "juliana@email.com",
+        "stack": [
+            {
+                "nome": "Frontend"
+            }
+        ],
+        "telefone": "8080808080",
+        "estado": "RJ",
         "disponivel": "F"
     },
     {
-        "idInscricao": 9,
-        "candidato": {
-            "nome": "Felipe",
-            "img": "https://img.freepik.com/fotos-premium/um-homem-de-pele-negra-e-rosto-negro-esta-olhando-para-a-camera_843274-7.jpg",
-            "email": "felipe@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Backend"
-                    }
-                ],
-                "turno": "noite"
-            },
-            "telefone": "9090909090",
-            "estado": "MG"
-        },
+        "id": 9,
+        "nome": "Felipe",
+        "img": "https://img.freepik.com/fotos-premium/um-homem-de-pele-negra-e-rosto-negro-esta-olhando-para-a-camera_843274-7.jpg",
+        "email": "felipe@email.com",
+        "stack": [
+            {
+                "nome": "Backend"
+            }
+        ],
+        "telefone": "9090909090",
+        "estado": "MG",
         "disponivel": "T"
     },
     {
-        "idInscricao": 10,
-        "candidato": {
-            "nome": "Aline",
-            "img": "data:image/jpeg;base64,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",
-            "email": "aline@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Data Science"
-                    }
-                ],
-                "turno": "manhã"
-            },
-            "telefone": "1010101010",
-            "estado": "RS"
-        },
+        "id": 10,
+        "nome": "Aline",
+        "img": "data:image/jpeg;base64,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",
+        "email": "aline@email.com",
+        "stack": [
+            {
+                "nome": "Data Science"
+            }
+        ],
+        "telefone": "1010101010",
+        "estado": "RS",
         "disponivel": "T"
     },
     {
-        "idInscricao": 11,
-        "candidato": {
-            "nome": "Gustavo",
-            "img": "https://64.media.tumblr.com/aa75f1cc5d9b1ad65fd7c5ecb90ae9e2/tumblr_inline_pchd40sYUQ1vzmbej_1280.jpg",
-            "email": "gustavo@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "DevOps"
-                    }
-                ],
-                "turno": "tarde"
-            },
-            "telefone": "1111111111",
-            "estado": "SC"
-        },
+        "id": 11,
+        "nome": "Gustavo",
+        "img": "https://64.media.tumblr.com/aa75f1cc5d9b1ad65fd7c5ecb90ae9e2/tumblr_inline_pchd40sYUQ1vzmbej_1280.jpg",
+        "email": "gustavo@email.com",
+        "stack": [
+            {
+                "nome": "DevOps"
+            }
+        ],
+        "telefone": "1111111111",
+        "estado": "SC",
         "disponivel": "F"
     },
     {
-        "idInscricao": 12,
-        "candidato": {
-            "nome": "Isabela",
-            "img": "https://avatars.githubusercontent.com/u/115966431?v=4",
-            "email": "isabela@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "UI/UX Design"
-                    }
-                ],
-                "turno": "noite"
-            },
-            "telefone": "1212121212",
-            "estado": "PR"
-        },
+        "id": 12,
+        "nome": "Isabela",
+        "img": "https://avatars.githubusercontent.com/u/115966431?v=4",
+        "email": "isabela@email.com",
+        "stack": [
+            {
+                "nome": "UI/UX Design"
+            }
+        ],
+        "telefone": "1212121212",
+        "estado": "PR",
         "disponivel": "T"
     },
     {
-        "idInscricao": 13,
-        "candidato": {
-            "nome": "Vinicius",
-            "img": "data:image/jpeg;base64,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",
-            "email": "vinicius@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Mobile Development"
-                    }
-                ],
-                "turno": "manhã"
-            },
-            "telefone": "1313131313",
-            "estado": "SP"
-        },
+        "id": 13,
+        "nome": "Vinicius",
+        "img": "data:image/jpeg;base64,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",
+        "email": "vinicius@email.com",
+        "stack": [
+            {
+                "nome": "Mobile Development"
+            }
+        ],
+        "telefone": "1313131313",
+        "estado": "SP",
         "disponivel": "T"
     },
     {
-        "idInscricao": 14,
-        "candidato": {
-            "nome": "Carolina",
-            "img": "https://img.freepik.com/fotos-gratis/linda-mulher-africana-retrato-do-rosto-de-perto_53876-148041.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704672000&semt=ais",
-            "email": "carolina@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Frontend"
-                    }
-                ],
-                "turno": "tarde"
-            },
-            "telefone": "1414141414",
-            "estado": "RJ"
-        },
+        "id": 14,
+        "nome": "Carolina",
+        "img": "https://img.freepik.com/fotos-gratis/linda-mulher-africana-retrato-do-rosto-de-perto_53876-148041.jpg?size=626&ext=jpg&ga=GA1.1.1412446893.1704672000&semt=ais",
+        "email": "carolina@email.com",
+        "stack": [
+            {
+                "nome": "Frontend"
+            }
+        ],
+        "telefone": "1414141414",
+        "estado": "RJ",
         "disponivel": "F"
     },
     {
-        "idInscricao": 15,
-        "candidato": {
-            "nome": "Pedro",
-            "img": "https://static.imasters.com.br/wp-content/uploads/2019/02/20112325/person05-300x300.jpg",
-            "email": "pedro@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Backend"
-                    }
-                ],
-                "turno": "noite"
-            },
-            "telefone": "1515151515",
-            "estado": "MG"
-        },
+        "id": 15,
+        "nome": "Pedro",
+        "img": "https://static.imasters.com.br/wp-content/uploads/2019/02/20112325/person05-300x300.jpg",
+        "email": "pedro@email.com",
+        "stack": [
+            {
+                "nome": "Backend"
+            }
+        ],
+        "telefone": "1515151515",
+        "estado": "MG",
         "disponivel": "T"
     },
     {
-        "idInscricao": 16,
-        "candidato": {
-            "nome": "Larissa",
-            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQpUSd0Zjbrj2hxufS3wIH3i_M2TCkm_LsykFar0znd4ozq_JXk4vd0fX9NnYkw75qyhk&usqp=CAU",
-            "email": "larissa@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Data Science"
-                    }
-                ],
-                "turno": "manhã"
-            },
-            "telefone": "1616161616",
-            "estado": "RS"
-        },
+        "id": 16,
+        "nome": "Larissa",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQpUSd0Zjbrj2hxufS3wIH3i_M2TCkm_LsykFar0znd4ozq_JXk4vd0fX9NnYkw75qyhk&usqp=CAU",
+        "email": "larissa@email.com",
+        "stack": [
+            {
+                "nome": "Data Science"
+            }
+        ],
+        "telefone": "1616161616",
+        "estado": "RS",
         "disponivel": "T"
     },
     {
-        "idInscricao": 17,
-        "candidato": {
-            "nome": "Fernando",
-            "img": "https://pbs.twimg.com/media/FR_lN9DX0AAKGo6.jpg",
-            "email": "fernando@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "DevOps"
-                    }
-                ],
-                "turno": "tarde"
-            },
-            "telefone": "1717171717",
-            "estado": "SC"
-        },
+        "id": 17,
+        "nome": "Fernando",
+        "img": "https://pbs.twimg.com/media/FR_lN9DX0AAKGo6.jpg",
+        "email": "fernando@email.com",
+        "stack": [
+            {
+                "nome": "DevOps"
+            }
+        ],
+        "telefone": "1717171717",
+        "estado": "SC",
         "disponivel": "F"
     },
     {
-        "idInscricao": 18,
-        "candidato": {
-            "nome": "Mariano",
-            "img": "https://www.showmetech.com.br/wp-content/uploads//2019/09/000059.jpg",
-            "email": "mariano@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "UI/UX Design"
-                    }
-                ],
-                "turno": "noite"
-            },
-            "telefone": "1818181818",
-            "estado": "PR"
-        },
+        "id": 18,
+        "nome": "Mariano",
+        "img": "https://www.showmetech.com.br/wp-content/uploads//2019/09/000059.jpg",
+        "email": "mariano@email.com",
+        "stack": [
+            {
+                "nome": "UI/UX Design"
+            }
+        ],
+        "telefone": "1818181818",
+        "estado": "PR",
         "disponivel": "T"
     },
     {
-        "idInscricao": 19,
-        "candidato": {
-            "nome": "Tatiane",
-            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuYA2H6AMIaI_9LI0HnxvxGAF4NZVtx8GIs6bY3EYSkMn0GpL0bBiRjaXxEq3Ii-uXwR4&usqp=CAU",
-            "email": "tatiane@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Mobile Development"
-                    }
-                ],
-                "turno": "manhã"
-            },
-            "telefone": "1919191919",
-            "estado": "SP"
-        },
+        "id": 19,
+        "nome": "Tatiane",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuYA2H6AMIaI_9LI0HnxvxGAF4NZVtx8GIs6bY3EYSkMn0GpL0bBiRjaXxEq3Ii-uXwR4&usqp=CAU",
+        "email": "tatiane@email.com",
+        "stack": [
+            {
+                "nome": "Mobile Development"
+            }
+        ],
+        "telefone": "1919191919",
+        "estado": "SP",
         "disponivel": "T"
     },
     {
-        "idInscricao": 20,
-        "candidato": {
-            "nome": "Roberto",
-            "img": "https://nuevodiario-assets.s3.us-east-2.amazonaws.com/wp-content/uploads/2023/07/06062425/jimmy-rosario.jpeg",
-            "email": "roberto@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "Frontend"
-                    }
-                ],
-                "turno": "tarde"
-            },
-            "telefone": "2020202020",
-            "estado": "RJ"
-        },
+        "id": 20,
+        "nome": "Roberto",
+        "img": "https://nuevodiario-assets.s3.us-east-2.amazonaws.com/wp-content/uploads/2023/07/06062425/jimmy-rosario.jpeg",
+        "email": "roberto@email.com",
+        "stack": [
+            {
+                "nome": "Frontend"
+            }
+        ],
+        "telefone": "2020202020",
+        "estado": "RJ",
         "disponivel": "F"
     },
     {
-        "idInscricao": 21,
-        "candidato": {
-            "nome": "Rodolfo",
-            "img": "https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg",
-            "email": "rodolfo@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "QA"
-                    }
-                ],
-                "turno": "tarde"
-            },
-            "telefone": "2020202020",
-            "estado": "RJ"
-        },
+        "id": 21,
+        "nome": "Rodolfo",
+        "img": "https://tm.ibxk.com.br/2019/02/17/17124052466014.jpg",
+        "email": "rodolfo@email.com",
+        "stack": [
+            {
+                "nome": "QA"
+            }
+        ],
+        "telefone": "2020202020",
+        "estado": "RJ",
         "disponivel": "F"
     },
     {
-        "idInscricao": 22,
-        "candidato": {
-            "nome": "Miguel",
-            "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBWXgg-9tEBPDE50jmQbAboIXsD-nEcPPTrXBcyxtLW5SxHY134teCpBhoiifBGWSvgUw&usqp=CAU",
-            "email": "miguel@email.com",
-            "formulario": {
-                "trilhas": [
-                    {
-                        "nome": "QA"
-                    }
-                ],
-                "turno": "manhã"
-            },
-            "telefone": "2020203030",
-            "estado": "SP"
-        },
+        "id": 22,
+        "nome": "Miguel",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBWXgg-9tEBPDE50jmQbAboIXsD-nEcPPTrXBcyxtLW5SxHY134teCpBhoiifBGWSvgUw&usqp=CAU",
+        "email": "miguel@email.com",
+        "stack": [
+            {
+                "nome": "QA"
+            }
+        ],
+        "telefone": "2020203030",
+        "estado": "SP",
         "disponivel": "T"
     }
 ]
