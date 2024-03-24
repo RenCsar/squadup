@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as Scroll from 'react-scroll';
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -11,8 +10,6 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import HomeIcon from '@mui/icons-material/Home';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
-import SettingsIcon from '@mui/icons-material/Settings';
-import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import LogoutIcon from '@mui/icons-material/Logout';
 import MenuIcon from '@mui/icons-material/Menu';
 import PersonSearchIcon from '@mui/icons-material/PersonSearch';
@@ -21,14 +18,7 @@ import HandymanIcon from '@mui/icons-material/Handyman';
 import ImportantDevicesIcon from '@mui/icons-material/ImportantDevices';
 import { Link, useLocation } from 'react-router-dom';
 import { Link as LinkSmooth } from "react-scroll";
-import { Avatar, IconButton, Tooltip, Typography } from '@mui/material';
 import Logo from '../../../assets/logo-escuro.webp';
-import elementos from '../../../utils/json/talentos.json';
-
-const userLogaded = {
-    nome: elementos[0].candidato.nome,
-    img: elementos[0].candidato.img
-}
 
 type Anchor = 'right';
 
@@ -65,9 +55,7 @@ export default function TemporaryDrawer() {
         ];
 
     const linkServices = [
-        { title: "Profile", path: '/profile', icon: <ManageAccountsIcon /> },
-        { title: "Settings", path: '/settings', icon: <SettingsIcon /> },
-        { title: "Sair", path: '/logout', icon: <LogoutIcon /> }
+        { title: "Sair", path: '/', icon: <LogoutIcon /> }
     ]
 
     const list = (anchor: Anchor) => (
@@ -88,39 +76,18 @@ export default function TemporaryDrawer() {
                     userSelect: 'none'
                 }}
             >
-                {
-                    isInitialPage ?
-                        <Box
-                            sx={{
-                                width: "100px",
-                                height: "25px",
-                                "& :first-child": {
-                                    width: "100px",
-                                    height: "25px",
-                                }
-                            }}
-                        >
-                            <img src={Logo} alt="logo" />
-                        </Box>
-                        :
-                        <Box
-                            sx={{
-                                display: 'flex',
-                                flexDirection: 'column',
-                                alignItems: "center",
-                                gap: '10px',
-                                fontWeight: "bold",
-
-                                "& :first-child": {
-                                    width: "100px",
-                                    height: "100px",
-                                }
-                            }}
-                        >
-                            <img src={userLogaded.img} alt="logo" />
-                            <p>{userLogaded.nome}</p>
-                        </Box>
-                }
+                <Box
+                    sx={{
+                        width: "100px",
+                        height: "25px",
+                        "& :first-child": {
+                            width: "100px",
+                            height: "25px",
+                        }
+                    }}
+                >
+                    <img src={Logo} alt="logo" />
+                </Box>
             </Box>
             <Divider />
             <List>
@@ -195,7 +162,7 @@ export default function TemporaryDrawer() {
                 }}
             >
                 {['Encontre um Talento'].map((text, index) => (
-                    <Link to={"/"} key={`${text}-${index}`}>
+                    <Link to={"/home"} key={`${text}-${index}`}>
                         <ListItem
                             disablePadding
                             onClick={toggleDrawer(anchor, false)}
@@ -271,34 +238,7 @@ export default function TemporaryDrawer() {
                         p: 0
                     }}
                 >
-                    {
-                        isInitialPage ?
-                            <MenuIcon />
-                            :
-                            <Tooltip title="Menu">
-                                <Box sx={{ display: 'flex', alignItems: 'center', textAlign: 'center' }}>
-                                    <Typography sx={{ paddingInline: '10px', fontWeight: "bold" }}>{userLogaded.nome}</Typography>
-                                    <IconButton
-                                        onClick={toggleDrawer('right', true)}
-                                        size="small"
-                                        sx={{
-                                            "& img": {
-                                                width: 40,
-                                                height: 40,
-                                                borderRadius: 50
-                                            }
-                                        }}
-                                    >
-                                        {
-                                            userLogaded.img ?
-                                                <img src={userLogaded.img} alt="foto-perfil" />
-                                                :
-                                                <Avatar sx={{ width: 40, height: 40 }}>M</Avatar>
-                                        }
-                                    </IconButton>
-                                </Box>
-                            </Tooltip>
-                    }
+                    <MenuIcon />
                 </Button>
                 <Drawer
                     anchor={'right'}

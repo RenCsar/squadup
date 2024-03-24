@@ -39,7 +39,6 @@ const Header = () => {
               >{i.title}</Link>
             </li>
           )}
-          <TemporaryDrawer />
         </ul>
       </Box>
       <Box
