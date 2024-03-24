@@ -221,9 +221,33 @@ export const Tabs = () => {
                         <OutlinedInput
                             endAdornment={
                                 <InputAdornment position="end">
-                                    <IconButton onClick={() => setEmail(emailInput)} edge="end">
-                                        <Search color="primary" />
-                                    </IconButton>
+                                    <Tooltip title="Buscar">
+                                        <IconButton onClick={() => setEmail(emailInput)} edge="end"
+                                            sx={{
+                                                borderRadius: "0px",
+                                                borderTopRightRadius: "5px",
+                                                borderBottomRightRadius: "5px",
+                                                background: "var(--bg-section-claro)",
+                                                color: "var(--branco)",
+                                                transition: "var(--transition)",
+                                                "&:hover": {
+                                                    transition: "var(--transition)",
+                                                    background: "var(--bg-section-escuro)",
+                                                },
+
+                                                "& :first-child": {
+                                                    transition: "var(--transition)",
+                                                    "&:hover": {
+                                                        transition: "var(--transition)",
+                                                        transform: "scale(1.1)"
+                                                    }
+                                                }
+
+                                            }}
+                                        >
+                                            <Search color="inherit" />
+                                        </IconButton>
+                                    </Tooltip>
                                 </InputAdornment>
                             }
                             id="candidatos-search-by-email"
