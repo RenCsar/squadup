@@ -29,6 +29,7 @@ import CustomButton from '../../ui/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import TalentCard from '../../ui/TalentCard';
 import { stacks } from '../../../utils/elementos';
+import { ConfirmDialog, TOptionsConfirmDialog } from '../ConfirmDialog';
 
 const rows = () => {
     return elementos.map(dados => {
@@ -66,6 +67,16 @@ export const Tabs = () => {
         setTrilha('');
         setPage(0);
     };
+
+    const [confirmDialog, setConfirmDialog] = useState<TOptionsConfirmDialog>({
+        isOpen: false,
+        title: "",
+        onConfirm: () => { },
+    });
+
+    const deleteAluno = (id: number) => {
+        console.log(id);
+    }
 
     const columns = [
         {
@@ -159,7 +170,20 @@ export const Tabs = () => {
                             </Button>
                         </Tooltip>
                         <Tooltip title="Deletar">
-                            <Button variant="contained" id="delete" sx={{ background: "red", width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1, background: "red" } }} onClick={() => console.log(params.row.id)}>
+                            <Button variant="contained" id="delete" sx={{ background: "red", width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1, background: "red" } }}
+                                onClick={(event) => {
+                                    setConfirmDialog({
+                                        isOpen: true,
+                                        title: "Confirma a exclusão desse Talento?",
+                                        onConfirm: () => {
+                                            setConfirmDialog({
+                                                ...confirmDialog,
+                                                isOpen: false,
+                                            });
+                                            deleteAluno(params.row.id);
+                                        },
+                                    });
+                                }}>
                                 <DeleteIcon />
                             </Button>
                         </Tooltip>
@@ -325,6 +349,10 @@ export const Tabs = () => {
                     page={page + 1}
                 />
             </Grid>
+            <ConfirmDialog
+                confirmDialog={confirmDialog}
+                setConfirmDialog={setConfirmDialog}
+            />
         </Grid>
     )
 };
