@@ -21,7 +21,7 @@ import {
 import { Search } from '@mui/icons-material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditNoteIcon from '@mui/icons-material/EditNote';
-import { DataGrid } from '@mui/x-data-grid';
+import { DataGrid, GridCellParams } from '@mui/x-data-grid';
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import elementos from '../../../utils/json/talentos.json';
@@ -29,17 +29,18 @@ import CustomButton from '../../ui/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import TalentCard from '../../ui/TalentCard';
 import { stacks } from '../../../utils/elementos';
-import { ConfirmDialog, TOptionsConfirmDialog } from '../ConfirmDialog';
+import { ConfirmDialog } from '../ConfirmDialog';
+import { TOptionsConfirmDialog, TTalent } from '../../../utils/types';
 
 const rows = () => {
-    return elementos.map(dados => {
+    return elementos.map((dados: TTalent) => {
         return {
             id: dados.id,
             img: dados.img,
             nome: dados.nome,
             email: dados.email,
             trilha: dados.stack
-                .map((trilha: any) => {
+                .map((trilha) => {
                     return trilha.nome
                 })
                 .join(', '),
@@ -74,7 +75,7 @@ export const Tabs = () => {
         onConfirm: () => { },
     });
 
-    const deleteAluno = (id: number) => {
+    const deletarTalento = (id: number) => {
         console.log(id);
     }
 
@@ -86,7 +87,7 @@ export const Tabs = () => {
             sortable: false,
             filterable: false,
             hideable: false,
-            renderCell: (params: any) => {
+            renderCell: (params: GridCellParams) => {
                 return (
                     <Box
                         sx={{
@@ -138,7 +139,7 @@ export const Tabs = () => {
             field: 'status',
             headerName: 'Status',
             width: 140,
-            renderCell: (params: any) => {
+            renderCell: (params: GridCellParams) => {
                 return (
                     <Typography
                         variant="body2"
@@ -156,7 +157,7 @@ export const Tabs = () => {
             sortable: false,
             filterable: false,
             hideable: false,
-            renderCell: (params: any) => {
+            renderCell: (params: GridCellParams) => {
                 return (
                     <Box
                         sx={{
@@ -180,7 +181,7 @@ export const Tabs = () => {
                                                 ...confirmDialog,
                                                 isOpen: false,
                                             });
-                                            deleteAluno(params.row.id);
+                                            deletarTalento(params.row.id);
                                         },
                                     });
                                 }}>
@@ -265,7 +266,7 @@ export const Tabs = () => {
                             </CustomButton>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
-                            <Link to='/adicionar'>
+                            <Link to='/talentos/adicionar'>
                                 <CustomButton
                                     color={"var(--font-color-primary)"}
                                     backgroundcolor={"var(--bg-section-claro)"}
@@ -327,9 +328,6 @@ export const Tabs = () => {
                                 initialState={{
                                     pagination: { paginationModel: { pageSize: 22 } },
                                 }}
-                                // onRowClick={({ row }) => {
-                                //     navigate('/candidatos/curriculo', { state: row })
-                                // }}
                                 sx={{
                                     boxShadow: 2
                                 }}

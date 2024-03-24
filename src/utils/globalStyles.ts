@@ -42,6 +42,7 @@ ol li {
   --verde: #79B473;
   --verde-hover: rgba(92, 167, 32, .6);
   --vermelho: rgb(242, 66, 54);
+  --vermelho-hover: #a32;
   --preto: rgba(22, 22, 22, 1);
   --cinza: rgba(165, 161, 161, 1);
   --cinza-claro: #f9f9f9;

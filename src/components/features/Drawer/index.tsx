@@ -51,7 +51,7 @@ export default function TemporaryDrawer() {
         : [
             { title: 'Home', path: '/home', icon: <HomeIcon /> },
             { title: 'Talentos', path: '/talentos', icon: <PersonSearchIcon /> },
-            { title: 'Adicionar Talento', path: '/adicionar', icon: <PersonAddIcon /> },
+            { title: 'Adicionar Talento', path: '/talentos/adicionar', icon: <PersonAddIcon /> },
         ];
 
     const linkServices = [

@@ -24,7 +24,7 @@ function AppRouter() {
             <Route path="/home" element={<Home />} />
             <Route path="/talentos" element={<Talentos />} />
             <Route path="/talentos/editar" element={<EditarTalentos />} />
-            <Route path="/adicionar" element={<AddTalentos />} />
+            <Route path="/talentos/adicionar" element={<AddTalentos />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />
           </Route>

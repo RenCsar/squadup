@@ -7,7 +7,7 @@ export const addTalentSchema = Yup.object().shape({
         .min(3, "O nome deve ter no mínimo 3 letras")
         .max(50, "O nome deve ter no máximo 50 letras")
         .matches(regex, "O nome deve ter apenas letras e espaços")
-        .test("nome", "O nome deve ter no mínimo sobrenome", (value: any) => {
+        .test("nome", "O nome deve ter no mínimo sobrenome", (value: string| Yup.AnyObject| undefined| "") => {
             if (value) {
                 const [nome, sobrenome] = value.split(" ");
                 return nome && sobrenome;
@@ -39,8 +39,8 @@ export const addTalentSchema = Yup.object().shape({
         .min(3, "A cidade deve ter no mínimo 3 letras")
         .max(50, "A cidade deve ter no máximo 50 letras")
         .matches(regex, "A Cidade deve ter apenas letras e espaços")
-        .test("cidade", "A cidade não pode conter apenas espaço", (value: any) => {
-            if (value.trim().length == 0) {
+        .test("cidade", "A cidade não pode conter apenas espaço", (value: string| Yup.AnyObject| undefined| "") => {
+            if (value?.trim().length == 0) {
                 return false;
             }
             return true;

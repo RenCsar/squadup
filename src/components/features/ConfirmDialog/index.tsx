@@ -1,18 +1,8 @@
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from '@mui/material';
 import React from 'react';
+import { TOptionsConfirmDialogProps } from '../../../utils/types';
 
-export interface TOptionsConfirmDialog {
-    isOpen: boolean,
-    title: string,
-    onConfirm(): void
-}
-
-interface Props {
-    confirmDialog: TOptionsConfirmDialog,
-    setConfirmDialog(options: TOptionsConfirmDialog): void
-}
-
-export const ConfirmDialog: React.FC<Props> = ({ confirmDialog, setConfirmDialog }: Props) => {
+export const ConfirmDialog: React.FC<TOptionsConfirmDialogProps> = ({ confirmDialog, setConfirmDialog }: TOptionsConfirmDialogProps) => {
 
     return (
         <Dialog

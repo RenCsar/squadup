@@ -16,7 +16,6 @@ const Header = () => {
   const section = [
     { title: "Home", link: '/home' },
     { title: "Talentos", link: '/talentos' },
-    { title: "Adicionar Talento", link: '/adicionar' }
   ];
 
   return (

@@ -45,11 +45,39 @@ export type TTalent = {
     stack: { nome: string; }[];
     telefone: string;
     estado: string;
-
     disponivel: string;
 }
 
 export type TTalentProps = {
     key: number,
-    talent: TTalent
+    talent: TTalent,
+}
+
+export type TAddFormProps = {
+    state?: TTalent,
+}
+
+export type TAddTalent = {
+    nome: string;
+    email: string;
+    rg: string;
+    cpf: string;
+    telefone: string;
+    estado?: string;
+    cidade: string;
+    dataNascimento: Date;
+    img: string;
+    status?: string;
+    stack?: string;
+}
+
+export type TOptionsConfirmDialog = {
+    isOpen: boolean,
+    title: string,
+    onConfirm(): void
+}
+
+export type TOptionsConfirmDialogProps = {
+    confirmDialog: TOptionsConfirmDialog,
+    setConfirmDialog(options: TOptionsConfirmDialog): void
 }

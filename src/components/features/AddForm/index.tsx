@@ -11,32 +11,28 @@ import {
     MenuItem,
     Tooltip,
     Box,
+    useTheme,
+    useMediaQuery,
 } from "@mui/material";
 import InputMask from "react-input-mask";
 import { addTalentSchema } from "../../../schemas/addTalentSchema";
 import { estadosBrasileiros, stacks } from "../../../utils/elementos";
 import { formatDate } from "../../../utils/functions/dateUtils";
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CustomButton from "../../ui/Button";
+import { useNavigate } from "react-router-dom";
+import { TAddFormProps, TAddTalent } from "../../../utils/types";
 
-type TAddTalent = {
-    nome: string;
-    email: string;
-    rg: string;
-    cpf: string;
-    telefone: string;
-    estado?: string;
-    cidade: string;
-    dataNascimento: Date;
-    img: string;
-    status?: string;
-    stack?: string;
-}
-
-const AddForm = ({state}: any) => {
+const AddForm = ({ state }: TAddFormProps) => {
     const [value, resetValue] = useState(0);
-    const [imgTalent, setImgTalent] = useState(state?.img? state.img: '');
+    const [imgTalent, setImgTalent] = useState(state?.img ? state.img : '');
+
+    const theme = useTheme();
+    const smDown = useMediaQuery(theme.breakpoints.down('sm'));
+
+    const navigate = useNavigate();
 
     const {
         register,
@@ -47,10 +43,13 @@ const AddForm = ({state}: any) => {
         resolver: yupResolver(addTalentSchema),
     });
 
-    const onSubmit = (data: any) => {
-        data.dataNascimento = formatDate(data.dataNascimento);
+    const onSubmit = (data: TAddTalent) => {
+        const newTalent = {
+            ...data,
+            dataNascimento: formatDate(data.dataNascimento),
+        };
 
-        console.log(data)
+        console.log(newTalent)
         reset();
         resetValue(value + 1);
         setImgTalent('');
@@ -59,9 +58,46 @@ const AddForm = ({state}: any) => {
     return (
         <Container>
             <Box className="container-geral">
-                <Box className="title-container">
-                    <PersonAddIcon color="primary" />
-                    <h3>{state? "Editar Talento" : "Adicionar Talento"}</h3>
+                <Box
+                    sx={{
+                        width: "100%",
+                        display: "flex",
+                        justifyContent: "center",
+                        position: "relative",
+                    }}
+                >
+                    <Box
+                        sx={{
+                            color: "var(--vermelho)",
+                            display: "flex",
+                            flexDirection: "column",
+                            position: "absolute",
+                            left: 0,
+                            cursor: "pointer",
+
+                            "&:hover": {
+                                color: "var(--vermelho-hover)"
+                            }
+                        }}
+                        onClick={() => navigate("/talentos")}
+                    >
+                        <ArrowBackIcon />
+                        <p>Voltar</p>
+                    </Box>
+                    <Box className="title-container"
+                        sx={{
+                            display: "flex",
+                            justifyContent: "center",
+                            alignItems: "center",
+                            textAlign: "center",
+                            width: smDown ? "150px" : "100%",
+                        }}
+                    >
+                        <PersonAddIcon color="primary" sx={{
+                            display: smDown ? "none" : "block",
+                        }} />
+                        <h2>{state ? "Editar Talento" : "Adicionar Talento"}</h2>
+                    </Box>
                 </Box>
                 <Box component="form" onSubmit={handleSubmit(onSubmit)}>
                     <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -115,6 +151,7 @@ const AddForm = ({state}: any) => {
                                         {...register("img")}
                                         key={value}
                                         onChange={(e) => setImgTalent(e.target.value)}
+                                        defaultValue={state?.img}
                                     />
                                 </Tooltip>
                             </Grid>
@@ -306,7 +343,7 @@ const AddForm = ({state}: any) => {
                                 <CustomButton
                                     type="submit"
                                 >
-                                    {state? "Editar" : "Adicionar"}
+                                    {state ? "Editar" : "Adicionar"}
                                 </CustomButton>
                             </Box>
                         </Grid>
