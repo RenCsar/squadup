@@ -10,6 +10,7 @@ import AddTalentos from "../pages/AddTalentos";
 import Profile from "../pages/Profile";
 import Settings from "../pages/Settings";
 import GlobalStyle from "../utils/globalStyles";
+import EditarTalentos from "../pages/EditarTalentos";
 
 function AppRouter() {
   return (
@@ -22,6 +23,7 @@ function AppRouter() {
           <Route path="/" element={<DefaultPage />}>
             <Route path="/home" element={<Home />} />
             <Route path="/talentos" element={<Talentos />} />
+            <Route path="/talentos/editar" element={<EditarTalentos />} />
             <Route path="/adicionar" element={<AddTalentos />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/settings" element={<Settings />} />

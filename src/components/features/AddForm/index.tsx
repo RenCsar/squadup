@@ -34,9 +34,9 @@ type TAddTalent = {
     stack?: string;
 }
 
-const AddForm = () => {
+const AddForm = ({state}: any) => {
     const [value, resetValue] = useState(0);
-    const [imgTalent, setImgTalent] = useState('');
+    const [imgTalent, setImgTalent] = useState(state?.img? state.img: '');
 
     const {
         register,
@@ -61,7 +61,7 @@ const AddForm = () => {
             <Box className="container-geral">
                 <Box className="title-container">
                     <PersonAddIcon color="primary" />
-                    <h3>Adicionar Talento</h3>
+                    <h3>{state? "Editar Talento" : "Adicionar Talento"}</h3>
                 </Box>
                 <Box component="form" onSubmit={handleSubmit(onSubmit)}>
                     <Grid container rowSpacing={2} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
@@ -128,6 +128,7 @@ const AddForm = () => {
                                 helperText={`${errors.nome?.message ? errors.nome?.message : ''}`}
                                 id="step-1-nome"
                                 {...register("nome")}
+                                defaultValue={state?.nome}
                             />
                         </Grid>
                         <Grid item xs={12} md={12} lg={12} xl={12}>
@@ -139,6 +140,7 @@ const AddForm = () => {
                                 id="step-1-email"
                                 {...register("email")}
                                 key={value}
+                                defaultValue={state?.email}
                             />
                         </Grid>
 
@@ -304,7 +306,7 @@ const AddForm = () => {
                                 <CustomButton
                                     type="submit"
                                 >
-                                    Adicionar
+                                    {state? "Editar" : "Adicionar"}
                                 </CustomButton>
                             </Box>
                         </Grid>

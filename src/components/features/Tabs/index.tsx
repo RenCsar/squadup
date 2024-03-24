@@ -154,7 +154,7 @@ export const Tabs = () => {
                         }}
                     >
                         <Tooltip title="Editar">
-                            <Button variant="contained" id="edit" sx={{ width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1 } }} onClick={() => { console.log(params.row); navigate('/talentos/editar', { state: params.row }) }}>
+                            <Button variant="contained" id="edit" sx={{ width: '40px', minWidth: "40px", opacity: 0.7, "&:hover": { opacity: 1 } }} onClick={() => navigate('/talentos/editar', { state: params.row })}>
                                 <EditNoteIcon />
                             </Button>
                         </Tooltip>
