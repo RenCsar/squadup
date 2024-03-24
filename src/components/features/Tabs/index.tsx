@@ -23,7 +23,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import { DataGrid, GridCellParams } from '@mui/x-data-grid';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import elementos from '../../../utils/json/talentos.json';
 import CustomButton from '../../ui/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
@@ -69,6 +69,18 @@ export const Tabs = () => {
         setPage(0);
     };
 
+    useEffect(() => {
+        if (trilha !== "") {
+            console.log(trilha); //Substituir pelo hook personalizado para GET na API
+        }
+    }, [trilha]);
+
+    useEffect(() => {
+        if (email !== "") {
+            console.log(email); //Substituir pelo hook personalizado para GET na API
+        }
+    }, [email]);
+
     const [confirmDialog, setConfirmDialog] = useState<TOptionsConfirmDialog>({
         isOpen: false,
         title: "",
@@ -76,7 +88,7 @@ export const Tabs = () => {
     });
 
     const deletarTalento = (id: number) => {
-        console.log(id);
+        console.log(id); //Substituir pelo hook personalizado para DELETE na API
     }
 
     const columns = [
@@ -220,6 +232,7 @@ export const Tabs = () => {
                             onChange={e => {
                                 setEmailInput(e.target.value)
                             }}
+                            onFocus={() => setTrilha('')}
                         />
                     </FormControl>
                     <FormControl fullWidth size="small">
@@ -233,6 +246,10 @@ export const Tabs = () => {
                                 setTrilha(e.target.value)
                             }}
                             sx={{ color: 'black' }}
+                            onFocus={() => {
+                                setEmail('');
+                                setEmailInput('');
+                            }}
                         >
                             {stacks?.map((stack) => {
                                 return (
