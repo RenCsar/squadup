@@ -37,26 +37,6 @@ export type TSocialProps = TBackgroundProps & {
     isfooter: boolean;
 }
 
-export type TTalent = {
-    id: number;
-    nome: string;
-    img?: string;
-    email: string;
-    stack: { nome: string; }[];
-    telefone: string;
-    estado: string;
-    disponivel: string;
-}
-
-export type TTalentProps = {
-    key: number,
-    talent: TTalent,
-}
-
-export type TAddFormProps = {
-    state?: TTalent,
-}
-
 export type TAddTalent = {
     nome: string;
     email: string;
@@ -69,6 +49,30 @@ export type TAddTalent = {
     img: string;
     status?: string;
     stack?: string;
+}
+
+export type TTalent = {
+    id: string;
+    nome: string;
+    email: string;
+    rg: string;
+    cpf: string;
+    telefone: string;
+    estado: string;
+    cidade: string;
+    dataNascimento: string;
+    img: string;
+    status: string;
+    stack: string;
+}
+
+export type TTalentProps = {
+    key: number,
+    talent: TTalent,
+}
+
+export type TAddFormProps = {
+    state?: TTalent,
 }
 
 export type TOptionsConfirmDialog = {

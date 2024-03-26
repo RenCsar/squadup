@@ -24,7 +24,7 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 import { DataGrid, GridCellParams } from '@mui/x-data-grid';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import elementos from '../../../utils/json/talentos.json';
+import elementos from '../../../utils/json/elementos.json';
 import CustomButton from '../../ui/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import TalentCard from '../../ui/TalentCard';
@@ -39,12 +39,8 @@ const rows = () => {
             img: dados.img,
             nome: dados.nome,
             email: dados.email,
-            trilha: dados.stack
-                .map((trilha) => {
-                    return trilha.nome
-                })
-                .join(', '),
-            status: dados.disponivel,
+            stack: dados.stack,
+            status: dados.status,
             telefone: dados.telefone,
             estado: dados.estado,
         }
@@ -141,8 +137,8 @@ export const Tabs = () => {
             flex: 1
         },
         {
-            field: 'trilha',
-            headerName: 'Trilhas',
+            field: 'stack',
+            headerName: 'Stack',
             minWidth: 90,
             maxWidth: 200,
             flex: 1,

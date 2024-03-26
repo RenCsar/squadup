@@ -18,7 +18,7 @@ const TalentCard = ({ talent }: TTalentProps) => {
         onConfirm: () => { },
     });
 
-    const deletarTalento = (id: number) => {
+    const deletarTalento = (id: string) => {
         console.log(id);
     }
 
@@ -65,14 +65,14 @@ const TalentCard = ({ talent }: TTalentProps) => {
                 <Box className="text-container"
                     sx={{
                         "& :nth-child(4) span": {
-                            color: talent.disponivel === "T" ? "#3beb27" : "rgba(187, 43, 33, 0.9)"
+                            color: talent.status === "T" ? "#3beb27" : "rgba(187, 43, 33, 0.9)"
                         }
                     }}
                 >
                     <p>{`Nome: ${talent.nome}`}</p>
                     <p>{`E-mail: ${talent.email}`}</p>
-                    <p>{`Stack: ${talent.stack[0].nome}`}</p>
-                    <p>Situação:<span>{` ${talent.disponivel === "T" ? "Disponível" : "Indisponível"}`}</span></p>
+                    <p>{`Stack: ${talent.stack}`}</p>
+                    <p>Situação:<span>{` ${talent.status === "T" ? "Disponível" : "Indisponível"}`}</span></p>
                 </Box>
             </Box>
             <Box className="btn-hire"
