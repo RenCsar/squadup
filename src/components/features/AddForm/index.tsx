@@ -53,6 +53,8 @@ const AddForm = ({ state }: TAddFormProps) => {
         reset();
         resetValue(value + 1);
         setImgTalent('');
+        state = undefined;
+        navigate("/talentos");
     };
 
     return (
@@ -187,6 +189,7 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 maskChar=" "
                                 {...register("rg")}
                                 key={value}
+                                defaultValue={state?.rg}
                             >
                                 {
                                     // @ts-ignore
@@ -212,6 +215,7 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 maskChar=" "
                                 {...register("cpf")}
                                 key={value}
+                                defaultValue={state?.cpf}
                             >
                                 {
                                     // @ts-ignore
@@ -238,6 +242,7 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 maskChar=" "
                                 {...register("telefone")}
                                 key={value}
+                                defaultValue={state?.telefone}
                             >
                                 {
                                     // @ts-ignore
@@ -264,6 +269,7 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 id="step-1-dataNascimento"
                                 InputLabelProps={{ shrink: true }}
                                 {...register("dataNascimento")}
+                                defaultValue={state? state.dataNascimento.split("/").reverse().join("-"): ''}
                             />
                         </Grid>
 
@@ -276,6 +282,7 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 id="step-1-cidade"
                                 {...register("cidade")}
                                 key={value}
+                                defaultValue={state?.cidade}
                             />
                         </Grid>
                         <Grid item xs={12} md={6} lg={6} xl={6}>
@@ -284,13 +291,13 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 <Select
                                     label="Estado"
                                     error={!!errors.estado}
-                                    defaultValue="AC"
+                                    defaultValue={state ? state.estado : "Acre"}
                                     id="step-1-estado"
                                     {...register("estado")}
                                     key={value}
                                 >
                                     {estadosBrasileiros.map((estado) => (
-                                        <MenuItem key={estado.id} value={estado.sigla}>
+                                        <MenuItem key={estado.id} value={estado.nome}>
                                             {estado.nome}
                                         </MenuItem>
                                     ))}
@@ -304,7 +311,7 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 <Select
                                     label="Status"
                                     error={!!errors.status}
-                                    defaultValue="T"
+                                    defaultValue={state ? state.status : "T"}
                                     id="step-1-status"
                                     {...register("status")}
                                     key={value}
@@ -324,7 +331,7 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 <Select
                                     label="Stack"
                                     error={!!errors.stack}
-                                    defaultValue="Frontend"
+                                    defaultValue={state ? state.stack : "Frontend"}
                                     id="step-1-stack"
                                     {...register("stack")}
                                     key={value}

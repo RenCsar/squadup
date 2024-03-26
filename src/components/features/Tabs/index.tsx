@@ -35,14 +35,18 @@ import { TOptionsConfirmDialog, TTalent } from '../../../utils/types';
 const rows = () => {
     return elementos.map((dados: TTalent) => {
         return {
-            id: dados.id,
-            img: dados.img,
-            nome: dados.nome,
-            email: dados.email,
-            stack: dados.stack,
-            status: dados.status,
-            telefone: dados.telefone,
-            estado: dados.estado,
+            ...dados
+            // id: dados.id,
+            // img: dados.img,
+            // nome: dados.nome,
+            // email: dados.email,
+            // stack: dados.stack,
+            // status: dados.status,
+            // telefone: dados.telefone,
+            // estado: dados.estado,
+            // rg: dados.rg,
+            // cpf: dados.cpf,
+            // cidade: dados.cidade
         }
     })
 };
