@@ -33,17 +33,17 @@ import { TOptionsConfirmDialog, TTalent } from '../../../utils/types';
 import { RootState, Store } from '../../../store/store';
 import { deleteTalent, deleteTalentLocal, fetchAllTalents, searchByEmail, searchByStack } from '../../../store/reducers/talent.Slice';
 import { useSelector } from 'react-redux';
+import { setEmail } from '../../../store/reducers/globalStates.Slice';
 
 export const Tabs = () => {
     const theme = useTheme();
     const smDown = useMediaQuery(theme.breakpoints.down("sm"));
     const navigate = useNavigate();
 
-    const { talents, loading, total, error } = useSelector((state: RootState) => state.talent);
+    const { talents, loading, total } = useSelector((state: RootState) => state.talent);
+    const { email } = useSelector((state: RootState) => state.globalStates);
 
     const [page, setPage] = useState(0);
-    const [email, setEmail] = useState('');
-    const [emailInput, setEmailInput] = useState('');
     const [trilha, setTrilha] = useState('');
 
     const limit = 22;
@@ -63,15 +63,14 @@ export const Tabs = () => {
         }
     }, [trilha]);
 
-    useEffect(() => {
+    const findByEmail = () => {
         if (email !== "") {
             Store.dispatch(searchByEmail({ limit: limit, offset: page, email: email.trim() }))
         }
-    }, [email]);
+    }
 
     const resetFiltro = () => {
-        setEmail('');
-        setEmailInput('');
+        Store.dispatch(setEmail(''));
         setTrilha('');
         setPage(0);
         Store.dispatch(fetchAllTalents({ limit: limit, offset: page }));
@@ -223,7 +222,7 @@ export const Tabs = () => {
                             endAdornment={
                                 <InputAdornment position="end">
                                     <Tooltip title="Buscar">
-                                        <IconButton onClick={() => setEmail(emailInput)} edge="end"
+                                        <IconButton onClick={() => findByEmail()} edge="end"
                                             sx={{
                                                 borderRadius: "0px",
                                                 borderTopRightRadius: "5px",
@@ -253,9 +252,9 @@ export const Tabs = () => {
                             }
                             id="candidatos-search-by-email"
                             label="Pesquisar por Email"
-                            value={emailInput}
+                            value={email}
                             onChange={e => {
-                                setEmailInput(e.target.value)
+                                Store.dispatch(setEmail(e.target.value));
                             }}
                             onFocus={() => setTrilha('')}
                         />
@@ -272,8 +271,7 @@ export const Tabs = () => {
                             }}
                             sx={{ color: 'black' }}
                             onFocus={() => {
-                                setEmail('');
-                                setEmailInput('');
+                                Store.dispatch(setEmail(''));
                             }}
                         >
                             {stacks?.map((stack) => {

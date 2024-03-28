@@ -13,6 +13,7 @@ import GlobalStyle from "../utils/globalStyles";
 import EditarTalentos from "../pages/EditarTalentos";
 import { Provider } from "react-redux";
 import { Store } from "../store/store";
+import GlobalSnackbar from "../components/features/SnackBarGlobal";
 
 function AppRouter() {
   return (
@@ -20,21 +21,23 @@ function AppRouter() {
       <Provider store={Store}>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
-          <Routes>
-            <Route path="*" element={<Error />} />
-            <Route index element={<Initial />} />
-            <Route path="/" element={<DefaultPage />}>
-              <Route path="/home" element={<Home />} />
-              <Route path="/talentos" element={<Talentos />} />
-              <Route path="/talentos/editar" element={<EditarTalentos />} />
-              <Route path="/talentos/adicionar" element={<AddTalentos />} />
-              <Route path="/profile" element={<Profile />} />
-              <Route path="/settings" element={<Settings />} />
-            </Route>
-          </Routes>
+          <GlobalSnackbar>
+            <Routes>
+              <Route path="*" element={<Error />} />
+              <Route index element={<Initial />} />
+              <Route path="/" element={<DefaultPage />}>
+                <Route path="/home" element={<Home />} />
+                <Route path="/talentos" element={<Talentos />} />
+                <Route path="/talentos/editar" element={<EditarTalentos />} />
+                <Route path="/talentos/adicionar" element={<AddTalentos />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/settings" element={<Settings />} />
+              </Route>
+            </Routes>
+          </GlobalSnackbar>
         </ThemeProvider>
       </Provider>
-    </BrowserRouter>
+    </BrowserRouter >
   );
 }
 

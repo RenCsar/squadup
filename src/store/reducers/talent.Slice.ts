@@ -118,6 +118,7 @@ export const talentsSlice = createSlice({
         builder
             .addCase(fetchAllTalents.pending, (state) => {
                 state.loading = true;
+                state.error = null;
             })
             .addCase(fetchAllTalents.fulfilled, (state, action) => {
                 state.loading = false;
@@ -130,6 +131,7 @@ export const talentsSlice = createSlice({
             })
             .addCase(searchByEmail.pending, (state) => {
                 state.loading = true;
+                state.error = null;
             })
             .addCase(searchByEmail.fulfilled, (state, action) => {
                 state.loading = false;
@@ -143,6 +145,7 @@ export const talentsSlice = createSlice({
             })
             .addCase(searchByStack.pending, (state) => {
                 state.loading = true;
+                state.error = null;
             })
             .addCase(searchByStack.fulfilled, (state, action) => {
                 state.loading = false;
@@ -156,6 +159,7 @@ export const talentsSlice = createSlice({
             })
             .addCase(addTalent.pending, (state) => {
                 state.loading = true;
+                state.error = null;
             })
             .addCase(addTalent.fulfilled, (state) => {
                 state.loading = false;
@@ -166,6 +170,7 @@ export const talentsSlice = createSlice({
             })
             .addCase(updateTalent.pending, (state) => {
                 state.loading = true;
+                state.error = null;
             })
             .addCase(updateTalent.fulfilled, (state) => {
                 state.loading = false;
@@ -176,6 +181,7 @@ export const talentsSlice = createSlice({
             })
             .addCase(deleteTalent.pending, (state) => {
                 state.loading = true;
+                state.error = null;
             })
             .addCase(deleteTalent.fulfilled, (state) => {
                 state.loading = false;

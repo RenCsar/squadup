@@ -1,3 +1,6 @@
+import { SlideProps } from "@mui/material/Slide";
+import { ReactNode } from "react";
+
 export type TButtonProps = {
     color?: string;
     backgroundcolor?: string;
@@ -112,4 +115,15 @@ export type TOptionsConfirmDialog = {
 export type TOptionsConfirmDialogProps = {
     confirmDialog: TOptionsConfirmDialog,
     setConfirmDialog(options: TOptionsConfirmDialog): void
+}
+
+export type CustomizedSnackbarsProps = {
+    error: string | null;
+    tipo?: any;
+};
+
+export type TransitionProps = Omit<SlideProps, "direction">;
+
+export type TGlobalSnackbarProps = {
+    children: ReactNode;
 }
