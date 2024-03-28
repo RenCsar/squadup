@@ -94,6 +94,7 @@ export type TInitialState = {
     limit: number;
     offset: number;
     total: number;
+    message: string | null;
 }
 
 export type TTalentProps = {
@@ -119,6 +120,7 @@ export type TOptionsConfirmDialogProps = {
 
 export type CustomizedSnackbarsProps = {
     error: string | null;
+    message: string | null;
     tipo?: any;
 };
 

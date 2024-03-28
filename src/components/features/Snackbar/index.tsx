@@ -5,7 +5,7 @@ import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Slide, { SlideProps } from '@mui/material/Slide';
 import { CustomizedSnackbarsProps, TransitionProps } from '../../../utils/types';
 import { Store } from '../../../store/store';
-import { fetchAllTalents } from '../../../store/reducers/talent.Slice';
+import { fetchAllTalents, limparError, limparMessage } from '../../../store/reducers/talent.Slice';
 import { setEmail } from '../../../store/reducers/globalStates.Slice';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -19,18 +19,18 @@ function TransitionRight(props: TransitionProps) {
     return <Slide {...props} direction="right" />;
 }
 
-export default function CustomizedSnackbars({ error, tipo }: CustomizedSnackbarsProps) {
+export default function CustomizedSnackbars({ error, tipo, message }: CustomizedSnackbarsProps) {
     const [open, setOpen] = React.useState(false);
     const [transition, setTransition] = React.useState<React.ComponentType<SlideProps> | undefined>(undefined);
 
     React.useEffect(() => {
-        if (error) {
+        if (error || message) {
             setOpen(true)
             setTransition(() => TransitionRight)
         } else {
             setOpen(false)
         }
-    }, [error])
+    }, [error, message])
 
 
     const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
@@ -39,6 +39,9 @@ export default function CustomizedSnackbars({ error, tipo }: CustomizedSnackbars
         }
         Store.dispatch(fetchAllTalents({ limit: 22, offset: 0 }));
         Store.dispatch(setEmail(''));
+        Store.dispatch(limparError());
+        Store.dispatch(limparMessage());
+        tipo = null
         setOpen(false);
     };
 
@@ -53,8 +56,8 @@ export default function CustomizedSnackbars({ error, tipo }: CustomizedSnackbars
                 }}
                 autoHideDuration={5000}
                 TransitionComponent={transition}>
-                <Alert onClose={handleClose} severity={tipo} sx={{ width: '100%' }}>
-                    {error ? error : "Ocorreu algo inesperado!"}
+                <Alert onClose={handleClose} severity={tipo} sx={{ width: '100%', background: tipo == "error" ? "red" : "green", color: "white" }}>
+                    {error ? error : message ? message : "Ocorreu algo inesperado!"}
                 </Alert>
             </Snackbar>
         </Stack>

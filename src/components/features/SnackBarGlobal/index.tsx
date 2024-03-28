@@ -5,22 +5,22 @@ import CustomizedSnackbars from '../Snackbar';
 import { TGlobalSnackbarProps } from '../../../utils/types';
 
 function GlobalSnackbar({ children }: TGlobalSnackbarProps) {
-    const { error } = useSelector((state: RootState) => state.talent);
+    const { error, message } = useSelector((state: RootState) => state.talent);
 
     const [snackbarsType, setSnackbarsType] = useState("success");
 
     useEffect(() => {
-        if (!error) {
+        if (message != null && error == null) {
             setSnackbarsType("success");
-        } else if (error) {
+        } else if (error != null && message == null) {
             setSnackbarsType('error');
         }
-    }, [error]);
+    }, [error, message]);
 
     return (
         <div>
             {children}
-            <CustomizedSnackbars tipo={snackbarsType} error={(error)} />
+            <CustomizedSnackbars tipo={snackbarsType} error={error} message={message} />
         </div>
     );
 }

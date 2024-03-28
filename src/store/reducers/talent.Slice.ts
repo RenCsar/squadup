@@ -65,11 +65,12 @@ export const addTalent = createAsyncThunk<void, TAddTalentReq>(
     }
 );
 
-export const updateTalent = createAsyncThunk<void, { talentData: TAddTalentReq, talentId: string }>(
+export const updateTalent = createAsyncThunk<string | null, { talentData: TAddTalentReq, talentId: string }>(
     'talents/updateTalent',
     async ({ talentData, talentId }) => {
         try {
-            await API.patch<APIResponse>(`/talent/${talentId}`, talentData);
+            const response = await API.patch(`/talent/${talentId}`, talentData);
+            return response.data.messege
         } catch (error: any) {
             if (error.response && error.response.data && error.response.data.message) {
                 throw new Error(error.response.data.message);
@@ -104,6 +105,7 @@ const initialState: TInitialState = {
     limit: 0,
     offset: 0,
     total: 0,
+    message: null,
 };
 
 export const talentsSlice = createSlice({
@@ -112,6 +114,12 @@ export const talentsSlice = createSlice({
     reducers: {
         deleteTalentLocal: (state, action) => {
             state.talents = state.talents.filter((talent: TTalent) => talent.id !== action.payload);
+        },
+        limparError: (state) => {
+            state.error = null;
+        },
+        limparMessage: (state) => {
+            state.message = null;
         }
     },
     extraReducers: (builder) => {
@@ -172,8 +180,9 @@ export const talentsSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(updateTalent.fulfilled, (state) => {
+            .addCase(updateTalent.fulfilled, (state, action) => {
                 state.loading = false;
+                state.message = action.payload;
             })
             .addCase(updateTalent.rejected, (state, action) => {
                 state.loading = false;
@@ -193,4 +202,4 @@ export const talentsSlice = createSlice({
     },
 });
 
-export const { deleteTalentLocal } = talentsSlice.actions;
+export const { deleteTalentLocal, limparMessage, limparError } = talentsSlice.actions;
