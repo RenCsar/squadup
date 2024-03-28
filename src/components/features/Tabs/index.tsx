@@ -24,62 +24,63 @@ import EditNoteIcon from '@mui/icons-material/EditNote';
 import { DataGrid, GridCellParams } from '@mui/x-data-grid';
 import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import elementos from '../../../utils/json/elementos.json';
 import CustomButton from '../../ui/Button';
 import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import TalentCard from '../../ui/TalentCard';
 import { stacks } from '../../../utils/elementos';
 import { ConfirmDialog } from '../ConfirmDialog';
 import { TOptionsConfirmDialog, TTalent } from '../../../utils/types';
-
-const rows = () => {
-    return elementos.map((dados: TTalent) => {
-        return {
-            ...dados
-            // id: dados.id,
-            // img: dados.img,
-            // nome: dados.nome,
-            // email: dados.email,
-            // stack: dados.stack,
-            // status: dados.status,
-            // telefone: dados.telefone,
-            // estado: dados.estado,
-            // rg: dados.rg,
-            // cpf: dados.cpf,
-            // cidade: dados.cidade
-        }
-    })
-};
+import { RootState, Store } from '../../../store/store';
+import { deleteTalent, deleteTalentLocal, fetchAllTalents, searchByEmail, searchByStack } from '../../../store/reducers/talent.Slice';
+import { useSelector } from 'react-redux';
 
 export const Tabs = () => {
+    const theme = useTheme();
+    const smDown = useMediaQuery(theme.breakpoints.down("sm"));
     const navigate = useNavigate();
+
+    const { talents, loading, total, error } = useSelector((state: RootState) => state.talent);
+
     const [page, setPage] = useState(0);
-    const [isLoading, setisLoading] = useState(false);
     const [email, setEmail] = useState('');
     const [emailInput, setEmailInput] = useState('');
     const [trilha, setTrilha] = useState('');
 
-    const theme = useTheme();
-    const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+    const limit = 22;
+    const totalPages = Math.ceil(total / limit);
+
+    useEffect(() => {
+        Store.dispatch(fetchAllTalents({ limit: limit, offset: page }));
+    }, []);
+
+    useEffect(() => {
+        Store.dispatch(fetchAllTalents({ limit: limit, offset: page }));
+    }, [page]);
+
+    useEffect(() => {
+        if (trilha !== "") {
+            Store.dispatch(searchByStack({ limit: limit, offset: page, stack: trilha }))
+        }
+    }, [trilha]);
+
+    useEffect(() => {
+        if (email !== "") {
+            Store.dispatch(searchByEmail({ limit: limit, offset: page, email: email.trim() }))
+        }
+    }, [email]);
 
     const resetFiltro = () => {
         setEmail('');
         setEmailInput('');
         setTrilha('');
         setPage(0);
+        Store.dispatch(fetchAllTalents({ limit: limit, offset: page }));
     };
 
-    useEffect(() => {
-        if (trilha !== "") {
-            console.log(trilha); //Substituir pelo hook personalizado para GET na API
-        }
-    }, [trilha]);
-
-    useEffect(() => {
-        if (email !== "") {
-            console.log(email); //Substituir pelo hook personalizado para GET na API
-        }
-    }, [email]);
+    const deletarTalento = (id: string) => {
+        Store.dispatch(deleteTalentLocal(id));
+        Store.dispatch(deleteTalent(id));
+    }
 
     const [confirmDialog, setConfirmDialog] = useState<TOptionsConfirmDialog>({
         isOpen: false,
@@ -87,9 +88,9 @@ export const Tabs = () => {
         onConfirm: () => { },
     });
 
-    const deletarTalento = (id: number) => {
-        console.log(id); //Substituir pelo hook personalizado para DELETE na API
-    }
+    const rows = () => {
+        return talents.map((dados: TTalent) => { return { ...dados } })
+    };
 
     const columns = [
         {
@@ -331,7 +332,7 @@ export const Tabs = () => {
             {
                 smDown ?
                     <Grid item xs={12} sx={{ height: 'calc(100vh)', width: '100%', }}>
-                        {isLoading ? (
+                        {loading ? (
                             <LinearProgress />
                         ) : (
                             <Box
@@ -349,10 +350,11 @@ export const Tabs = () => {
                                 }}
 
                             >
-                                {elementos.map((talent, index) => (
+                                {talents.map((talent: TTalent, index: number) => (
                                     <TalentCard
                                         key={index}
                                         talent={talent}
+                                        onDeleteTalent={deletarTalento}
                                     />
                                 ))}
                             </Box>
@@ -360,7 +362,7 @@ export const Tabs = () => {
                     </Grid>
                     :
                     <Grid item xs={12} sx={{ height: 'calc(100vh - 223px)', width: '100%' }}>
-                        {isLoading ? (
+                        {loading ? (
                             <LinearProgress />
                         ) : (
                             <DataGrid
@@ -379,7 +381,7 @@ export const Tabs = () => {
             }
             <Grid item xs={12} display="flex" justifyContent="center">
                 <Pagination
-                    count={1}
+                    count={totalPages}
                     color="primary"
                     size="small"
                     onChange={(_, page) => {

@@ -37,7 +37,7 @@ export type TSocialProps = TBackgroundProps & {
     isfooter: boolean;
 }
 
-export type TAddTalent = {
+export type TAddTalentBase = {
     nome: string;
     email: string;
     rg: string;
@@ -45,10 +45,17 @@ export type TAddTalent = {
     telefone: string;
     estado?: string;
     cidade: string;
-    dataNascimento: Date;
     img: string;
     status?: string;
     stack?: string;
+}
+
+export type TAddTalent = TAddTalentBase & {
+    dataNascimento: Date;
+}
+
+export type TAddTalentReq = TAddTalentBase & {
+    dataNascimento: string;
 }
 
 export type TTalent = {
@@ -66,9 +73,30 @@ export type TTalent = {
     stack: string;
 }
 
+export type APIResponse = {
+    results: TTalent[];
+    limit: number;
+    offset: number;
+    total: number;
+    nextUrl: string | null;
+    previuosUrl: string | null;
+}
+
+export type TInitialState = {
+    talents: TTalent[],
+    loading: boolean;
+    error: string | null;
+    nextUrl: null;
+    previuosUrl: null;
+    limit: number;
+    offset: number;
+    total: number;
+}
+
 export type TTalentProps = {
     key: number,
     talent: TTalent,
+    onDeleteTalent: (id: string) => void
 }
 
 export type TAddFormProps = {

@@ -34,7 +34,7 @@ export const stacks = [
     { id: 3, nome: "Fullstack" },
     { id: 4, nome: "Data Science" },
     { id: 5, nome: "DevOps" },
-    { id: 6, nome: "UI/UX Design" },
+    { id: 6, nome: "UI-UX Design" },
     { id: 7, nome: "Mobile Development" },
     { id: 8, nome: "QA" },
 ];

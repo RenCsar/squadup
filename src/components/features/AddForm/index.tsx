@@ -24,6 +24,8 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CustomButton from "../../ui/Button";
 import { useNavigate } from "react-router-dom";
 import { TAddFormProps, TAddTalent } from "../../../utils/types";
+import { Store } from "../../../store/store";
+import { addTalent, fetchAllTalents, updateTalent } from "../../../store/reducers/talent.Slice";
 
 const AddForm = ({ state }: TAddFormProps) => {
     const [value, resetValue] = useState(0);
@@ -49,7 +51,12 @@ const AddForm = ({ state }: TAddFormProps) => {
             dataNascimento: formatDate(data.dataNascimento),
         };
 
-        console.log(newTalent)
+        if (state) {
+            Store.dispatch(updateTalent({ talentData: newTalent, talentId: state.id }));
+        } else {
+            Store.dispatch(addTalent(newTalent));
+        }
+        Store.dispatch(fetchAllTalents({ limit: 22, offset: 0 }));
         reset();
         resetValue(value + 1);
         setImgTalent('');
@@ -269,7 +276,7 @@ const AddForm = ({ state }: TAddFormProps) => {
                                 id="step-1-dataNascimento"
                                 InputLabelProps={{ shrink: true }}
                                 {...register("dataNascimento")}
-                                defaultValue={state? state.dataNascimento.split("/").reverse().join("-"): ''}
+                                defaultValue={state ? state.dataNascimento.split("/").reverse().join("-") : ''}
                             />
                         </Grid>
 

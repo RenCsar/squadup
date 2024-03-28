@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { ConfirmDialog } from "../../features/ConfirmDialog";
 import { useState } from "react";
 
-const TalentCard = ({ talent }: TTalentProps) => {
+const TalentCard = ({ talent, onDeleteTalent }: TTalentProps) => {
     const navigate = useNavigate();
 
     const [confirmDialog, setConfirmDialog] = useState<TOptionsConfirmDialog>({
@@ -17,10 +17,6 @@ const TalentCard = ({ talent }: TTalentProps) => {
         title: "",
         onConfirm: () => { },
     });
-
-    const deletarTalento = (id: string) => {
-        console.log(id);
-    }
 
     return (
         <Container>
@@ -43,7 +39,7 @@ const TalentCard = ({ talent }: TTalentProps) => {
                                             ...confirmDialog,
                                             isOpen: false,
                                         });
-                                        deletarTalento(talent.id);
+                                        onDeleteTalent(talent.id);
                                     },
                                 });
                             }}
