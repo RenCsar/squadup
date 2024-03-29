@@ -53,9 +53,11 @@ export const searchByStack = createAsyncThunk<APIResponse, { limit: number; offs
 
 export const addTalent = createAsyncThunk<string | null, TAddTalentReq>(
     'talents/addTalent',
-    async (talentData) => {
+    async (talentData, { getState }) => {
+        const { limit } = (getState() as RootState).globalStates;
         try {
             const response = await API.post('/talent', talentData);
+            Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
             return response.data.message;
         } catch (error: any) {
             if (error.response && error.response.data && error.response.data.message) {
@@ -69,9 +71,11 @@ export const addTalent = createAsyncThunk<string | null, TAddTalentReq>(
 
 export const updateTalent = createAsyncThunk<string | null, { talentData: TAddTalentReq, talentId: string }>(
     'talents/updateTalent',
-    async ({ talentData, talentId }) => {
+    async ({ talentData, talentId }, { getState }) => {
+        const { limit } = (getState() as RootState).globalStates;
         try {
             const response = await API.patch(`/talent/${talentId}`, talentData);
+            Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
             return response.data.message
         } catch (error: any) {
             if (error.response && error.response.data && error.response.data.message) {
@@ -89,7 +93,7 @@ export const deleteTalent = createAsyncThunk<string | null, string>(
         const { limit } = (getState() as RootState).globalStates;
         try {
             const response = await API.delete(`/talent/${talentId}`);
-            Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }))
+            Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
             return response.data.message;
         } catch (error: any) {
             if (error.response && error.response.data && error.response.data.message) {
