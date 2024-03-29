@@ -31,7 +31,7 @@ import { stacks } from '../../../utils/elementos';
 import { ConfirmDialog } from '../ConfirmDialog';
 import { TOptionsConfirmDialog, TTalent } from '../../../utils/types';
 import { RootState, Store } from '../../../store/store';
-import { deleteTalent, deleteTalentLocal, fetchAllTalents, searchByEmail, searchByStack } from '../../../store/reducers/talent.Slice';
+import { deleteTalent, fetchAllTalents, searchByEmail, searchByStack } from '../../../store/reducers/talent.Slice';
 import { useSelector } from 'react-redux';
 import { setEmail } from '../../../store/reducers/globalStates.Slice';
 
@@ -41,12 +41,11 @@ export const Tabs = () => {
     const navigate = useNavigate();
 
     const { talents, loading, total } = useSelector((state: RootState) => state.talent);
-    const { email } = useSelector((state: RootState) => state.globalStates);
+    const { email, limit } = useSelector((state: RootState) => state.globalStates);
 
     const [page, setPage] = useState(0);
     const [trilha, setTrilha] = useState('');
 
-    const limit = 7;
     const totalPages = Math.ceil(total / limit);
 
     useEffect(() => {
@@ -83,14 +82,13 @@ export const Tabs = () => {
     };
 
     const deletarTalento = (id: string) => {
-        Store.dispatch(deleteTalentLocal(id));
         Store.dispatch(deleteTalent(id));
     }
 
     const [confirmDialog, setConfirmDialog] = useState<TOptionsConfirmDialog>({
         isOpen: false,
         title: "",
-        onConfirm: () => { },
+        onConfirm: () => {},
     });
 
     const rows = () => {

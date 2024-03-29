@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    email: ''
+    email: '',
+    limit: 7,
 };
 
 export const globalStates = createSlice({

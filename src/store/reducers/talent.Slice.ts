@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { API } from '../../api/squadUpAPI';
-import { APIResponse, TAddTalentReq, TInitialState, TTalent } from '../../utils/types';
+import { APIResponse, TAddTalentReq, TInitialState } from '../../utils/types';
+import { RootState, Store } from '../store';
 
 export const fetchAllTalents = createAsyncThunk<APIResponse, { limit: number; offset: number }>(
     'talents/fetchAllTalents',
@@ -50,11 +51,12 @@ export const searchByStack = createAsyncThunk<APIResponse, { limit: number; offs
     }
 );
 
-export const addTalent = createAsyncThunk<void, TAddTalentReq>(
+export const addTalent = createAsyncThunk<string | null, TAddTalentReq>(
     'talents/addTalent',
     async (talentData) => {
         try {
-            await API.post('/talent', talentData);
+            const response = await API.post('/talent', talentData);
+            return response.data.message;
         } catch (error: any) {
             if (error.response && error.response.data && error.response.data.message) {
                 throw new Error(error.response.data.message);
@@ -81,11 +83,14 @@ export const updateTalent = createAsyncThunk<string | null, { talentData: TAddTa
     }
 );
 
-export const deleteTalent = createAsyncThunk<void, string>(
+export const deleteTalent = createAsyncThunk<string | null, string>(
     'talents/deleteTalent',
-    async (talentId) => {
+    async (talentId, { getState }) => {
+        const { limit } = (getState() as RootState).globalStates;
         try {
-            await API.delete(`/talent/${talentId}`);
+            const response = await API.delete(`/talent/${talentId}`);
+            Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }))
+            return response.data.message;
         } catch (error: any) {
             if (error.response && error.response.data && error.response.data.message) {
                 throw new Error(error.response.data.message);
@@ -112,9 +117,6 @@ export const talentsSlice = createSlice({
     name: 'talents',
     initialState: initialState,
     reducers: {
-        deleteTalentLocal: (state, action) => {
-            state.talents = state.talents.filter((talent: TTalent) => talent.id !== action.payload);
-        },
         limparError: (state) => {
             state.error = null;
         },
@@ -171,8 +173,9 @@ export const talentsSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(addTalent.fulfilled, (state) => {
+            .addCase(addTalent.fulfilled, (state, action) => {
                 state.loading = false;
+                state.message = action.payload;
             })
             .addCase(addTalent.rejected, (state, action) => {
                 state.loading = false;
@@ -194,8 +197,9 @@ export const talentsSlice = createSlice({
                 state.loading = true;
                 state.error = null;
             })
-            .addCase(deleteTalent.fulfilled, (state) => {
+            .addCase(deleteTalent.fulfilled, (state, action) => {
                 state.loading = false;
+                state.message = action.payload;
             })
             .addCase(deleteTalent.rejected, (state, action) => {
                 state.loading = false;
@@ -204,4 +208,4 @@ export const talentsSlice = createSlice({
     },
 });
 
-export const { deleteTalentLocal, limparMessage, limparError } = talentsSlice.actions;
+export const { limparMessage, limparError } = talentsSlice.actions;

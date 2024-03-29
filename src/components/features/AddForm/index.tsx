@@ -25,7 +25,7 @@ import CustomButton from "../../ui/Button";
 import { useNavigate } from "react-router-dom";
 import { TAddFormProps, TAddTalent } from "../../../utils/types";
 import { Store } from "../../../store/store";
-import { addTalent, fetchAllTalents, updateTalent } from "../../../store/reducers/talent.Slice";
+import { addTalent, updateTalent } from "../../../store/reducers/talent.Slice";
 
 const AddForm = ({ state }: TAddFormProps) => {
     const [value, resetValue] = useState(0);
@@ -56,7 +56,6 @@ const AddForm = ({ state }: TAddFormProps) => {
         } else {
             Store.dispatch(addTalent(newTalent));
         }
-        Store.dispatch(fetchAllTalents({ limit: 22, offset: 0 }));
         reset();
         resetValue(value + 1);
         setImgTalent('');
