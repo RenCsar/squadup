@@ -46,7 +46,7 @@ export const Tabs = () => {
     const [page, setPage] = useState(0);
     const [trilha, setTrilha] = useState('');
 
-    const limit = 10;
+    const limit = 7;
     const totalPages = Math.ceil(total / limit);
 
     useEffect(() => {

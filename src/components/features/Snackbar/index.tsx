@@ -39,7 +39,7 @@ export default function CustomizedSnackbars({ error, tipo, message }: Customized
         }
 
         if(tipo == "error") {
-            Store.dispatch(fetchAllTalents({ limit: 22, offset: 0 }));
+            Store.dispatch(fetchAllTalents({ limit: 7, offset: 0 }));
         }
         Store.dispatch(setEmail(''));
         Store.dispatch(limparError());
