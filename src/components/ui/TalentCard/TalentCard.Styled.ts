@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
-  min-height: 250px;
+  height: 250px;
   padding: 30px 50px;
   background-color: var(--bg-section-claro);
   display: flex;
@@ -68,6 +68,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 450px) {
+    height: 330px;
     & .content {
       flex-direction: column;
       align-items: center;
@@ -78,6 +79,21 @@ export const Container = styled.div`
     border-top-left-radius: 25px;
     border-bottom-right-radius: 25px;
     padding: 10px;
+
+    & .card-header {
+      flex-direction: column;
+      
+      > p {
+        word-wrap: break-word;
+      }
+      
+      & .button-container {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        margin-top: 5px;
+      }
+    }
   }
 
   @media (max-width: 350px) {
