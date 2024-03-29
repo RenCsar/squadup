@@ -1,5 +1,7 @@
-import axios from "axios"
+import axios from "axios";
+
+const url = process.env.REACT_APP_API_URL;
 
 export const API = axios.create({
-    baseURL: `https://api-squadup.vercel.app/`,
+    baseURL: url,
 })
