@@ -46,7 +46,7 @@ export const Tabs = () => {
     const [page, setPage] = useState(0);
     const [trilha, setTrilha] = useState('');
 
-    const limit = 22;
+    const limit = 10;
     const totalPages = Math.ceil(total / limit);
 
     useEffect(() => {
@@ -54,17 +54,23 @@ export const Tabs = () => {
     }, []);
 
     useEffect(() => {
-        Store.dispatch(fetchAllTalents({ limit: limit, offset: page }));
+        if (trilha !== "") {
+            Store.dispatch(searchByStack({ limit: limit, offset: page, stack: trilha }))
+        } else {
+            Store.dispatch(fetchAllTalents({ limit: limit, offset: page * limit }));
+        }
     }, [page]);
 
     useEffect(() => {
         if (trilha !== "") {
-            Store.dispatch(searchByStack({ limit: limit, offset: page, stack: trilha }))
+            setPage(0);
+            Store.dispatch(searchByStack({ limit: limit, offset: page, stack: trilha }));
         }
     }, [trilha]);
 
     const findByEmail = () => {
         if (email !== "") {
+            setPage(0);
             Store.dispatch(searchByEmail({ limit: limit, offset: page, email: email.trim() }))
         }
     }

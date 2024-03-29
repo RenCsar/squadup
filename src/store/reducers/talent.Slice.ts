@@ -140,6 +140,7 @@ export const talentsSlice = createSlice({
             .addCase(searchByEmail.pending, (state) => {
                 state.loading = true;
                 state.error = null;
+                state.total = 1;
             })
             .addCase(searchByEmail.fulfilled, (state, action) => {
                 state.loading = false;
@@ -154,6 +155,7 @@ export const talentsSlice = createSlice({
             .addCase(searchByStack.pending, (state) => {
                 state.loading = true;
                 state.error = null;
+                state.total = 1;
             })
             .addCase(searchByStack.fulfilled, (state, action) => {
                 state.loading = false;
