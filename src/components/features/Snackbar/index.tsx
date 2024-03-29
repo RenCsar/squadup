@@ -37,7 +37,10 @@ export default function CustomizedSnackbars({ error, tipo, message }: Customized
         if (reason === 'clickaway') {
             return;
         }
-        Store.dispatch(fetchAllTalents({ limit: 22, offset: 0 }));
+
+        if(tipo == "error") {
+            Store.dispatch(fetchAllTalents({ limit: 22, offset: 0 }));
+        }
         Store.dispatch(setEmail(''));
         Store.dispatch(limparError());
         Store.dispatch(limparMessage());
