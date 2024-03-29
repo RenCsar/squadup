@@ -64,14 +64,14 @@ export const Tabs = () => {
     useEffect(() => {
         if (trilha !== "") {
             setPage(0);
-            Store.dispatch(searchByStack({ limit: limit, offset: page, stack: trilha }));
+            Store.dispatch(searchByStack({ limit: limit, offset: 0, stack: trilha }));
         }
     }, [trilha]);
 
     const findByEmail = () => {
         if (email !== "") {
             setPage(0);
-            Store.dispatch(searchByEmail({ limit: limit, offset: page, email: email.trim() }))
+            Store.dispatch(searchByEmail({ limit: limit, offset: 0, email: email.trim() }))
         }
     }
 
