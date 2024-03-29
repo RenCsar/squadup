@@ -70,7 +70,7 @@ export const updateTalent = createAsyncThunk<string | null, { talentData: TAddTa
     async ({ talentData, talentId }) => {
         try {
             const response = await API.patch(`/talent/${talentId}`, talentData);
-            return response.data.messege
+            return response.data.message
         } catch (error: any) {
             if (error.response && error.response.data && error.response.data.message) {
                 throw new Error(error.response.data.message);
