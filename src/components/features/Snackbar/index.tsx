@@ -60,7 +60,7 @@ export default function CustomizedSnackbars({ error, tipo, message }: Customized
                 autoHideDuration={5000}
                 TransitionComponent={transition}>
                 <Alert onClose={handleClose} severity={tipo} sx={{ width: '100%', background: tipo == "error" ? "red" : "green", color: "white" }}>
-                    {error ? error : message ? message : "Ocorreu algo inesperado!"}
+                    {error ? error :  message}
                 </Alert>
             </Snackbar>
         </Stack>
