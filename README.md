@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
+<br />
+<div align="center">
+  <a href="https://squadup-livid.vercel.app/">
+    <img align="center" width="270" height="80" src="./src/assets/logo-claro.webp">
+  </a>
+  <h1>SquadUp</h1>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">Code with Confidence, SquadUp with Excellence.</p>
+<p align="justify">Precisando escalar seu time de TI de forma rápida e eficiente? Conectamos empresas aos melhores talentos de TI. Encontre o Seu Futuro Profissional aqui!</p>
+<p align="center">Acesse o site da <a href="https://squadup-livid.vercel.app/">SquadUp</a>.</p>
 
-## Available Scripts
+<p align="center">
+ <a href="#Descrição">Descrição</a> •
+ <a href="#Tecnologias">Tecnologias utilizadas</a> •
+ <a href="#start">Getting Start</a> •
+ <a href="#autor">Autor</a>
+</p>
 
-In the project directory, you can run:
+---
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h1 align="center">  
+  <p align="center">
+  <img width="200" height="400" src="https://i.imgur.com/3VpCkEc.gif"><br><br>
+  <img width="800" height="400" src="https://i.postimg.cc/7Zh8YV3q/squadup.gif">
+</p>
 
-### `npm test`
+</h1>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<a id="Descrição"></a>
+### Descrição
 
-### `npm run build`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<a id="Tecnologias"></a>
+### Tecnologias utilizadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+As seguintes ferramentas foram usadas na construção do projeto:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React JS
+- Typescript
+- Redux toolkit
+- Redux Thunk
+- Axios
+- Styled Components
+- Material UI
+- React Router Dom
 
-### `npm run eject`
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<a id="start"></a>
+## Getting Started
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Prerequisites
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+  ```sh
+  npm install npm@latest -g
+  ```
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Get a free API Key at [https://example.com](https://example.com)
+2. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your API in `config.js`
+   ```js
+   const API_KEY = 'ENTER YOUR API';
+   ```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+---
+
+### Autor
+
+Made with 💜 by Renan Cesar 👋
+
+[![LinkedIn Badge](https://img.shields.io/badge/-Renan_Cesar-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/renan-cesar/)](https://www.linkedin.com/in/renan-cesar/)
