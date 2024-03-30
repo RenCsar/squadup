@@ -1,5 +1,6 @@
 <a name="readme-top"></a>
 <br />
+
 <div align="center">
   <a href="https://squadup-livid.vercel.app/">
     <img align="center" width="270" height="80" src="./src/assets/logo-claro.webp">
@@ -22,21 +23,21 @@
 
 <br>
 
-
 <h1 align="center">  
-  <p align="center">
-  <img width="200" height="400" src="https://i.imgur.com/3VpCkEc.gif"><br><br>
-  <img width="800" height="400" src="https://i.postimg.cc/7Zh8YV3q/squadup.gif">
-</p>
-
+    <p align="center">
+        <img width="200" height="400" src="./src/assets/squadup-mobile.gif"><br><br>
+        <img width="800" height="400" src="./src/assets/squadup.gif">
+    </p>
 </h1>
 
 <a id="Descrição"></a>
+
 ### Descrição
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <a id="Tecnologias"></a>
+
 ### Tecnologias utilizadas
 
 As seguintes ferramentas foram usadas na construção do projeto:
@@ -53,6 +54,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <a id="start"></a>
+
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
@@ -61,7 +63,8 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+
+- npm
   ```sh
   npm install npm@latest -g
   ```
@@ -81,7 +84,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 4. Enter your API in `config.js`
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   const API_KEY = "ENTER YOUR API";
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
