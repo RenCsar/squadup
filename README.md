@@ -14,6 +14,7 @@
 
 <p align="center">
  <a href="#Descrição">Descrição</a> •
+ <a href="#Funcionalidades">Funcionalidades</a> •
  <a href="#Tecnologias">Tecnologias utilizadas</a> •
  <a href="#start">Getting Start</a> •
  <a href="#autor">Autor</a>
@@ -33,6 +34,25 @@
 <a id="Descrição"></a>
 
 ### Descrição
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<a id="Funcionalidades"></a>
+
+### Funcionalidades
+
+As funcionalidades da v1.0 são:
+
+- Sistemas responsivos para várias telas
+- CRUD de talentos: listagem, cadastro, atualização e deleção
+- Filtragem de talentos por e-mail
+- Filtragem de talentos por stack
+- Controle de formulário com Hook-Form e validação com Yup
+- Requisições realizadas com Axios
+- Gerenciamento de estados com Redux Toolkit
+- Utilização do middleware Redux Thunk para funções assíncronas
+- Utilização de modal para sinalizar mensagens de erro e sucesso das requisições para o usuário
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
