@@ -88,7 +88,7 @@ export const Tabs = () => {
     const [confirmDialog, setConfirmDialog] = useState<TOptionsConfirmDialog>({
         isOpen: false,
         title: "",
-        onConfirm: () => {},
+        onConfirm: () => { },
     });
 
     const rows = () => {
@@ -333,7 +333,7 @@ export const Tabs = () => {
             </Grid>
             {
                 smDown ?
-                    <Grid item xs={12} sx={{ height: 'calc(100vh)', width: '100%', }}>
+                    <Grid item xs={12} sx={{ height: '100%', width: '100%', }}>
                         {loading ? (
                             <LinearProgress />
                         ) : (
@@ -352,13 +352,30 @@ export const Tabs = () => {
                                 }}
 
                             >
-                                {talents.map((talent: TTalent, index: number) => (
-                                    <TalentCard
-                                        key={index}
-                                        talent={talent}
-                                        onDeleteTalent={deletarTalento}
-                                    />
-                                ))}
+                                {
+                                    talents.length == 0 ?
+                                        <Box
+                                            sx={{
+                                                height: "330px",
+                                                width: "100%",
+                                                display: "flex",
+                                                justifyContent: "center",
+                                                alignItems: "center",
+                                                padding: "30px 50px"
+                                            }}
+                                        >
+                                            <p>Nenhum Talento encontrado</p>
+                                        </Box>
+                                        :
+
+                                        talents.map((talent: TTalent, index: number) => (
+                                            <TalentCard
+                                                key={index}
+                                                talent={talent}
+                                                onDeleteTalent={deletarTalento}
+                                            />
+                                        ))
+                                }
                             </Box>
                         )}
                     </Grid>
