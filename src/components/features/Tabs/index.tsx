@@ -47,6 +47,7 @@ export const Tabs = () => {
     const [trilha, setTrilha] = useState('');
 
     const totalPages = Math.ceil(total / limit);
+    const nextPage = page * limit;
 
     useEffect(() => {
         Store.dispatch(fetchAllTalents({ limit: limit, offset: page }));
@@ -56,7 +57,7 @@ export const Tabs = () => {
         if (trilha !== "") {
             Store.dispatch(searchByStack({ limit: limit, offset: page, stack: trilha }))
         } else {
-            Store.dispatch(fetchAllTalents({ limit: limit, offset: page * limit }));
+            Store.dispatch(fetchAllTalents({ limit: limit, offset: nextPage }));
         }
     }, [page]);
 

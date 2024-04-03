@@ -109,10 +109,6 @@ const initialState: TInitialState = {
     talents: [],
     loading: false,
     error: null,
-    nextUrl: null,
-    previuosUrl: null,
-    limit: 0,
-    offset: 0,
     total: 0,
     message: null,
 };

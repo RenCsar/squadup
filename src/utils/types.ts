@@ -78,21 +78,13 @@ export type TTalent = {
 
 export type APIResponse = {
     results: TTalent[];
-    limit: number;
-    offset: number;
     total: number;
-    nextUrl: string | null;
-    previuosUrl: string | null;
 }
 
 export type TInitialState = {
     talents: TTalent[],
     loading: boolean;
     error: string | null;
-    nextUrl: null;
-    previuosUrl: null;
-    limit: number;
-    offset: number;
     total: number;
     message: string | null;
 }
