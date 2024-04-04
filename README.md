@@ -35,6 +35,20 @@
 
 ### Descrição
 
+#### **SquadUp**
+
+SquadUp é uma plataforma que tem como objetivo conectar empresas aos melhores profissionais do mercado. De uma forma rápida, você consegue montar a Squad ideal para o seu projeto. Por meio desta plataforma, é possível encontrar talentos qualificados e especializados em diversas áreas para impulsionar o sucesso dos seus empreendimentos.
+
+Por trás do SquadUp está a empresa fictícia SquadUp S/A., criada com o propósito de demonstrar meus conhecimentos e habilidades em desenvolvimento de software e gestão de projetos.
+
+#### **Motivação e Planejamento**
+
+A motivação para criar o SquadUP foi desenvolver um projeto MERN (MongoDB, Express, React e Node) concebido desde suas bases. Isso inclui a elaboração do documento de requisitos do sistema, o branding completo (nome fantasia, slogan, missão, etc.), o design, e as fases de planejamento e pré-desenvolvimento utilizando metodologias ágeis como Scrum e Kanban. O objetivo foi criar uma plataforma robusta e eficiente que atendesse às necessidades tanto das empresas quanto dos profissionais.
+
+#### **Fase Atual e Futuras Atualizações**
+
+Atualmente, a aplicação SquadUp está em sua primeira fase, que consiste principalmente no desenvolvimento do CRUD (Create, Read, Update, Delete) de talentos. Esta é uma etapa crucial para fornecer um Mínimo Produto Viável (MVP) que demonstre a funcionalidade básica da plataforma. Nas próximas atualizações, planejo implementar recursos adicionais, como autenticação de usuários e outros CRUDs, incluindo gestão de usuários e de squads. Estou comprometido em evoluir continuamente meus conhecimentos e complementar a plataforma com novas features.
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <a id="Funcionalidades"></a>
@@ -82,34 +96,47 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Este guia tem como objetivo fornecer instruções sobre como configurar e iniciar o projeto localmente. O projeto é desenvolvido em React com TypeScript e consome uma API cujo link está definido no arquivo .env.
 
-### Prerequisites
+### Pré-requisitos
 
-This is an example of how to list things you need to use the software and how to install them.
+- Node.js instalado
+- npm ou yarn instalado
+- Conta no GitHub (para clonar o repositório, se necessário)
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app._
+_Siga os passos abaixo para configurar e iniciar o projeto_
 
-1. Clone the repo
+1. Clone o repositório:
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/RenCsar/squadup.git
    ```
-2. Install NPM packages
+2. Instale as dependências do projeto:
    ```sh
+   cd squadup
    npm install
    ```
-3. Enter your URL API in `.env`
+3. Configure a URL da API:
+
+- Renomeie o arquivo `.env.example` para `.env`.
+- Abra o arquivo .env em um editor de texto.
+- Substitua "INSIRA A URL DA SUA API" pela URL real da sua API.
+
    ```js
-   REACT_APP_API_URL = "ENTER YOUR URL API";
+   REACT_APP_API_URL = "INSIRA A URL DA SUA API";
    ```
+
+#### Executando o Projeto
+Após seguir os passos de instalação, você pode iniciar o projeto localmente:
+  ```sh
+    npm start
+  ```
+O projeto será executado no seu navegador padrão. Se não abrir automaticamente, você pode acessá-lo manualmente em http://localhost:3000.
+
+#### Detalhes das Variáveis de Ambiente
+- REACT_APP_API_URL: A URL da API que o projeto irá consumir.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
