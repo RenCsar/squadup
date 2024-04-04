@@ -72,7 +72,7 @@ As funcionalidades da v1.0 são:
 
 <a id="Tecnologias"></a>
 
-### Tecnologias utilizadas
+### Tecnologias utilizadas (Frontend)
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
@@ -89,6 +89,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - Yup
 - React Scroll
 - Swiper-js
+
+Backend desenvolvido com **NodeJs**, **Express** e **MongoDB**. Para mais informações sobre o backend SquadUp [clique aqui](https://github.com/RenCsar/API-SquadUp).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
