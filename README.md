@@ -43,7 +43,7 @@ Por trás do SquadUp está a empresa fictícia SquadUp S/A., criada com o propó
 
 #### **Motivação e Planejamento**
 
-A motivação para criar o SquadUP foi desenvolver um projeto MERN (MongoDB, Express, React e Node) concebido desde suas bases. Isso inclui a elaboração do documento de requisitos do sistema, o branding completo (nome fantasia, slogan, missão, etc.), o design, e as fases de planejamento e pré-desenvolvimento utilizando metodologias ágeis como Scrum e Kanban. O objetivo foi criar uma plataforma robusta e eficiente que atendesse às necessidades tanto das empresas quanto dos profissionais.
+A motivação para criar o SquadUP foi desenvolver um projeto **MERN (MongoDB, Express, React e Node)** concebido desde suas bases. Isso inclui a elaboração do documento de requisitos do sistema, o branding completo (nome fantasia, slogan, missão, etc.), o design, e as fases de planejamento e pré-desenvolvimento utilizando metodologias ágeis como Scrum e Kanban. O objetivo foi criar uma plataforma robusta e eficiente que atendesse às necessidades tanto das empresas quanto dos profissionais.
 
 #### **Fase Atual e Futuras Atualizações**
 
