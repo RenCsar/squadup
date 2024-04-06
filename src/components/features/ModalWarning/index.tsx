@@ -26,6 +26,12 @@ const ModalWarning = ({ isOpen, onClose }: TModalWarningProps) => {
                             Para proteger o servidor, rotas como Post e Patch têm um limite de 10kb no corpo da requisição, então você não poderá salvar strings longas.
                         </p>
                         <p>
+                            Também há um limite de, no máximo, 100 novos registros por hora para evitar sobrecarregas.
+                        </p>
+                        <p>
+                            E ainda, há exclusão agendada de novos registros nos horários: 0hrs, 6hrs, 12hrs e 18hrs.
+                        </p>
+                        <p>
                             Você ainda pode criar, atualizar e deletar novos talentos, mas evite nomes impróprios ao salvá-los.
                         </p>
                         <p>
