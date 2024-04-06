@@ -20,13 +20,10 @@ const ModalWarning = ({ isOpen, onClose }: TModalWarningProps) => {
                             Não é possível editar ou excluir talentos antigos. Isso é necessário para demonstrar recursos como paginação, filtragem por e-mail e stack.
                         </p>
                         <p>
-                            Há um rate-limit para limitar as requisições por segundo. Por favor, proceda com calma.
+                            Há um rate-limit para limitar a quantidade de requisições por segundo, assim como um limite máximo de 100 novos registros por hora.
                         </p>
                         <p>
                             Para proteger o servidor, rotas como Post e Patch têm um limite de 10kb no corpo da requisição, então você não poderá salvar strings longas.
-                        </p>
-                        <p>
-                            Também há um limite de, no máximo, 100 novos registros por hora para evitar sobrecarregas.
                         </p>
                         <p>
                             E ainda, há exclusão agendada de novos registros nos horários: 0hrs, 6hrs, 12hrs e 18hrs.
