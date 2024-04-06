@@ -1,5 +1,5 @@
 import useBackground from "../../../hooks/useBackground";
-import { TSocialProps } from "../../../utils/types";
+import { TSocialProps } from "../../../types/types";
 import { Container } from "./SocialsFixed.Styled";
 
 const SocialsFixed = ({ isfooter }: TSocialProps) => {

@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import { Container } from "./ButtonFindTalent .Styled";
 import { Link } from "react-router-dom";
-import { TButtonProps } from "../../../utils/types";
+import { TButtonProps } from "../../../types/types";
 
 const ButtonFindTalent = ({ backgroundcolor, color, borderRadius, backgroundcolorhover, colorHover }: TButtonProps) => {
     return (

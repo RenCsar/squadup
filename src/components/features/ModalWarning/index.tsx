@@ -1,12 +1,7 @@
 import CancelIcon from '@mui/icons-material/Cancel';
-import ButtonFindTalent from '../../ui/ButtonFindTalent';
+import { TModalWarningProps } from '../../../types/types';
 
-interface ModalProps {
-    isOpen: boolean;
-    onClose: () => void;
-}
-
-const ModalWarning = ({ isOpen, onClose }: ModalProps) => {
+const ModalWarning = ({ isOpen, onClose }: TModalWarningProps) => {
     if (!isOpen) return null;
 
     return (

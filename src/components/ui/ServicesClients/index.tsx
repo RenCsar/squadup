@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 import { Container, StyledListItem } from "./ServicesClients.Styled";
-import { TServicesClientsProps } from "../../../utils/types";
+import { TServicesClientsProps } from "../../../types/types";
 
 const ServicesClients = ({ title, img, classStyle, items }: TServicesClientsProps) => {
     return (

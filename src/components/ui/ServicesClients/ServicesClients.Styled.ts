@@ -3,7 +3,7 @@ import IndicadorProjetos from "./../../../assets/indicador-projetos.svg";
 import IndicadorWeb from "./../../../assets/indicador-web.svg";
 import IndicadorDesign from "./../../../assets/indicador-design.svg";
 import { interactionOff } from "../../../utils/globalStyles";
-import { TServiceListProps } from "../../../utils/types";
+import { TServiceListProps } from "../../../types/types";
 
 export const Container = styled.div`
   display: flex;

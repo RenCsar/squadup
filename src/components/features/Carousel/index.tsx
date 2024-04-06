@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import { Container } from './Carousel.Styled';
 import { useTheme, useMediaQuery } from '@mui/material';
-import { TCarouselProps } from '../../../utils/types';
+import { TCarouselProps } from '../../../types/types';
 
 export default function Carousel({ content }: TCarouselProps) {
     const theme = useTheme()

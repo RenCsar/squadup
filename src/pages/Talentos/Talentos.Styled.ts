@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div<any>`
+export const Container = styled.div<{modalOpen: boolean}>`
   background-color: var(--bg-home);
 
   > :nth-child(1) {

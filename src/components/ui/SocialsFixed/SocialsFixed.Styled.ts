@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TSocialProps } from "../../../utils/types";
+import { TSocialProps } from "../../../types/types";
 
 export const Container = styled.div<TSocialProps>`
   display: flex;

@@ -29,7 +29,7 @@ import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import TalentCard from '../../ui/TalentCard';
 import { stacks } from '../../../utils/elementos';
 import { ConfirmDialog } from '../ConfirmDialog';
-import { TOptionsConfirmDialog, TTalent } from '../../../utils/types';
+import { TOptionsConfirmDialog, TTalent } from '../../../types/types';
 import { RootState, Store } from '../../../store/store';
 import { deleteTalent, fetchAllTalents, searchByEmail, searchByStack } from '../../../store/reducers/talent.Slice';
 import { useSelector } from 'react-redux';

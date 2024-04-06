@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import CustomButton from "../Button";
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { TOptionsConfirmDialog, TTalentProps } from "../../../utils/types";
+import { TOptionsConfirmDialog, TTalentProps } from "../../../types/types";
 import { useNavigate } from "react-router-dom";
 import { ConfirmDialog } from "../../features/ConfirmDialog";
 import { useState } from "react";

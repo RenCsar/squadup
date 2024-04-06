@@ -1,6 +1,6 @@
 import { Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from '@mui/material';
 import React from 'react';
-import { TOptionsConfirmDialogProps } from '../../../utils/types';
+import { TOptionsConfirmDialogProps } from '../../../types/types';
 
 export const ConfirmDialog: React.FC<TOptionsConfirmDialogProps> = ({ confirmDialog, setConfirmDialog }: TOptionsConfirmDialogProps) => {
 

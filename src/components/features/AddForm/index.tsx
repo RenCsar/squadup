@@ -23,7 +23,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import CustomButton from "../../ui/Button";
 import { useNavigate } from "react-router-dom";
-import { TAddFormProps, TAddTalent } from "../../../utils/types";
+import { TAddFormProps, TAddTalent } from "../../../types/types";
 import { Store } from "../../../store/store";
 import { addTalent, updateTalent } from "../../../store/reducers/talent.Slice";
 

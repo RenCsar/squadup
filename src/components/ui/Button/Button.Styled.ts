@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TButtonProps } from "../../../utils/types";
+import { TButtonProps } from "../../../types/types";
 
 export const Container = styled.div<TButtonProps>`
   & button {

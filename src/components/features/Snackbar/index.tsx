@@ -3,7 +3,7 @@ import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
 import MuiAlert, { AlertProps } from '@mui/material/Alert';
 import Slide, { SlideProps } from '@mui/material/Slide';
-import { CustomizedSnackbarsProps, TransitionProps } from '../../../utils/types';
+import { CustomizedSnackbarsProps, TransitionProps } from '../../../types/types';
 import { Store } from '../../../store/store';
 import { fetchAllTalents, limparError, limparMessage } from '../../../store/reducers/talent.Slice';
 import { setEmail } from '../../../store/reducers/globalStates.Slice';

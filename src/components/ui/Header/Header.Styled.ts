@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { TBackgroundProps } from "../../../utils/types";
+import { TBackgroundProps } from "../../../types/types";
 import { flexCenter } from "../../../utils/globalStyles";
 
 export const HeaderStyled = styled.div<TBackgroundProps>`

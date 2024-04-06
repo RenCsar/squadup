@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { API } from '../../api/squadUpAPI';
-import { APIResponse, TAddTalentReq, TInitialState } from '../../utils/types';
+import { APIResponse, TAddTalentReq, TInitialState } from '../../types/types';
 import { RootState, Store } from '../store';
 
 export const fetchAllTalents = createAsyncThunk<APIResponse, { limit: number; offset: number }>(

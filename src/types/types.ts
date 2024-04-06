@@ -121,3 +121,8 @@ export type TransitionProps = Omit<SlideProps, "direction">;
 export type TGlobalSnackbarProps = {
     children: ReactNode;
 }
+
+export type TModalWarningProps = {
+    isOpen: boolean;
+    onClose: () => void;
+}
