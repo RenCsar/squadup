@@ -103,7 +103,7 @@ export const Container = styled.div<{modalOpen: boolean}>`
     }
   }
 
-  @media (max-width: 350px) {
+  @media (max-width: 400px) and (max-height: 600px) {
     & .modal {
       width: 95%;
       height: 98%;
@@ -114,6 +114,7 @@ export const Container = styled.div<{modalOpen: boolean}>`
 
           & .texts {
             height: 350px;
+            padding: 5px;
             overflow-y: scroll;
 
             > p:last-child {
