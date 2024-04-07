@@ -122,6 +122,10 @@ export const Container = styled.div<{modalOpen: boolean}>`
             }
           }
         }
+
+        & .confirm-btn {
+          margin-top: 10px;
+        }
       }
     }
   }
