@@ -17,7 +17,6 @@ pointer-events: none;
 `;
 
 const GlobalStyle = createGlobalStyle`
- @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
 
 * {
   padding: 0px;
@@ -65,7 +64,7 @@ ol li {
   --border-radius-sm: 5px;
   --border-radius-md: 15px;
 
-  --font-family-primary: 'Manrope', sans-serif;
+  --font-family-primary: sans-serif;
   --font-color-primary: var(--branco);
   --font-color-secondary: var(--azul-claro);
   --font-color-text: var(--azul-escuro);

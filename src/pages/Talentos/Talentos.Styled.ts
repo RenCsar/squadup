@@ -29,8 +29,6 @@ export const Container = styled.div<{modalOpen: boolean}>`
       flex-direction: column;
       align-items: center;
 
-      /* justify-content: space-between; */
-
       > .close-container {
         width: 100%;
         display: flex;
