@@ -13,7 +13,7 @@ function GlobalSnackbar({ children }: TGlobalSnackbarProps) {
         if (message != null && error == null) {
             setSnackbarsType("success");
         } else if (error != null && message == null) {
-            setSnackbarsType('error');
+            setSnackbarsType("error");
         }
     }, [error, message]);
 

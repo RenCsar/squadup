@@ -81,6 +81,10 @@ export type APIResponse = {
     total: number;
 }
 
+export type TAPIError = {
+    message: string;
+}
+
 export type TInitialState = {
     talents: TTalent[],
     loading: boolean;
@@ -113,7 +117,7 @@ export type TOptionsConfirmDialogProps = {
 export type CustomizedSnackbarsProps = {
     error: string | null;
     message: string | null;
-    tipo?: any;
+    tipo: string | null;
 };
 
 export type TransitionProps = Omit<SlideProps, "direction">;

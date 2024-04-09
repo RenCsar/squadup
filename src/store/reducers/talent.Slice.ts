@@ -1,53 +1,57 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { API } from '../../api/squadUpAPI';
-import { APIResponse, TAddTalentReq, TInitialState } from '../../types/types';
+import { APIResponse, TAPIError, TAddTalentReq, TInitialState } from '../../types/types';
 import { RootState, Store } from '../store';
+import { AxiosError } from 'axios';
 
 export const fetchAllTalents = createAsyncThunk<APIResponse, { limit: number; offset: number }>(
     'talents/fetchAllTalents',
     async ({ limit, offset }) => {
-        try {
-            const response = await API.get(`/talent?limit=${limit}&offset=${offset}`);
-            return response.data;
-        } catch (error: any) {
-            if (error.response && error.response.data && error.response.data.message) {
-                throw new Error(error.response.data.message);
-            } else {
-                throw error;
-            }
-        }
+        return API.get(`/talent?limit=${limit}&offset=${offset}`)
+            .then(response => {
+                return response.data;
+            })
+            .catch((error: AxiosError<TAPIError>) => {
+                if (error.response && error.response.data && error.response.data.message) {
+                    throw new Error(error.response.data.message);
+                } else {
+                    throw error;
+                }
+            });
     }
 );
 
 export const searchByEmail = createAsyncThunk<APIResponse, { limit: number; offset: number, email: string }>(
     'talents/searchByEmail',
     async ({ limit, offset, email }) => {
-        try {
-            const response = await API.get(`/talent/${email}?limit=${limit}&offset=${offset}`);
-            return response.data;
-        } catch (error: any) {
-            if (error.response && error.response.data && error.response.data.message) {
-                throw new Error(error.response.data.message);
-            } else {
-                throw error;
-            }
-        }
+        return await API.get(`/talent/${email}?limit=${limit}&offset=${offset}`)
+            .then(response => {
+                return response.data;
+            })
+            .catch((error: AxiosError<TAPIError>) => {                
+                if (error.response && error.response.data && error.response.data.message) {
+                    throw new Error(error.response.data.message);
+                } else {
+                    throw error;
+                }
+            });
     }
 );
 
 export const searchByStack = createAsyncThunk<APIResponse, { limit: number; offset: number, stack: string }>(
     'talents/searchByStack',
     async ({ limit, offset, stack }) => {
-        try {
-            const response = await API.get(`/talent/search/${stack}?limit=${limit}&offset=${offset}`);
-            return response.data;
-        } catch (error: any) {
-            if (error.response && error.response.data && error.response.data.message) {
-                throw new Error(error.response.data.message);
-            } else {
-                throw error;
-            }
-        }
+        return await API.get(`/talent/search/${stack}?limit=${limit}&offset=${offset}`)
+            .then(response => {
+                return response.data;
+            })
+            .catch((error: AxiosError<TAPIError>) => {
+                if (error.response && error.response.data && error.response.data.message) {
+                    throw new Error(error.response.data.message);
+                } else {
+                    throw error;
+                }
+            });
     }
 );
 
@@ -55,17 +59,18 @@ export const addTalent = createAsyncThunk<string | null, TAddTalentReq>(
     'talents/addTalent',
     async (talentData, { getState }) => {
         const { limit } = (getState() as RootState).globalStates;
-        try {
-            const response = await API.post('/talent', talentData);
-            Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
-            return response.data.message;
-        } catch (error: any) {
-            if (error.response && error.response.data && error.response.data.message) {
-                throw new Error(error.response.data.message);
-            } else {
-                throw error;
-            }
-        }
+        return await API.post('/talent', talentData)
+            .then(response => {
+                Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
+                return response.data.message;
+            })
+            .catch((error: AxiosError<TAPIError>) => {
+                if (error.response && error.response.data && error.response.data.message) {
+                    throw new Error(error.response.data.message);
+                } else {
+                    throw error;
+                }
+            });
     }
 );
 
@@ -73,17 +78,18 @@ export const updateTalent = createAsyncThunk<string | null, { talentData: TAddTa
     'talents/updateTalent',
     async ({ talentData, talentId }, { getState }) => {
         const { limit } = (getState() as RootState).globalStates;
-        try {
-            const response = await API.patch(`/talent/${talentId}`, talentData);
-            Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
-            return response.data.message
-        } catch (error: any) {
-            if (error.response && error.response.data && error.response.data.message) {
-                throw new Error(error.response.data.message);
-            } else {
-                throw error;
-            }
-        }
+        return await API.patch(`/talent/${talentId}`, talentData)
+            .then(response => {
+                Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
+                return response.data.message;
+            })
+            .catch((error: AxiosError<TAPIError>) => {
+                if (error.response && error.response.data && error.response.data.message) {
+                    throw new Error(error.response.data.message);
+                } else {
+                    throw error;
+                }
+            });
     }
 );
 
@@ -91,17 +97,18 @@ export const deleteTalent = createAsyncThunk<string | null, string>(
     'talents/deleteTalent',
     async (talentId, { getState }) => {
         const { limit } = (getState() as RootState).globalStates;
-        try {
-            const response = await API.delete(`/talent/${talentId}`);
-            Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
-            return response.data.message;
-        } catch (error: any) {
-            if (error.response && error.response.data && error.response.data.message) {
-                throw new Error(error.response.data.message);
-            } else {
-                throw error;
-            }
-        }
+        return await API.delete(`/talent/${talentId}`)
+            .then(response => {
+                Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
+                return response.data.message;
+            })
+            .catch((error: AxiosError<TAPIError>) => {
+                if (error.response && error.response.data && error.response.data.message) {
+                    throw new Error(error.response.data.message);
+                } else {
+                    throw error;
+                }
+            });
     }
 );
 

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import MuiAlert, { AlertColor, AlertProps } from '@mui/material/Alert';
 import Slide, { SlideProps } from '@mui/material/Slide';
 import { CustomizedSnackbarsProps, TransitionProps } from '../../../types/types';
 import { Store } from '../../../store/store';
@@ -38,13 +38,13 @@ export default function CustomizedSnackbars({ error, tipo, message }: Customized
             return;
         }
 
-        if(tipo == "error") {
+        if (tipo == "error") {
             Store.dispatch(fetchAllTalents({ limit: 7, offset: 0 }));
         }
         Store.dispatch(setEmail(''));
         Store.dispatch(limparError());
         Store.dispatch(limparMessage());
-        tipo = null
+        tipo = null;
         setOpen(false);
     };
 
@@ -59,8 +59,8 @@ export default function CustomizedSnackbars({ error, tipo, message }: Customized
                 }}
                 autoHideDuration={5000}
                 TransitionComponent={transition}>
-                <Alert onClose={handleClose} severity={tipo} sx={{ width: '100%', background: tipo == "error" ? "red" : "green", color: "white" }}>
-                    {error ? error :  message}
+                <Alert onClose={handleClose} severity={tipo == null || tipo == undefined ? undefined : tipo as AlertColor} sx={{ width: '100%', background: tipo == "error" ? "red" : "green", color: "white" }}>
+                    {error ? error : message}
                 </Alert>
             </Snackbar>
         </Stack>
