@@ -5,7 +5,7 @@ import MuiAlert, { AlertColor, AlertProps } from '@mui/material/Alert';
 import Slide, { SlideProps } from '@mui/material/Slide';
 import { CustomizedSnackbarsProps, TransitionProps } from '../../../types/types';
 import { Store } from '../../../store/store';
-import { fetchAllTalents, limparError, limparMessage } from '../../../store/reducers/talent.Slice';
+import { limparError, limparMessage } from '../../../store/reducers/talent.Slice';
 import { setEmail } from '../../../store/reducers/globalStates.Slice';
 
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(
@@ -38,15 +38,15 @@ export default function CustomizedSnackbars({ error, tipo, message }: Customized
             return;
         }
 
-        if (tipo == "error") {
-            Store.dispatch(fetchAllTalents({ limit: 7, offset: 0 }));
-        }
         Store.dispatch(setEmail(''));
+        setOpen(false);
+    };
+
+    const handleExited = () => {
         Store.dispatch(limparError());
         Store.dispatch(limparMessage());
         tipo = null;
-        setOpen(false);
-    };
+    }
 
     return (
         <Stack spacing={2} sx={{ width: '100%' }}>
@@ -58,7 +58,10 @@ export default function CustomizedSnackbars({ error, tipo, message }: Customized
                     horizontal: 'center'
                 }}
                 autoHideDuration={5000}
-                TransitionComponent={transition}>
+                TransitionComponent={transition}
+                TransitionProps={{ onExited: handleExited }}
+
+            >
                 <Alert onClose={handleClose} severity={tipo == null || tipo == undefined ? undefined : tipo as AlertColor} sx={{ width: '100%', background: tipo == "error" ? "red" : "green", color: "white" }}>
                     {error ? error : message}
                 </Alert>

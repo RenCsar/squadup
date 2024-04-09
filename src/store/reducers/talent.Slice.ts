@@ -28,7 +28,8 @@ export const searchByEmail = createAsyncThunk<APIResponse, { limit: number; offs
             .then(response => {
                 return response.data;
             })
-            .catch((error: AxiosError<TAPIError>) => {                
+            .catch((error: AxiosError<TAPIError>) => {
+                Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
                 if (error.response && error.response.data && error.response.data.message) {
                     throw new Error(error.response.data.message);
                 } else {
@@ -46,6 +47,7 @@ export const searchByStack = createAsyncThunk<APIResponse, { limit: number; offs
                 return response.data;
             })
             .catch((error: AxiosError<TAPIError>) => {
+                Store.dispatch(fetchAllTalents({ limit: limit, offset: 0 }));
                 if (error.response && error.response.data && error.response.data.message) {
                     throw new Error(error.response.data.message);
                 } else {
