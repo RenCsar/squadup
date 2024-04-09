@@ -12,12 +12,14 @@ const ButtonFindTalent = ({ backgroundcolor, color, borderRadius, backgroundcolo
             backgroundcolorhover={backgroundcolorhover}
             colorHover={colorHover}
         >
-            <Button sx={{
-                textTransform: 'inherit',
-                p: 0
-            }}>
-                <Link to="/home">Encontre um Talento</Link>
-            </Button>
+            <Link to="/home">
+                <Button sx={{
+                    textTransform: 'inherit',
+                    p: 0
+                }}>
+                    Encontre um Talento
+                </Button>
+            </Link>
         </Container>
     )
 }
